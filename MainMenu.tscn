@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://b0ohrm1gam4so"]
+
+[ext_resource type="Script" uid="uid://d0hkpyuwl6cb1" path="res://main_menu.gd" id="1_eiy7p"]
+[ext_resource type="Theme" uid="uid://byegh1d0uo8t7" path="res://menu_theme.tres" id="1_i26rj"]
+
+[node name="Control" type="Control" unique_id=721649581]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eiy7p")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1895228789]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="mainscreen" type="VBoxContainer" parent="." unique_id=854115805]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = 60.0
+offset_right = 80.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+alignment = 2
+
+[node name="lb_title" type="Label" parent="mainscreen" unique_id=896406514]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("1_i26rj")
+theme_type_variation = &"HeaderLarge"
+text = "My Custom Game"
+horizontal_alignment = 1
+
+[node name="btn_start" type="Button" parent="mainscreen" unique_id=806133240]
+layout_mode = 2
+text = "Start New Game"
+
+[node name="inlinebox" type="HBoxContainer" parent="mainscreen" unique_id=1957314134]
+layout_mode = 2
+
+[node name="btn_settings" type="Button" parent="mainscreen/inlinebox" unique_id=1432438877]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Settings"
+
+[node name="btn_exit" type="Button" parent="mainscreen/inlinebox" unique_id=852980425]
+layout_mode = 2
+size_flags_horizontal = 3
+keep_pressed_outside = true
+text = "Exit Game"
+
+[node name="footer" type="HBoxContainer" parent="." unique_id=184041004]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="lb_version" type="Label" parent="footer" unique_id=49386067]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme = ExtResource("1_i26rj")
+theme_type_variation = &"HeaderSmall"
+theme_override_font_sizes/font_size = 8
+text = "v0.1.0"
+vertical_alignment = 2
+
+[node name="lb_credits" type="Label" parent="footer" unique_id=469155188]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme = ExtResource("1_i26rj")
+theme_type_variation = &"HeaderSmall"
+theme_override_font_sizes/font_size = 8
+text = "Temu.Games"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[connection signal="pressed" from="mainscreen/inlinebox/btn_exit" to="." method="_on_btn_exit_pressed"]
