@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://fmu7m1futaje"]
+
+[ext_resource type="Theme" uid="uid://duarm5fhevydq" path="res://Castle/castle_theme.tres" id="1_vls0f"]
+[ext_resource type="PackedScene" uid="uid://b0fc2bfi4t8gj" path="res://Dialogue/DialogueSystem.tscn" id="4_ejnqn"]
+
+[sub_resource type="GDScript" id="GDScript_ofbpt"]
+
+[node name="CastleScene" type="Control" unique_id=1261575005]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vls0f")
+script = SubResource("GDScript_ofbpt")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1280526428]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vls0f")
+
+[node name="Resources" type="HBoxContainer" parent="." unique_id=1933473346]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme = ExtResource("1_vls0f")
+
+[node name="Label" type="Label" parent="Resources" unique_id=2004851550]
+layout_mode = 2
+text = "Villagers left: 10"
+
+[node name="TimeOfDay" type="TextureRect" parent="." unique_id=1296735536]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme = ExtResource("1_vls0f")
+
+[node name="DialogueSystem" parent="." unique_id=505604403 instance=ExtResource("4_ejnqn")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -1.5258789e-05
+offset_bottom = 1.5258789e-05
+
+[node name="ToTown" type="Button" parent="." unique_id=1715218420]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -4.0
+offset_bottom = 4.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_vls0f")
+text = "Town"
+
+[node name="VSlider" type="VSlider" parent="." unique_id=1595892657]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -4.0
+offset_right = 16.0
+offset_bottom = 4.0
+grow_vertical = 2
+value = 100.0

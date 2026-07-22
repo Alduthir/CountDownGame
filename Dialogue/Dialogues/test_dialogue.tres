@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="DialogueEntry" format=3 uid="uid://cp8nbp5g4enci"]
+
+[ext_resource type="Texture2D" uid="uid://5xmko42jclas" path="res://Resources/portraits/peer.png" id="1_1w4rc"]
+[ext_resource type="Script" uid="uid://c5kpn8txihbv7" path="res://Dialogue/tools/dialogue_choice.gd" id="2_qgr0b"]
+[ext_resource type="Script" uid="uid://ca055npa72yf5" path="res://Dialogue/tools/dialogue_action.gd" id="3_qgr0b"]
+[ext_resource type="Script" uid="uid://dntknnuc1tx1u" path="res://Dialogue/tools/dialogue_entry.gd" id="3_tcwet"]
+
+[sub_resource type="Resource" id="Resource_ejnqn"]
+script = ExtResource("3_qgr0b")
+metadata/_custom_type_script = "uid://ca055npa72yf5"
+
+[sub_resource type="Resource" id="Resource_r48nt"]
+script = ExtResource("2_qgr0b")
+text = "Of course. Guards! Help this man put the fire out, round up as many villagers as you can to help and save anyone trapped in the building!"
+action = SubResource("Resource_ejnqn")
+
+[sub_resource type="Resource" id="Resource_tcwet"]
+script = ExtResource("2_qgr0b")
+text = "I'm sorry, I cannot spare the men right now."
+
+[resource]
+script = ExtResource("3_tcwet")
+text = "Sir, Please send some people to help. My house has caught fire!"
+character = ExtResource("1_1w4rc")
+choices = Array[ExtResource("2_qgr0b")]([SubResource("Resource_r48nt"), SubResource("Resource_tcwet")])
+metadata/_custom_type_script = "uid://dntknnuc1tx1u"
