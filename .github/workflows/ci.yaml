@@ -1,11 +1,11 @@
-name: "BomberMouse CI"
+name: "CountDownGameCI"
 on:
   push:
     branches:
     - main
 
 env:
-  GODOT_VERSION: 4.6.3
+  GODOT_VERSION: 4.7.1
   USER_VERSION: "0.0.${{ github.run_number }}"
 
 jobs:
