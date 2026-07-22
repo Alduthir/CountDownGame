@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://fmu7m1futaje"]
 
 [ext_resource type="Theme" uid="uid://duarm5fhevydq" path="res://Castle/castle_theme.tres" id="1_vls0f"]
+[ext_resource type="Script" uid="uid://dlf1hmcp27ju5" path="res://Castle/castle_scene.gd" id="2_c43rf"]
 [ext_resource type="Texture2D" uid="uid://b1mrsita7sr7o" path="res://icon.svg" id="2_ofbpt"]
+[ext_resource type="Resource" uid="uid://cp8nbp5g4enci" path="res://Dialogue/Dialogues/test_dialogue.tres" id="3_ejnqn"]
 
 [node name="CastleScene" type="Control" unique_id=1261575005]
 layout_mode = 3
@@ -11,6 +13,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_vls0f")
+script = ExtResource("2_c43rf")
+current_dialogue = ExtResource("3_ejnqn")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1280526428]
 layout_mode = 1
@@ -57,6 +61,7 @@ grow_vertical = 0
 theme = ExtResource("1_vls0f")
 
 [node name="Dialogue" type="RichTextLabel" parent="DialogueContainer" unique_id=304300169]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("1_vls0f")
@@ -65,24 +70,11 @@ text = "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
 
 [node name="ResponseContainer" type="VBoxContainer" parent="DialogueContainer" unique_id=1761423232]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 theme = ExtResource("1_vls0f")
-
-[node name="Response1" type="Button" parent="DialogueContainer/ResponseContainer" unique_id=1084144057]
-layout_mode = 2
-theme = ExtResource("1_vls0f")
-text = "Bla"
-
-[node name="Response2" type="Button" parent="DialogueContainer/ResponseContainer" unique_id=25907440]
-layout_mode = 2
-theme = ExtResource("1_vls0f")
-text = "Bla"
-
-[node name="Response3" type="Button" parent="DialogueContainer/ResponseContainer" unique_id=1877273912]
-layout_mode = 2
-text = "Bla"
 
 [node name="ToTown" type="Button" parent="." unique_id=849358494]
 layout_mode = 1
@@ -132,7 +124,8 @@ layout_mode = 2
 texture = ExtResource("2_ofbpt")
 expand_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1384675895]
+[node name="Villager" type="TextureRect" parent="HBoxContainer" unique_id=1384675895]
+unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_ofbpt")
 expand_mode = 2
