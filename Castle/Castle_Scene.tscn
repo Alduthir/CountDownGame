@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://fmu7m1futaje"]
 
 [ext_resource type="Theme" uid="uid://duarm5fhevydq" path="res://Castle/castle_theme.tres" id="1_vls0f"]
-[ext_resource type="Script" uid="uid://dlf1hmcp27ju5" path="res://Castle/castle_scene.gd" id="2_c43rf"]
-[ext_resource type="Texture2D" uid="uid://b1mrsita7sr7o" path="res://icon.svg" id="2_ofbpt"]
-[ext_resource type="Resource" uid="uid://cp8nbp5g4enci" path="res://Dialogue/Dialogues/test_dialogue.tres" id="3_ejnqn"]
+[ext_resource type="PackedScene" uid="uid://b0fc2bfi4t8gj" path="res://Dialogue/DialogueSystem.tscn" id="4_ejnqn"]
+
+[sub_resource type="GDScript" id="GDScript_ofbpt"]
 
 [node name="CastleScene" type="Control" unique_id=1261575005]
 layout_mode = 3
@@ -13,8 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_vls0f")
-script = ExtResource("2_c43rf")
-current_dialogue = ExtResource("3_ejnqn")
+script = SubResource("GDScript_ofbpt")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1280526428]
 layout_mode = 1
@@ -50,33 +49,17 @@ offset_bottom = 40.0
 grow_horizontal = 0
 theme = ExtResource("1_vls0f")
 
-[node name="DialogueContainer" type="HBoxContainer" parent="." unique_id=394381840]
+[node name="DialogueSystem" parent="." unique_id=505604403 instance=ExtResource("4_ejnqn")]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("1_vls0f")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -1.5258789e-05
+offset_bottom = 1.5258789e-05
 
-[node name="Dialogue" type="RichTextLabel" parent="DialogueContainer" unique_id=304300169]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme = ExtResource("1_vls0f")
-text = "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
-
-[node name="ResponseContainer" type="VBoxContainer" parent="DialogueContainer" unique_id=1761423232]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 10
-theme = ExtResource("1_vls0f")
-
-[node name="ToTown" type="Button" parent="." unique_id=849358494]
+[node name="ToTown" type="Button" parent="." unique_id=1715218420]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -91,7 +74,7 @@ grow_vertical = 2
 theme = ExtResource("1_vls0f")
 text = "Town"
 
-[node name="VSlider" type="VSlider" parent="." unique_id=641964862]
+[node name="VSlider" type="VSlider" parent="." unique_id=1595892657]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 1
 anchors_preset = 4
@@ -102,30 +85,3 @@ offset_right = 16.0
 offset_bottom = 4.0
 grow_vertical = 2
 value = 100.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=852976556]
-custom_minimum_size = Vector2(200, 100)
-propagate_maximum_size = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Count" type="TextureRect" parent="HBoxContainer" unique_id=615252962]
-layout_mode = 2
-texture = ExtResource("2_ofbpt")
-expand_mode = 2
-
-[node name="Villager" type="TextureRect" parent="HBoxContainer" unique_id=1384675895]
-unique_name_in_owner = true
-layout_mode = 2
-texture = ExtResource("2_ofbpt")
-expand_mode = 2
