@@ -29,7 +29,7 @@ var start_time_hours: int = 13
 var start_time_minutes: int = 0
 var start_suspicion: int = 0
 var start_thirst: int = max_thirst
-var starter_villagers: int = 2
+var starter_villagers: int = 3
 
 var next_event: int = 5
 

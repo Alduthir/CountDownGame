@@ -2,9 +2,26 @@
 
 [ext_resource type="Script" uid="uid://b324652qjt01v" path="res://UI/Overlay/Gui/gui.gd" id="1_n4itr"]
 [ext_resource type="Texture2D" uid="uid://dvnmo20jip6nk" path="res://UI/Fang.png" id="2_jdrlu"]
+[ext_resource type="Texture2D" uid="uid://b0sipjatsdd7m" path="res://UI/house_icon.png" id="2_q6ge2"]
 [ext_resource type="FontFile" uid="uid://cp64hlqrv4k0q" path="res://Resources/fonts/Feathergraphy2.ttf" id="3_uke80"]
+[ext_resource type="Texture2D" uid="uid://dgnq0yc5qys3h" path="res://UI/shield_icon.png" id="5_evs6x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsrf3"]
+bg_color = Color(0.9607843, 0.9607843, 0.9607843, 1)
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="FontVariation" id="FontVariation_247m7"]
+base_font = ExtResource("3_uke80")
 
 [sub_resource type="FontVariation" id="FontVariation_wsrf3"]
+base_font = ExtResource("3_uke80")
+
+[sub_resource type="FontVariation" id="FontVariation_tnj7p"]
 base_font = ExtResource("3_uke80")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8kre"]
@@ -46,13 +63,13 @@ border_blend = true
 [node name="Gui" type="Node2D" unique_id=921643240]
 script = ExtResource("1_n4itr")
 
-[node name="background header" type="ColorRect" parent="." unique_id=549401117]
+[node name="Background_header" type="Panel" parent="." unique_id=311915413]
 custom_minimum_size = Vector2(210, 15)
 custom_maximum_size = Vector2(210, 15)
 offset_left = 55.0
 offset_right = 265.0
-offset_bottom = 25.0
-size_flags_horizontal = 3
+offset_bottom = 15.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wsrf3")
 
 [node name="header" type="HBoxContainer" parent="." unique_id=643448728]
 offset_left = 55.0
@@ -60,9 +77,25 @@ offset_right = 265.0
 offset_bottom = 18.0
 
 [node name="left" type="HBoxContainer" parent="header" unique_id=1736627371]
+custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+alignment = 1
+
+[node name="icon" type="TextureRect" parent="header/left" unique_id=1942016304]
+z_as_relative = false
+custom_maximum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("2_q6ge2")
+
+[node name="villagers" type="Label" parent="header/left" unique_id=154875187]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_247m7")
+theme_override_font_sizes/font_size = 8
+text = "2"
 
 [node name="calander" type="HBoxContainer" parent="header" unique_id=702888237]
 custom_minimum_size = Vector2(30, 45)
@@ -118,6 +151,25 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+alignment = 1
+
+[node name="gaurds" type="RichTextLabel" parent="header/right" unique_id=1685006967]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_tnj7p")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "[font_size=10]6[/font_size][font_size=6]/3[/font_size]
+"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="icon" type="TextureRect" parent="header/right" unique_id=949431380]
+custom_maximum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("5_evs6x")
 
 [node name="suspicion_bar" type="HBoxContainer" parent="." unique_id=736904942]
 offset_left = 305.0
