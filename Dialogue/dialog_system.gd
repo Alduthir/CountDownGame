@@ -1,4 +1,4 @@
-extends Node2D
+class_name DialogSystem extends Node2D
 
 signal dialog_finished(result: Dictionary)
 
@@ -49,10 +49,10 @@ func _render_buttons():
 func _on_response(response: DialogResponse):
 	if response.action != null:
 		var action = response.action
-		if action == "end":
+		if action == 1:
 			_end_dialog()
 			return
-		if action == "set_values":
+		if action == 0:
 			dialog_finished.emit({"set_values": response.values})
 	
 	current_step += 1

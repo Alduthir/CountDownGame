@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7bqc5p3h1i5y"]
 
-[ext_resource type="Script" uid="uid://cdtayklefiism" path="res://DialogueV2/dialog_system.gd" id="1_u62x5"]
+[ext_resource type="Script" uid="uid://cdtayklefiism" path="res://Dialogue/dialog_system.gd" id="1_u62x5"]
 [ext_resource type="Texture2D" uid="uid://b1mrsita7sr7o" path="res://icon.svg" id="2_cyj5f"]
 [ext_resource type="Theme" uid="uid://duarm5fhevydq" path="res://Castle/castle_theme.tres" id="3_ey7y4"]
 
@@ -9,13 +9,15 @@ position = Vector2(160, 90)
 script = ExtResource("1_u62x5")
 character_image = ExtResource("2_cyj5f")
 
-[node name="Background" type="TextureRect" parent="." unique_id=2105733600]
-anchors_preset = 15
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1691811739]
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_left = -173.0
+offset_top = -103.0
+offset_right = 187.0
+offset_bottom = 123.0
 grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("3_ey7y4")
+color = Color(0, 0, 0, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1013480835]
 anchors_preset = 15

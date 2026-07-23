@@ -17711,3 +17711,4 @@ tile_map_data = PackedByteArray("AADa/3YAAgAJAAEAAADa/3cAAgAJAAIAAADa/3gAAgAJAAM
 tile_set = SubResource("TileSet_qb2yi")
 
 [node name="villager" parent="." unique_id=1855185321 instance=ExtResource("18_tuxap")]
+position = Vector2(162, 88)
