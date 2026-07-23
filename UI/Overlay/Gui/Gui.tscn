@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dcmqw5sgnqpo0"]
+
+[ext_resource type="Script" uid="uid://b324652qjt01v" path="res://UI/Overlay/Gui/gui.gd" id="1_n4itr"]
+
+[node name="Gui" type="Node2D" unique_id=921643240]
+script = ExtResource("1_n4itr")
+
+[node name="header" type="HBoxContainer" parent="." unique_id=643448728]
+offset_left = 55.0
+offset_right = 265.0
+offset_bottom = 18.0
+
+[node name="left" type="HBoxContainer" parent="header" unique_id=1736627371]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="calander" type="HBoxContainer" parent="header" unique_id=702888237]
+custom_minimum_size = Vector2(30, 45)
+layout_mode = 2
+
+[node name="center" type="HBoxContainer" parent="header" unique_id=583942112]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="timer" type="HBoxContainer" parent="header" unique_id=1928966542]
+custom_minimum_size = Vector2(30, 45)
+layout_mode = 2
+
+[node name="right" type="HBoxContainer" parent="header" unique_id=33692185]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Suspision_bar" type="HBoxContainer" parent="." unique_id=736904942]
+offset_left = 305.0
+offset_top = 141.0
+offset_right = 377.0
+offset_bottom = 168.0
+rotation = -1.5707964
+scale = Vector2(1, 0.2)
+
+[node name="health_bar" type="ProgressBar" parent="Suspision_bar" unique_id=419527490]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+size_flags_horizontal = 3
+step = 1.0
+allow_lesser = true
+show_percentage = false
+
+[node name="footer" type="HBoxContainer" parent="." unique_id=904128976]
+offset_left = 32.0
+offset_top = 170.0
+offset_right = 278.0
+offset_bottom = 197.0
+scale = Vector2(1, 0.3)
+
+[node name="health_bar" type="ProgressBar" parent="footer" unique_id=1894148599]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+size_flags_horizontal = 3
+allow_lesser = true
+show_percentage = false
+
+[node name="thirst_bar" type="HBoxContainer" parent="." unique_id=1189176117]
+offset_left = 10.0
+offset_top = 141.0
+offset_right = 82.0
+offset_bottom = 168.0
+rotation = -1.5707964
+scale = Vector2(1, 0.2)
+
+[node name="health_bar" type="ProgressBar" parent="thirst_bar" unique_id=380831046]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+size_flags_horizontal = 3
+allow_lesser = true
+show_percentage = false
