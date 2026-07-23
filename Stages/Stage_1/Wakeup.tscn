@@ -1,6 +1,59 @@
 [gd_scene format=3 uid="uid://db20vgbosllb3"]
 
-[ext_resource type="PackedScene" uid="uid://b0fc2bfi4t8gj" path="res://Dialogue/DialogueSystem.tscn" id="1_8hhkg"]
+[ext_resource type="Script" uid="uid://c4vcpt1egjj56" path="res://Stages/Stage_1/wakeup.gd" id="1_8hhkg"]
+[ext_resource type="Texture2D" uid="uid://5xmko42jclas" path="res://Resources/portraits/peer.png" id="2_348wc"]
+[ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://DialogueV2/dialog_step.gd" id="2_td61u"]
+[ext_resource type="PackedScene" uid="uid://c7bqc5p3h1i5y" path="res://DialogueV2/DialogSystem.tscn" id="2_vigwt"]
+[ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://DialogueV2/dialog_data.gd" id="3_td61u"]
+[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://DialogueV2/dialog_response.gd" id="3_wy6ru"]
+
+[sub_resource type="Resource" id="Resource_pcam2"]
+script = ExtResource("3_wy6ru")
+label = "Kom binnen"
+action = 1
+values = Dictionary[int, int]({
+1: 9,
+2: 9
+})
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_qtpgy"]
+script = ExtResource("3_wy6ru")
+label = "Ga weg!"
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_lfvaf"]
+script = ExtResource("3_wy6ru")
+label = "Wat wil je?"
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_wy6ru"]
+script = ExtResource("2_td61u")
+text = "Goedenavond... ik heb dorst..."
+responses = Array[ExtResource("3_wy6ru")]([SubResource("Resource_pcam2"), SubResource("Resource_qtpgy"), SubResource("Resource_lfvaf")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_o3bkd"]
+script = ExtResource("3_wy6ru")
+label = "Ja natuurlijk"
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_ykw1g"]
+script = ExtResource("3_wy6ru")
+label = "nee"
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_un1s2"]
+script = ExtResource("2_td61u")
+text = "Mag ik wat water?"
+responses = Array[ExtResource("3_wy6ru")]([SubResource("Resource_o3bkd"), SubResource("Resource_ykw1g")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_wsrf3"]
+script = ExtResource("3_td61u")
+portrait = ExtResource("2_348wc")
+conversation = Array[ExtResource("2_td61u")]([SubResource("Resource_wy6ru"), SubResource("Resource_un1s2")])
+metadata/_custom_type_script = "uid://b543j03pna7xr"
 
 [node name="Wakeup" type="Control" unique_id=35681556]
 layout_mode = 3
@@ -9,10 +62,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8hhkg")
+dialog_data = SubResource("Resource_wsrf3")
 
-[node name="DialogueSystem" parent="." unique_id=505604403 instance=ExtResource("1_8hhkg")]
-layout_mode = 1
-anchors_preset = 10
-anchor_bottom = 0.0
-grow_vertical = 1
-size_flags_horizontal = 4
+[node name="DialogSystem" parent="." unique_id=1480868554 instance=ExtResource("2_vigwt")]
