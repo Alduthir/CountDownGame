@@ -1,4 +1,4 @@
-extends Node2D
+class_name DialogSystem extends Node2D
 
 signal dialog_finished(result: Dictionary)
 
