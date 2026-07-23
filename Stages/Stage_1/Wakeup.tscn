@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c7bqc5p3h1i5y" path="res://Dialogue/DialogSystem.tscn" id="2_vigwt"]
 [ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="3_td61u"]
 [ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="3_wy6ru"]
+[ext_resource type="PackedScene" uid="uid://dcmqw5sgnqpo0" path="res://UI/Overlay/Gui/Gui.tscn" id="7_pcam2"]
 
 [sub_resource type="Resource" id="Resource_pcam2"]
 script = ExtResource("3_wy6ru")
@@ -61,4 +62,7 @@ grow_vertical = 2
 script = ExtResource("1_8hhkg")
 dialog_data = SubResource("Resource_wsrf3")
 
+[node name="Gui" parent="." unique_id=921643240 instance=ExtResource("7_pcam2")]
+
 [node name="DialogSystem" parent="." unique_id=1480868554 instance=ExtResource("2_vigwt")]
+visible = false
