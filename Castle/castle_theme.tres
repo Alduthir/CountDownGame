@@ -1,0 +1,5 @@
+[gd_resource type="Theme" format=3 uid="uid://duarm5fhevydq"]
+
+[resource]
+default_font_size = 6
+Button/font_sizes/font_size = 6
