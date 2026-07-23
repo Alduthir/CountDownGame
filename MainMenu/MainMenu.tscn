@@ -2,6 +2,22 @@
 
 [ext_resource type="Script" uid="uid://d0hkpyuwl6cb1" path="res://MainMenu/main_menu.gd" id="1_cruaa"]
 [ext_resource type="Theme" uid="uid://byegh1d0uo8t7" path="res://menu_theme.tres" id="2_b76km"]
+[ext_resource type="Shader" uid="uid://cdflkgc45o4xi" path="res://MainMenu/MainMenu.gdshader" id="2_lbqne"]
+[ext_resource type="FontFile" uid="uid://cp64hlqrv4k0q" path="res://Resources/fonts/Feathergraphy2.ttf" id="3_b76km"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3p42x"]
+resource_local_to_scene = true
+shader = ExtResource("2_lbqne")
+shader_parameter/center_color = Color(0.03, 0.08, 0.22, 1)
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2p3vw"]
+font_size = 60
+font_color = Color(1, 0.07450981, 0.050980393, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_430ii"]
+base_font = ExtResource("3_b76km")
+spacing_glyph = 4
 
 [node name="Control" type="Control" unique_id=721649581]
 layout_mode = 3
@@ -13,38 +29,58 @@ grow_vertical = 2
 script = ExtResource("1_cruaa")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1895228789]
+material = SubResource("ShaderMaterial_3p42x")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="lb_title" type="Label" parent="." unique_id=2027095136]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -30.0
+offset_right = 160.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+offset_transform_enabled = true
+offset_transform_rotation = -0.20943952
+theme_type_variation = &"HeaderLarge"
+theme_override_fonts/font = ExtResource("3_b76km")
+theme_override_font_sizes/font_size = 75
+text = "Count Downie"
+label_settings = SubResource("LabelSettings_2p3vw")
+horizontal_alignment = 1
 
 [node name="mainscreen" type="VBoxContainer" parent="." unique_id=854115805]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 80.0
-offset_top = 60.0
-offset_right = 80.0
-offset_bottom = 60.0
+offset_left = 135.0
+offset_top = 110.0
+offset_right = 135.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 alignment = 2
 
-[node name="lb_title" type="Label" parent="mainscreen" unique_id=896406514]
-layout_mode = 2
-size_flags_vertical = 6
-theme = ExtResource("2_b76km")
-theme_type_variation = &"HeaderLarge"
-text = "My Custom Game"
-horizontal_alignment = 1
-
 [node name="btn_start" type="Button" parent="mainscreen" unique_id=806133240]
 layout_mode = 2
-text = "Start New Game"
+theme_override_colors/font_color = Color(0.7372549, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = SubResource("FontVariation_430ii")
+theme_override_font_sizes/font_size = 22
+text = "Start"
 
 [node name="inlinebox" type="HBoxContainer" parent="mainscreen" unique_id=1957314134]
 layout_mode = 2
@@ -52,11 +88,13 @@ layout_mode = 2
 [node name="btn_settings" type="Button" parent="mainscreen/inlinebox" unique_id=1432438877]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 text = "Settings"
 
 [node name="btn_exit" type="Button" parent="mainscreen/inlinebox" unique_id=852980425]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 keep_pressed_outside = true
 text = "Exit Game"
 
@@ -76,6 +114,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 8
 theme = ExtResource("2_b76km")
 theme_type_variation = &"HeaderSmall"
+theme_override_colors/font_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
 theme_override_font_sizes/font_size = 8
 text = "v0.1.0"
 vertical_alignment = 2
@@ -86,6 +125,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 8
 theme = ExtResource("2_b76km")
 theme_type_variation = &"HeaderSmall"
+theme_override_colors/font_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 theme_override_font_sizes/font_size = 8
 text = "Temu.Games"
 horizontal_alignment = 2
