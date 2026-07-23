@@ -9,7 +9,7 @@ signal health_changed(new_value: int)
 signal hours_changed(new_value: int)
 signal minutes_changed(new_value: int)
 signal suspicion_changed(new_value: int)
-signal thirts_changed(new_value: int)
+signal thirst_changed(new_value: int)
 signal villagers_changed(new_value: int)
 
 var max_int = 9223372036854775807
@@ -18,7 +18,7 @@ var max_health: int = 100
 var max_hours: int = 24
 var max_minutes: int = 60
 var max_suspicion: int = 100
-var max_thirts: int = 100
+var max_thirst: int = 100
 
 var start_ate: int = 0
 var start_days: int = 0
@@ -28,8 +28,10 @@ var start_health: int = max_health
 var start_time_hours: int = 13
 var start_time_minutes: int = 0
 var start_suspicion: int = 0
-var start_thirts: int = max_thirts
+var start_thirst: int = max_thirst
 var starter_villagers: int = 2
+
+var next_event: int = 5
 
 var ate: int = start_ate:
 	set(value):
@@ -40,6 +42,8 @@ var days: int = start_days:
 	set(value):
 		days = clampi(value, days, max_int)
 		days_changed.emit(days)
+	get():
+		return days_to_event(days)
 
 var guards: int = start_guards:
 	set(value):
@@ -83,10 +87,10 @@ var suspicion: int = start_suspicion:
 			gameover_changed.emit(true)
 		suspicion_changed.emit(suspicion)
 
-var thirts: int = start_thirts:
+var thirst: int = start_thirst:
 	set(value):
-		thirts = clampi(value, 0, max_thirts)
-		thirts_changed.emit(thirts)
+		thirst = clampi(value, 0, max_thirst)
+		thirst_changed.emit(thirst)
 
 var villagers: int = starter_villagers:
 	set(value):
@@ -94,3 +98,6 @@ var villagers: int = starter_villagers:
 		if villagers == 0:
 			gameover_changed.emit(true)
 		villagers_changed.emit(villagers)
+
+func days_to_event(amount_days):
+	return next_event - amount_days
