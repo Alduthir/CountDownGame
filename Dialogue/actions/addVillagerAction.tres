@@ -1,7 +1,0 @@
-[gd_resource type="Resource" format=3 uid="uid://bcj0b1wp0d5xe"]
-
-[ext_resource type="Script" uid="uid://b2xvy3aqlfdsh" path="res://Dialogue/actions/add_villager_action.gd" id="1_xnaj4"]
-
-[resource]
-script = ExtResource("1_xnaj4")
-metadata/_custom_type_script = "uid://ca055npa72yf5"

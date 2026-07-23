@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7bqc5p3h1i5y"]
 
-[ext_resource type="Script" uid="uid://cdtayklefiism" path="res://DialogueV2/dialog_system.gd" id="1_u62x5"]
+[ext_resource type="Script" uid="uid://cdtayklefiism" path="res://Dialogue/dialog_system.gd" id="1_u62x5"]
 [ext_resource type="Texture2D" uid="uid://b1mrsita7sr7o" path="res://icon.svg" id="2_cyj5f"]
 [ext_resource type="Theme" uid="uid://duarm5fhevydq" path="res://Castle/castle_theme.tres" id="3_ey7y4"]
 

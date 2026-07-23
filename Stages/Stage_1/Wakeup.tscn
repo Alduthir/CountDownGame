@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c4vcpt1egjj56" path="res://Stages/Stage_1/wakeup.gd" id="1_8hhkg"]
 [ext_resource type="Texture2D" uid="uid://5xmko42jclas" path="res://Resources/portraits/peer.png" id="2_348wc"]
-[ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://DialogueV2/dialog_step.gd" id="2_td61u"]
-[ext_resource type="PackedScene" uid="uid://c7bqc5p3h1i5y" path="res://DialogueV2/DialogSystem.tscn" id="2_vigwt"]
-[ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://DialogueV2/dialog_data.gd" id="3_td61u"]
-[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://DialogueV2/dialog_response.gd" id="3_wy6ru"]
+[ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="2_td61u"]
+[ext_resource type="PackedScene" uid="uid://c7bqc5p3h1i5y" path="res://Dialogue/DialogSystem.tscn" id="2_vigwt"]
+[ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="3_td61u"]
+[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="3_wy6ru"]
 
 [sub_resource type="Resource" id="Resource_pcam2"]
 script = ExtResource("3_wy6ru")
