@@ -7,3 +7,4 @@ enum Values { HEALTH, TIME, SUSPICION, VILLAGERS, GUARDS, IDLE_VILLS, BUSY_GUARD
 @export var label: String
 @export var action: Actions 
 @export var values: Dictionary[Values, int]
+@export var color: Color = Color.WHITE_SMOKE
