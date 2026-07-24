@@ -114,6 +114,7 @@ script = ExtResource("1_tpsdo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1041239756]
 unique_name_in_owner = true
+y_sort_enabled = true
 position = Vector2(1, 13)
 sprite_frames = SubResource("SpriteFrames_6v2qs")
 animation = &"walk_up"
@@ -121,7 +122,8 @@ autoplay = "default"
 offset = Vector2(-1, -13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35010276]
-position = Vector2(1, 8)
+y_sort_enabled = true
+position = Vector2(1, 12)
 shape = SubResource("CircleShape2D_sti7c")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1484967754]
