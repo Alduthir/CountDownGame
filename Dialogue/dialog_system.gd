@@ -42,6 +42,7 @@ func _render_buttons():
 	for i in step.responses.size():
 		var response = step.responses[i]
 		var btn = Button.new()
+		btn.add_theme_color_override("font_color", response.color)
 		btn.text = response["label"]
 		btn.pressed.connect(_on_response.bind(response))
 		responses_container.add_child(btn)
