@@ -1,8 +1,8 @@
 class_name DialogResponse
 extends Resource
 
-enum Actions { SET_VALUES, END }
-enum Values { HEALTH, SUS, TEST}
+enum Actions { SET_VALUES, END, CONTINUE }
+enum Values { HEALTH, TIME, SUSPICION, VILLAGERS, GUARDS, IDLE_VILLS, BUSY_GUARDS, AMOUNT_STEPS}
 
 @export var label: String
 @export var action: Actions 

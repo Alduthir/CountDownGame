@@ -28,7 +28,7 @@ func _show_step():
 	dialog_text.text = step.text
 	dialog_text.visible_ratio = 0.0
 	var tween := create_tween()
-	var text_appearing_duration : float = step.text.length() / 30.0
+	var text_appearing_duration : float = step.text.length() / 100.0
 	tween.tween_property(dialog_text, "visible_ratio", 1.0, text_appearing_duration)
 	tween.finished.connect(_render_buttons)
 	
@@ -47,15 +47,17 @@ func _render_buttons():
 		responses_container.add_child(btn)
 
 func _on_response(response: DialogResponse):
+	var amount_steps = 1
 	if response.action != null:
 		var action = response.action
 		if action == 1:
 			_end_dialog()
 			return
 		if action == 0:
+			amount_steps = response.values.get(response.Values.AMOUNT_STEPS)
 			dialog_finished.emit({"set_values": response.values})
-	
-	current_step += 1
+			
+	current_step += amount_steps
 	_show_step()
 
 func _end_dialog():
