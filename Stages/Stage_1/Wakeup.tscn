@@ -66,6 +66,7 @@ script = ExtResource("1_8hhkg")
 dialog_data = SubResource("Resource_wsrf3")
 
 [node name="World" parent="." unique_id=1902833331 instance=ExtResource("6_qtpgy")]
+position = Vector2(-2, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1466623364]
 
