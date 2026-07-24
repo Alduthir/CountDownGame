@@ -7,18 +7,20 @@
 
 [sub_resource type="Resource" id="Resource_pcam2"]
 script = ExtResource("2_24uhq")
-label = "[b]Count Downey:[/b] [color=crimson]‘Piss off, it’s far too early.’[/color]"
+label = "‘Piss off, it’s far too early.’"
 values = Dictionary[int, int]({
 1: -1
 })
+color = Color(0.74509805, 0, 0, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_qtpgy"]
 script = ExtResource("2_24uhq")
-label = "[b]Count Downey:[/b] [color=crimson]‘I’m coming, I’m coming.’[/color]"
+label = "‘I’m coming, I’m coming.’"
 values = Dictionary[int, int]({
 7: 3
 })
+color = Color(0.74509805, 0, 0, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_wy6ru"]
