@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1ehk1507ad5q"
-path="res://.godot/imported/villager_green.png-16835c2083a88af56b6e253083823e0b.ctex"
+uid="uid://bre486xjo331v"
+path="res://.godot/imported/heart.png-5fe1f6e7dd80df8acbb6ac96cff1a62c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPCs/Villagers/villager_green.png"
-dest_files=["res://.godot/imported/villager_green.png-16835c2083a88af56b6e253083823e0b.ctex"]
+source_file="res://UI/heart.png"
+dest_files=["res://.godot/imported/heart.png-5fe1f6e7dd80df8acbb6ac96cff1a62c.ctex"]
 
 [params]
 

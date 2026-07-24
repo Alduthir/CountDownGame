@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du73t4i83jq1u"
-path="res://.godot/imported/regis.png-391f66bce1ac1f8a613d06efb8f6fa37.ctex"
+uid="uid://dsaplp1htgnex"
+path="res://.godot/imported/p_count.png-1a30e2026ef770922014e852329d1392.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/NPCS/regis.png"
-dest_files=["res://.godot/imported/regis.png-391f66bce1ac1f8a613d06efb8f6fa37.ctex"]
+source_file="res://Player/p_count.png"
+dest_files=["res://.godot/imported/p_count.png-1a30e2026ef770922014e852329d1392.ctex"]
 
 [params]
 

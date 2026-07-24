@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1ehk1507ad5q"
-path="res://.godot/imported/villager_green.png-16835c2083a88af56b6e253083823e0b.ctex"
+uid="uid://rph6whh7irxn"
+path="res://.godot/imported/chalice.png-2f398dc9e8b3cc9787f1ec2be9cfaef6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPCs/Villagers/villager_green.png"
-dest_files=["res://.godot/imported/villager_green.png-16835c2083a88af56b6e253083823e0b.ctex"]
+source_file="res://UI/chalice.png"
+dest_files=["res://.godot/imported/chalice.png-2f398dc9e8b3cc9787f1ec2be9cfaef6.ctex"]
 
 [params]
 

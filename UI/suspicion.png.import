@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkx1b6nrjyb40"
-path="res://.godot/imported/guard.png-0f139e46149dd6a857485394579de72e.ctex"
+uid="uid://cp57mmo3fbj5l"
+path="res://.godot/imported/suspicion.png-69f95f45256c630f7dc7671b8156c480.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/NPCS/guard.png"
-dest_files=["res://.godot/imported/guard.png-0f139e46149dd6a857485394579de72e.ctex"]
+source_file="res://UI/suspicion.png"
+dest_files=["res://.godot/imported/suspicion.png-69f95f45256c630f7dc7671b8156c480.ctex"]
 
 [params]
 

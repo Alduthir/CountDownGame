@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xly8teqgty75"
-path="res://.godot/imported/villager_lavender.png-a7e3032b67dda3cecb05d2c872ca7771.ctex"
+path="res://.godot/imported/villager_lavender.png-a4dc3aabfe8243a36879e1811874d9f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/NPCS/villager_lavender.png"
-dest_files=["res://.godot/imported/villager_lavender.png-a7e3032b67dda3cecb05d2c872ca7771.ctex"]
+source_file="res://NPCs/Villagers/villager_lavender.png"
+dest_files=["res://.godot/imported/villager_lavender.png-a4dc3aabfe8243a36879e1811874d9f4.ctex"]
 
 [params]
 
