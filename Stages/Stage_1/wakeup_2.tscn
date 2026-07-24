@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dof4kwyyspem8"]
+
+[ext_resource type="Script" uid="uid://c4vcpt1egjj56" path="res://Stages/Stage_1/wakeup.gd" id="1_87ito"]
+[ext_resource type="Resource" uid="uid://c8y64rijas6vk" path="res://Stages/Stage_1/dialog_wakeup_day_2.tres" id="2_i37ee"]
+[ext_resource type="PackedScene" uid="uid://da78i5tfnn7os" path="res://Maps/world.tscn" id="3_h21bt"]
+[ext_resource type="PackedScene" uid="uid://dcmqw5sgnqpo0" path="res://UI/Overlay/Gui/Gui.tscn" id="4_pl4um"]
+[ext_resource type="PackedScene" uid="uid://c7bqc5p3h1i5y" path="res://Dialogue/DialogSystem.tscn" id="5_btj0y"]
+
+[node name="Wakeup2" type="Control" unique_id=35681556]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_87ito")
+dialog_data = ExtResource("2_i37ee")
+
+[node name="World" parent="." unique_id=1902833331 instance=ExtResource("3_h21bt")]
+position = Vector2(-2, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1466623364]
+
+[node name="Gui" parent="CanvasLayer" unique_id=921643240 instance=ExtResource("4_pl4um")]
+
+[node name="DialogSystem" parent="CanvasLayer" unique_id=1480868554 instance=ExtResource("5_btj0y")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(160, 60)

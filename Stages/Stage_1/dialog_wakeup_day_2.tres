@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://c8y64rijas6vk"]
+
+[ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="1_inp46"]
+[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_8b03m"]
+[ext_resource type="Texture2D" uid="uid://5xmko42jclas" path="res://Resources/portraits/peer.png" id="3_qhjp3"]
+[ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="4_qey67"]
+
+[sub_resource type="Resource" id="Resource_td61u"]
+script = ExtResource("2_8b03m")
+label = "'This again? Go away!' (-1h)"
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_wy6ru"]
+script = ExtResource("2_8b03m")
+label = "'Yes, let's organize a party. Sigh!'"
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_6qtk6"]
+script = ExtResource("1_inp46")
+text = "[b]Regis:[/b] [color=orangered]'It’s time, Mr. Downey! Wake up!'[/color] [p][/p] [p]Regis knocks on the coffin.[/p]"
+responses = Array[ExtResource("2_8b03m")]([SubResource("Resource_td61u"), SubResource("Resource_wy6ru")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_pcam2"]
+script = ExtResource("2_8b03m")
+label = "'I'll wake up when I wake up!' (-2h)"
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_qtpgy"]
+script = ExtResource("2_8b03m")
+label = "'You should sleep in more often too.'"
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_nbar7"]
+script = ExtResource("1_inp46")
+text = "[color=orangered]'I’m not going to keep waking you up, Mr. Downey.'[/color]"
+responses = Array[ExtResource("2_8b03m")]([SubResource("Resource_pcam2"), SubResource("Resource_qtpgy")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_lfvaf"]
+script = ExtResource("2_8b03m")
+label = "'I'm awake, I'm awake.'"
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_36yly"]
+script = ExtResource("1_inp46")
+text = "Count Downey wakes up and opens the coffin."
+responses = Array[ExtResource("2_8b03m")]([SubResource("Resource_lfvaf")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_inp46"]
+script = ExtResource("2_8b03m")
+label = "'Well...'"
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_myoev"]
+script = ExtResource("1_inp46")
+text = "[color=orangered]'Had to much to drink again, sir?'[/color]"
+responses = Array[ExtResource("2_8b03m")]([SubResource("Resource_inp46")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_j6771"]
+script = ExtResource("1_inp46")
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_od3j0"]
+script = ExtResource("1_inp46")
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[resource]
+script = ExtResource("4_qey67")
+portrait = ExtResource("3_qhjp3")
+conversation = Array[ExtResource("1_inp46")]([SubResource("Resource_6qtk6"), SubResource("Resource_nbar7"), SubResource("Resource_36yly"), SubResource("Resource_myoev"), SubResource("Resource_j6771"), SubResource("Resource_od3j0")])
+metadata/_custom_type_script = "uid://b543j03pna7xr"
