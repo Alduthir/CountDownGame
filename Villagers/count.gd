@@ -11,6 +11,7 @@ var is_attacking := false
 
 func _ready() -> void:
 	animator.animation_finished.connect(_on_animation_finished)
+	GameState.health_changed.connect(_on_health_changed)
 	play_idle()
 
 
@@ -25,7 +26,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack"): # Koppel "attack" aan Mouse Left
 		play_attack()
 		return
-
+	if Input.is_action_just_pressed("test_damage"):
+		take_damage(10)
+	
 	var direction := Input.get_vector(
 		"move_left",
 		"move_right",
@@ -132,3 +135,28 @@ func _on_animation_finished() -> void:
 	if animator.animation.begins_with("attack_"):
 		is_attacking = false
 		play_idle()
+		
+func take_damage(amount: int) -> void:
+	if amount <= 0:
+		return
+
+	GameState.health -= amount
+
+
+func heal(amount: int) -> void:
+	if amount <= 0:
+		return
+
+	GameState.health += amount
+
+func _on_health_changed(new_health: int) -> void:
+	print("Player health: ", new_health)
+
+	if new_health <= 0:
+		die()
+
+func die() -> void:
+	velocity = Vector2.ZERO
+	set_physics_process(false)
+	animator.play("dead")
+	print("Player is dood")
