@@ -1,25 +1,25 @@
 extends CharacterBody2D
 
-@export var speed: float = 75.0
-@export var sprint_speed: float = 120.0
+@export var speed := 75.0
+@export var sprint_speed := 120
 
 @onready var animator: AnimatedSprite2D = %AnimatedSprite2D
+@onready var playerTimer: Timer = %player_timer
 
-var facing: String = "down"
-var is_attacking: bool = false
-var is_dead: bool = false
+var facing := "down"
+var is_attacking := false
 
 
 func _ready() -> void:
 	animator.animation_finished.connect(_on_animation_finished)
 	GameState.health_changed.connect(_on_health_changed)
 	play_idle()
+	playerTimer.wait_time = 1.0
+	playerTimer.timeout.connect(drainThirst)
+	playerTimer.start()
 
 
-func _physics_process(_delta: float) -> void:
-	if is_dead:
-		return
-
+func _physics_process(delta: float) -> void:
 	# Tijdens een aanval niet bewegen
 	if is_attacking:
 		velocity = Vector2.ZERO
@@ -27,14 +27,12 @@ func _physics_process(_delta: float) -> void:
 		return
 
 	# Linkermuisknop = aanval
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack"): # Koppel "attack" aan Mouse Left
 		play_attack()
 		return
-
-	# Tijdelijke testknop voor schade
 	if Input.is_action_just_pressed("test_damage"):
 		take_damage(10)
-
+	
 	var direction := Input.get_vector(
 		"move_left",
 		"move_right",
@@ -42,11 +40,9 @@ func _physics_process(_delta: float) -> void:
 		"move_down"
 	)
 
-	var current_speed: float = speed
-
+	var current_speed = speed
 	if Input.is_action_pressed("sprint"):
 		current_speed = sprint_speed
-
 	velocity = direction * current_speed
 	move_and_slide()
 
@@ -79,16 +75,10 @@ func play_walk(direction: Vector2) -> void:
 
 func play_attack() -> void:
 	is_attacking = true
-	velocity = Vector2.ZERO
-
-	var mouse_direction := get_global_mouse_position() - global_position
-
-	# Als de muis exact op de speler staat, gebruik dan de huidige kijkrichting
-	if mouse_direction.length_squared() == 0:
-		play_attack_for_facing()
-		return
-
+	
+	var mouse_direction = (get_global_mouse_position() - global_position).normalized()
 	if abs(mouse_direction.y) > abs(mouse_direction.x):
+		# Verticale aanval
 		animator.flip_h = false
 
 		if mouse_direction.y < 0:
@@ -98,6 +88,7 @@ func play_attack() -> void:
 			facing = "down"
 			animator.play("attack_down")
 	else:
+		# Horizontale aanval
 		if mouse_direction.x < 0:
 			facing = "left"
 			animator.flip_h = false
@@ -106,9 +97,7 @@ func play_attack() -> void:
 			animator.flip_h = true
 
 		animator.play("attack_left")
-
-
-func play_attack_for_facing() -> void:
+		
 	match facing:
 		"up":
 			animator.flip_h = false
@@ -150,21 +139,19 @@ func _on_animation_finished() -> void:
 	if animator.animation.begins_with("attack_"):
 		is_attacking = false
 		play_idle()
-
-
+		
 func take_damage(amount: int) -> void:
-	if amount <= 0 or is_dead:
+	if amount <= 0:
 		return
 
 	GameState.health -= amount
 
 
 func heal(amount: int) -> void:
-	if amount <= 0 or is_dead:
+	if amount <= 0:
 		return
 
 	GameState.health += amount
-
 
 func _on_health_changed(new_health: int) -> void:
 	print("Player health: ", new_health)
@@ -172,15 +159,26 @@ func _on_health_changed(new_health: int) -> void:
 	if new_health <= 0:
 		die()
 
-
 func die() -> void:
-	if is_dead:
-		return
-
-	is_dead = true
-	is_attacking = false
 	velocity = Vector2.ZERO
-
 	set_physics_process(false)
 	animator.play("dead")
 	print("Player is dood")
+	
+func drink() -> void:
+	if GameState.is_day() == true:
+		GameState.thirst += 15
+	else:
+		GameState.thirst += 30
+
+func drainThirst() -> void:
+	if GameState.thirst > 0:
+		if GameState.is_day() == true:
+			GameState.thirst -= 2
+		else:
+			GameState.thirst -= 1
+	else:
+		GameState.health -= 1
+
+		
+	

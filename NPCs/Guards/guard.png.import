@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5alsvdco5qij"
-path="res://.godot/imported/guard.png-0f139e46149dd6a857485394579de72e.ctex"
+path="res://.godot/imported/guard.png-162d753fee841091e4fd98d3b078aa5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/NPCS/guard.png"
-dest_files=["res://.godot/imported/guard.png-0f139e46149dd6a857485394579de72e.ctex"]
+source_file="res://NPCs/Guards/guard.png"
+dest_files=["res://.godot/imported/guard.png-162d753fee841091e4fd98d3b078aa5e.ctex"]
 
 [params]
 

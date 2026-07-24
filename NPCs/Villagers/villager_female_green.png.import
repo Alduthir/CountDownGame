@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6p8plv6vyaad"
-path="res://.godot/imported/villager_female_green.png-5cf32b9583931fd408beccb6a55cceb8.ctex"
+path="res://.godot/imported/villager_female_green.png-b4ba78ba9be7616df68921d683032259.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/NPCS/villager_female_green.png"
-dest_files=["res://.godot/imported/villager_female_green.png-5cf32b9583931fd408beccb6a55cceb8.ctex"]
+source_file="res://NPCs/Villagers/villager_female_green.png"
+dest_files=["res://.godot/imported/villager_female_green.png-b4ba78ba9be7616df68921d683032259.ctex"]
 
 [params]
 

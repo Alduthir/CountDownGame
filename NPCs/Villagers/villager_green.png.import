@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1ehk1507ad5q"
-path="res://.godot/imported/villager_green.png-8ffc957e1d28e0cfa97e402aba3ecba9.ctex"
+path="res://.godot/imported/villager_green.png-16835c2083a88af56b6e253083823e0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/NPCS/villager_green.png"
-dest_files=["res://.godot/imported/villager_green.png-8ffc957e1d28e0cfa97e402aba3ecba9.ctex"]
+source_file="res://NPCs/Villagers/villager_green.png"
+dest_files=["res://.godot/imported/villager_green.png-16835c2083a88af56b6e253083823e0b.ctex"]
 
 [params]
 
