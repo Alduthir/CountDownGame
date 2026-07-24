@@ -25,13 +25,14 @@ var start_days: int = 0
 var start_guards: int = 0
 var start_guards_busy: int = 0
 var start_health: int = max_health
-var start_time_hours: int = 13
-var start_time_minutes: int = 0
+var start_time_hours: int = 16
+var start_time_minutes: int = 25
 var start_suspicion: int = 0
 var start_thirst: int = max_thirst
 var starter_villagers: int = 3
 
 var next_event: int = 5
+var time_speed: float = 1
 
 var ate: int = start_ate:
 	set(value):
@@ -42,8 +43,6 @@ var days: int = start_days:
 	set(value):
 		days = clampi(value, days, max_int)
 		days_changed.emit(days)
-	get():
-		return days_to_event(days)
 
 var guards: int = start_guards:
 	set(value):
@@ -98,6 +97,3 @@ var villagers: int = starter_villagers:
 		if villagers == 0:
 			gameover_changed.emit(true)
 		villagers_changed.emit(villagers)
-
-func days_to_event(amount_days):
-	return next_event - amount_days

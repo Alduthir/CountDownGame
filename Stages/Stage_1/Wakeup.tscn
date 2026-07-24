@@ -11,10 +11,9 @@
 
 [sub_resource type="Resource" id="Resource_pcam2"]
 script = ExtResource("3_wy6ru")
-label = "[b]Count Downey:[/b] [color=crimson]‘Piss off, it’s far too early.’[/color] (-1h.)"
+label = "Kom binnen"
 values = Dictionary[int, int]({
-1: -1,
-7: 1
+1: 2
 })
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
@@ -180,6 +179,7 @@ script = ExtResource("1_8hhkg")
 dialog_data = SubResource("Resource_wsrf3")
 
 [node name="World" parent="." unique_id=1902833331 instance=ExtResource("6_qtpgy")]
+position = Vector2(-2, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1466623364]
 

@@ -50,11 +50,10 @@ func _on_response(response: DialogResponse):
 	var amount_steps = 1
 	if response.action != null:
 		var action = response.action
-		if action == 1:
+		if action == response.Actions.END:
 			_end_dialog()
 			return
-		if action == 0:
-			amount_steps = response.values.get(response.Values.AMOUNT_STEPS)
+		if action == response.Actions.SET_VALUES:
 			dialog_finished.emit({"set_values": response.values})
 			
 	current_step += amount_steps

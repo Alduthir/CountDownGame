@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://sk8ufv6nx78v" path="res://Resources/MedievalVillageExterior/MedievalVillageExteriorv1.0/RPGMaker/MedievalVillage_B.png" id="9_kkmk3"]
 [ext_resource type="Texture2D" uid="uid://brnap4fhgkvr6" path="res://Resources/rauo_free/topDown_baseTiles.png" id="10_b3se2"]
 [ext_resource type="Texture2D" uid="uid://cmmfn6olxtojx" path="res://Resources/TheFantasyTileSet/The Fan-tasy Tileset (Free)/Art/Props/Atlas/Props.png" id="11_7nbo8"]
-[ext_resource type="PackedScene" uid="uid://tu7giprjdsld" path="res://Villagers/villager.tscn" id="12_o8g31"]
+[ext_resource type="PackedScene" uid="uid://tu7giprjdsld" path="res://Villagers/count.tscn" id="12_o8g31"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8g31"]
 texture = ExtResource("1_mxe1n")
