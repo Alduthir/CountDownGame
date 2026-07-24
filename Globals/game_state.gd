@@ -97,3 +97,14 @@ var villagers: int = starter_villagers:
 		if villagers == 0:
 			gameover_changed.emit(true)
 		villagers_changed.emit(villagers)
+		
+		
+		
+var sunrise_hour: int = 6
+var sunset_hour: int = 20
+
+func is_day() -> bool:
+	return hours >= sunrise_hour and hours < sunset_hour
+
+func is_night() -> bool:
+	return not is_day()

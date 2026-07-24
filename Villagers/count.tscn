@@ -63,6 +63,10 @@ region = Rect2(144, 235, 48, 47)
 atlas = ExtResource("2_sti7c")
 region = Rect2(192, 235, 48, 47)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu1kv"]
+atlas = ExtResource("2_sti7c")
+region = Rect2(0, 480, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yg5j8"]
 atlas = ExtResource("2_sti7c")
 region = Rect2(47, 0, 47, 47)
@@ -167,6 +171,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qu1kv")
+}],
+"loop": 1,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_yg5j8")
 }],
 "loop": 1,
@@ -237,7 +249,7 @@ unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(1, 13)
 sprite_frames = SubResource("SpriteFrames_6v2qs")
-animation = &"attack_up"
+animation = &"dead"
 autoplay = "default"
 offset = Vector2(-1, -13)
 
