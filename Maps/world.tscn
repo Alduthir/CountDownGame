@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://btdq5hs33bx4d" path="res://Resources/TheFantasyTileSet/The Fan-tasy Tileset (Free)/Tiled/Tilemaps/Beginning Fields.png" id="15_qyt5g"]
 [ext_resource type="Texture2D" uid="uid://b86g5onr6qay2" path="res://Resources/TheFantasyTileSet/The Fan-tasy Tileset (Free)/Art/Buildings/CityWall_Gate_1.png" id="16_2hmam"]
 [ext_resource type="Texture2D" uid="uid://3xycxp3jf0rf" path="res://Resources/TheFantasyTileSet/The Fan-tasy Tileset (Free)/Art/Trees and Bushes/Atlas/Trees_Bushes.png" id="17_1qwd6"]
-[ext_resource type="PackedScene" uid="uid://co8or8g5t7ydw" path="res://Player/Count.tscn" id="18_7ukdt"]
+[ext_resource type="PackedScene" uid="uid://b4dbotui4udo" path="res://Player/Count.tscn" id="18_7ukdt"]
 [ext_resource type="PackedScene" uid="uid://1pacybqng5kn" path="res://NPCs/Villagers/villager_manager.tscn" id="20_nd6ba"]
 [ext_resource type="Script" uid="uid://dhvbl7cloe6qg" path="res://NPCs/Villagers/villager_manager.gd" id="21_trlpu"]
 [ext_resource type="PackedScene" uid="uid://buck8o4epxs7t" path="res://NPCs/Villagers/villager.tscn" id="22_g1a4f"]
@@ -28925,6 +28925,7 @@ position = Vector2(983, 1255)
 [node name="VillagerManager" parent="." unique_id=1575749568 instance=ExtResource("20_nd6ba")]
 script = ExtResource("21_trlpu")
 villager_scene = ExtResource("22_g1a4f")
+start_villagers = null
 spawn_area_top_left = Vector2(0, -250)
 spawn_area_bottom_right = Vector2(1200, 200)
 spawn_locations = Array[Vector2]([Vector2(824, 695)])
