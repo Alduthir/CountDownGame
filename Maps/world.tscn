@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://btdq5hs33bx4d" path="res://Resources/TheFantasyTileSet/The Fan-tasy Tileset (Free)/Tiled/Tilemaps/Beginning Fields.png" id="15_qyt5g"]
 [ext_resource type="Texture2D" uid="uid://b86g5onr6qay2" path="res://Resources/TheFantasyTileSet/The Fan-tasy Tileset (Free)/Art/Buildings/CityWall_Gate_1.png" id="16_2hmam"]
 [ext_resource type="Texture2D" uid="uid://3xycxp3jf0rf" path="res://Resources/TheFantasyTileSet/The Fan-tasy Tileset (Free)/Art/Trees and Bushes/Atlas/Trees_Bushes.png" id="17_1qwd6"]
-[ext_resource type="PackedScene" uid="uid://co8or8g5t7ydw" path="res://Player/Count.tscn" id="18_7ukdt"]
+[ext_resource type="PackedScene" uid="uid://b4dbotui4udo" path="res://Player/Count.tscn" id="18_7ukdt"]
 [ext_resource type="PackedScene" uid="uid://1pacybqng5kn" path="res://NPCs/Villagers/villager_manager.tscn" id="20_nd6ba"]
 [ext_resource type="Script" uid="uid://dhvbl7cloe6qg" path="res://NPCs/Villagers/villager_manager.gd" id="21_trlpu"]
 [ext_resource type="Script" uid="uid://b3hrdugomvli8" path="res://NPCs/Villagers/villager.gd" id="22_qn3oc"]
@@ -22644,7 +22644,8 @@ texture = ExtResource("7_vedx6")
 17:19/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_6pi06"]
-physics_layer_0/collision_layer = 2
+physics_layer_0/collision_layer = 16
+physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_3sg8k")
 sources/1 = SubResource("TileSetAtlasSource_dgvho")
 sources/2 = SubResource("TileSetAtlasSource_jj37g")
@@ -30739,12 +30740,8 @@ script = ExtResource("21_trlpu")
 villager_scene = SubResource("PackedScene_a4kiq")
 spawn_area_top_left = Vector2(0, -250)
 spawn_area_bottom_right = Vector2(1200, 200)
-<<<<<<< HEAD
-spawn_locations = Array[Vector2]([Vector2(824, 695), Vector2(1344, 695), Vector2(1319, 428), Vector2(1090, 435), Vector2(1046, 338), Vector2(1630, 370), Vector2(608, 551), Vector2(383, 599), Vector2(284, 436), Vector2(55, 50), Vector2(200, 129), Vector2(284, 249), Vector2(499, 333), Vector2(280, 360), Vector2(482, 149), Vector2(484, 50), Vector2(602, 118), Vector2(715, 276), Vector2(885, 996), Vector2(371, 714), Vector2(724, 85), Vector2(1150, 162), Vector2(975, 545), Vector2(323, 275), Vector2(384, 314), Vector2(968, 434), Vector2(604, 466), Vector2(1290, 1236), Vector2(1588, 200), Vector2(760, 427), Vector2(53, 240), Vector2(412, 201), Vector2(596, 282), Vector2(987, 444), Vector2(29, 398), Vector2(779, 43), Vector2(688, 240), Vector2(0, 0)])
-=======
 spawn_locations = Array[Vector2]([Vector2(824, 695)])
 
 [node name="GuardManager" parent="." unique_id=290531858 instance=ExtResource("23_f0i0x")]
 guard_scene = ExtResource("25_7wrt7")
 spawn_locations = Array[Vector2]([Vector2(238, 327), Vector2(478, 146), Vector2(667, 282), Vector2(605, 437), Vector2(718, 443), Vector2(1312, 282), Vector2(949, 800), Vector2(603, 604)])
->>>>>>> main
