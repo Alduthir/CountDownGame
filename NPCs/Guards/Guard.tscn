@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c5alsvdco5qij" path="res://NPCs/Guards/guard.png" id="1_2u555"]
 [ext_resource type="Script" uid="uid://d2dg0882c6uy0" path="res://NPCs/Guards/guard.gd" id="1_m7p6y"]
+[ext_resource type="Material" uid="uid://c38evxe5k2k4s" path="res://Shared/hit_flash.tres" id="2_5e3yv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m7p6y"]
 atlas = ExtResource("1_2u555")
@@ -237,43 +238,43 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jyjnn"]
-radius = 5.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w30wv"]
+radius = 8.0
+height = 22.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8qg4"]
-size = Vector2(24, 5)
+size = Vector2(23, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfrwm"]
-size = Vector2(24, 5)
+size = Vector2(23, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4jfah"]
-size = Vector2(5, 22)
+size = Vector2(5, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eka6j"]
-size = Vector2(5, 22)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_g8qg4"]
-radius = 24.186773
+size = Vector2(5, 21)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tfrwm"]
-radius = 150.08331
+radius = 50.0
 
 [node name="Guard" type="CharacterBody2D" unique_id=1479677957]
 collision_layer = 4
 collision_mask = 21
 script = ExtResource("1_m7p6y")
+minimal_detection_radius = 50.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1469768436]
 unique_name_in_owner = true
+material = ExtResource("2_5e3yv")
 sprite_frames = SubResource("SpriteFrames_g8qg4")
-animation = &"attack_up"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1764530065]
-position = Vector2(0, 10)
-shape = SubResource("CircleShape2D_jyjnn")
+position = Vector2(1, 2)
+shape = SubResource("CapsuleShape2D_w30wv")
 
-[node name="HitBoxes" type="Node2D" parent="." unique_id=2062504295]
+[node name="HitBoxes" type="Node2D" parent="." unique_id=1457867660]
 
 [node name="HitBoxLeft" type="Area2D" parent="HitBoxes" unique_id=1912102569]
 unique_name_in_owner = true
@@ -282,7 +283,7 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxes/HitBoxLeft" unique_id=1487668816]
-position = Vector2(-16, 3.5)
+position = Vector2(-15.5, 3.5)
 shape = SubResource("RectangleShape2D_g8qg4")
 debug_color = Color(0, 0.6373837, 0.39686793, 0.41960785)
 
@@ -293,7 +294,7 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxes/HitBoxRight" unique_id=1069355831]
-position = Vector2(16, 3.5)
+position = Vector2(15.5, 3.5)
 shape = SubResource("RectangleShape2D_tfrwm")
 debug_color = Color(0, 0.6428472, 0.316057, 0.41960785)
 
@@ -304,7 +305,7 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxes/HitBoxUp" unique_id=1932264964]
-position = Vector2(1.5, -17)
+position = Vector2(1.5, -16.5)
 shape = SubResource("RectangleShape2D_4jfah")
 debug_color = Color(4.813075e-07, 0.64090365, 0.3475691, 0.41960785)
 
@@ -315,7 +316,7 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxes/HitBoxDown" unique_id=1271334975]
-position = Vector2(-1.5, 17)
+position = Vector2(-1.5, 16.5)
 shape = SubResource("RectangleShape2D_eka6j")
 debug_color = Color(1.732707e-06, 0.6393569, 0.37027597, 0.41960785)
 
@@ -324,22 +325,18 @@ unique_name_in_owner = true
 wait_time = 3.0
 one_shot = true
 
-[node name="MeleeRange" type="Area2D" parent="." unique_id=1302248778]
-collision_layer = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeRange" unique_id=1065461858]
-shape = SubResource("CircleShape2D_g8qg4")
-debug_color = Color(0.55262357, 0.40506074, 0.9907114, 0.41960785)
-
 [node name="FollowRange" type="Area2D" parent="." unique_id=580670051]
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FollowRange" unique_id=1036740157]
+[node name="FollowRangeShape" type="CollisionShape2D" parent="FollowRange" unique_id=1036740157]
+unique_name_in_owner = true
 shape = SubResource("CircleShape2D_tfrwm")
 debug_color = Color(0.5905234, 0.53541917, 0.33330646, 0.41960785)
 
+[node name="AttackTimer" type="Timer" parent="." unique_id=1516621801]
+unique_name_in_owner = true
+
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]
-[connection signal="area_entered" from="MeleeRange" to="." method="_on_melee_range_area_entered"]
-[connection signal="area_exited" from="MeleeRange" to="." method="_on_melee_range_area_exited"]
 [connection signal="body_entered" from="FollowRange" to="." method="_on_follow_range_body_entered"]
 [connection signal="body_exited" from="FollowRange" to="." method="_on_follow_range_body_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
