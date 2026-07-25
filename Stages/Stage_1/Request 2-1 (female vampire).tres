@@ -12,7 +12,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_vq3qt"]
 script = ExtResource("1_f8eo5")
-text = "A young lady—a vampire not yet 200 years old—walks up to you. [p][/p][p]Count Downey: [color=crimson]‘Time for a coffee break. This young lady will not cause anyone any trouble.’[/color][/p]"
+text = "[p align=right]A young lady—a vampire not yet 200 years old—walks up to you.[/p][p align=left]Count Downey: [color=crimson]‘Time for a coffee break. This young lady will not cause anyone any trouble.’[/color][/p]"
 responses = Array[ExtResource("2_vq3qt")]([SubResource("Resource_30bgd")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_7yahd"]
 script = ExtResource("1_f8eo5")
-text = "[color=mediumvioletred]‘Good afternoon, Count Downey.’[/color] [p][/p][p][color=crimson]‘Good afternoon, young lady.’[/color][/p] [p][/p][p]Regis: [color=orangered]‘Welcome to the—’[/color][/p]"
+text = "[p align=right][color=mediumvioletred]‘Good afternoon, Count Downey.’[/color][/p][p align=left][color=crimson]‘Good afternoon, young lady.’[/color][/p] [p align=left]Regis: [color=orangered]‘Welcome to the—’[/color][/p]"
 responses = Array[ExtResource("2_vq3qt")]([SubResource("Resource_1fiol")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
@@ -36,7 +36,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_v2lqg"]
 script = ExtResource("1_f8eo5")
-text = "Downey loses himself in the eyes of the beauty standing before him. [p][/p][p][color=mediumvioletred]‘I am looking for a place to sleep. I promise I will not bother anyone.’[/color] She smiles mischievously.[/p] [p][/p][p]Regis: [color=orangered]‘I don’t think—’[/color][/p] "
+text = "[p align=left]Downey loses himself in the eyes of the beauty standing before him.[/p][p align=right][color=mediumvioletred]‘I am looking for a place to sleep. I promise I will not bother anyone.’[/color] She smiles mischievously.[/p] [p align=right]Regis: [color=orangered]‘I don’t think—’[/color][/p] "
 responses = Array[ExtResource("2_vq3qt")]([SubResource("Resource_of357")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
@@ -52,7 +52,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_oticw"]
 script = ExtResource("1_f8eo5")
-text = "She blushes. [color=mediumvioletred]‘What do you say? Can I stay?’[/color] [p][/p][p]Option 1: [color=crimson]‘What an excellent idea!’[/color][/p] [p][/p][p]Result: -7 villagers[/p][p]A beautiful lady is staying in the village, with an appetite to rival your own.[/p] [p][/p][p]Option 2: [color=crimson]‘Regis, could you leave us alone for a moment?’[/color][/p][p]Result: -7 villagers[/p][p]A beautiful lady is staying in the village, with an appetite to rival your own.[/p] [p][/p][p]Option 3: [color=crimson]‘Regis, what do you think?’[/color][/p][p][color=orangered]‘As if there is any point in saying it is a bad idea. You are going to let her stay anyway.’[/color][/p][p]Result: -7 villagers[/p][p]A beautiful lady is staying in the village, with an appetite to rival your own.[/p]"
+text = "[p align=right]She blushes. [color=mediumvioletred]‘What do you say? Can I stay?’[/color][/p] [p][/p][p align=left]Option 1: [color=crimson]‘What an excellent idea!’[/color][/p] [p][/p][p]Result: -7 villagers[/p][p][color=mediumvioletred]A beautiful lady is staying in the village, with an appetite to rival your own.[/color][/p] [p][/p][p]Option 2: [color=crimson]‘Regis, could you leave us alone for a moment?’[/color][/p][p]Result: -7 villagers[/p][p][color=mediumvioletred]If you teach her how to hunt, she may teach you a thing or two.[/color][/p] [p][/p][p]Option 3: [color=crimson]‘Regis, what do you think?’[/color][/p][p][color=orangered]‘As if there is any point in saying it is a bad idea. You are going to let her stay anyway.’[/color][/p][p]Result: -7 villagers[/p][p][color=mediumvioletred]Let the Hunger Games begin![/color][/p]"
 responses = Array[ExtResource("2_vq3qt")]([SubResource("Resource_w2smt")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 

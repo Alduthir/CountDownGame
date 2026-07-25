@@ -12,7 +12,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_c0hgo"]
 script = ExtResource("1_xorxa")
-text = "Guard: [color=dimgray]‘Mr. Downey, sir.’[/color] [p][/p] [p]Count Downey looks at the guard.[/p] [p][/p] [p]The guard keeps his eyes lowered and waits for the Count’s response.[/p]"
+text = "[right]Guard: [color=dimgray]‘Mr. Downey, sir.’[/color][/right] [p][left]Count Downey looks at the guard.[/left][/p] [p][right]The guard keeps his eyes lowered and waits for the Count’s response.[/right][/p]"
 responses = Array[ExtResource("2_c0hgo")]([SubResource("Resource_s4d1k")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
@@ -25,7 +25,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_kkik2"]
 script = ExtResource("1_xorxa")
-text = "Regis: [color=orangered]‘Go on.’[/color] [p][/p] [p]Guard: [color=dimgray]‘Thank you, sir. There is a group of refugees at the edge of the village, sir.’[/color][/p]"
+text = "[right]Regis: [color=orangered]‘Go on.’[/color][/right] [p][right]Guard: [color=dimgray]‘Thank you, sir. There is a group of refugees at the edge of the village, sir.’[/color][/right][/p]"
 responses = Array[ExtResource("2_c0hgo")]([SubResource("Resource_vjnkr")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
@@ -38,7 +38,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_fvj1w"]
 script = ExtResource("1_xorxa")
-text = "Regis: [color=orangered]‘What sir means to ask is what the refugees want.’[/color] [p][/p] [p]Guard: [color=dimgray]‘They were attacked by wolves in the forest. They are now weakened and injured, and they wish to stay here. At least until they have regained their strength.’[/color][/p] [p][/p] [p]Count Downey: [color=crimson]‘And why do I have to decide that?’[/color][/p] [p][/p] [p]Guard: [color=dimgray]‘To properly… help them, we need people to keep an eye on them.’[/color][/p]"
+text = "[right]Regis: [color=orangered]‘What sir means to ask is what the refugees want.’[/color][/right] [p][right]Guard: [color=dimgray]‘They were attacked by wolves in the forest. They are now weakened and injured, and they wish to stay here. At least until they have regained their strength.’[/color][/right][/p] [p][left]Count Downey: [color=crimson]‘And why do I have to decide that?’[/color][/left][/p] [p][right]Guard: [color=dimgray]‘To properly… help them, we need people to keep an eye on them.’[/color][/right][/p]"
 responses = Array[ExtResource("2_c0hgo")]([SubResource("Resource_k80qm")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
