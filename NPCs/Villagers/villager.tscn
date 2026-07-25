@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://26pqrbwayv3g"]
+
+[ext_resource type="Script" uid="uid://b3hrdugomvli8" path="res://NPCs/Villagers/villager.gd" id="1_06taw"]
+[ext_resource type="SpriteFrames" uid="uid://2wlmt4kepyh6" path="res://NPCs/Villagers/SpriteFrames/villager_m_blue.tres" id="1_viwei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oib71"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=587181747]
+script = ExtResource("1_06taw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2026871804]
+sprite_frames = ExtResource("1_viwei")
+animation = &"walk_down"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2119717372]
+shape = SubResource("RectangleShape2D_oib71")
+
+[node name="WanderTimer" type="Timer" parent="." unique_id=1540232389]
+unique_name_in_owner = true
