@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://b034buufnmhal" path="res://Stages/Stage_1/dialog_wakeup_day_1.tres" id="2_td61u"]
 [ext_resource type="PackedScene" uid="uid://c7bqc5p3h1i5y" path="res://Dialogue/DialogSystem.tscn" id="2_vigwt"]
 [ext_resource type="PackedScene" uid="uid://da78i5tfnn7os" path="res://Maps/world.tscn" id="6_qtpgy"]
+[ext_resource type="PackedScene" uid="uid://cp66iwqtk3574" path="res://UI/Overlay/Pauze/pausemenu.tscn" id="6_wy6ru"]
 [ext_resource type="PackedScene" uid="uid://dcmqw5sgnqpo0" path="res://UI/Overlay/Gui/Gui.tscn" id="7_pcam2"]
 
 [node name="Wakeup" type="Control" unique_id=35681556]
@@ -15,6 +16,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8hhkg")
 dialog_data = ExtResource("2_td61u")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=973820382]
+
+[node name="Pausemenu" parent="CanvasLayer2" unique_id=2054648775 instance=ExtResource("6_wy6ru")]
 
 [node name="World" parent="." unique_id=1902833331 instance=ExtResource("6_qtpgy")]
 position = Vector2(-2, 2)
