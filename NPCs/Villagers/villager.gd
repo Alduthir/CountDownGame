@@ -1,11 +1,15 @@
-extends CharacterBody2D
+class_name Villager extends CharacterBody2D
 
 @export var speed: float = 20.0
+@export var knockback_force := 200.0
 
 @onready var animator: AnimatedSprite2D = $AnimatedSprite2D
 @onready var wander_timer: Timer = $WanderTimer
+@onready var despawn_timer : Timer = %DespawnTimer
 
 var direction := Vector2.ZERO
+var is_knocked_back = false
+var knockback_velocity = Vector2.ZERO
 
 var sprite_options: Array[SpriteFrames] = [
 	preload("res://NPCs/Villagers/SpriteFrames/villager_f_green.tres"),
@@ -28,7 +32,14 @@ func _ready() -> void:
 	_choose_new_direction()
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	if is_knocked_back:
+		
+		velocity = knockback_velocity
+		knockback_velocity = knockback_velocity.lerp(Vector2.ZERO, 5*delta)
+		if knockback_velocity.length() < 100: is_knocked_back = false
+		move_and_slide()
+		return
 	velocity = direction * speed
 	move_and_slide()
 
@@ -70,3 +81,17 @@ func _choose_new_direction() -> void:
 
 	# Kies na 1-3 seconden opnieuw een richting
 	wander_timer.start(randf_range(1.0, 3.0))
+	
+func die() -> void:
+	animator.play("die")
+	set_physics_process(false)
+	set_deferred("monitoring", false)
+	despawn_timer.start()
+
+func _on_despawn_timer_timeout() -> void:
+	queue_free()
+	
+func apply_knockback(force: Vector2) -> void:
+	animator.play("idle")
+	is_knocked_back = true
+	knockback_velocity = force	
