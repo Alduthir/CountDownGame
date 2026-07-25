@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c38evxe5k2k4s"]
+
+[ext_resource type="Shader" uid="uid://c06btoodwnufx" path="res://Shared/hit_flash.gdshader" id="1_qpem3"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_qpem3")
+shader_parameter/flash_amount = 0.0
