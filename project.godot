@@ -64,6 +64,14 @@ test_damage={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Count"
+2d_physics/layer_2="CountAttack"
+2d_physics/layer_3="NPC"
+2d_physics/layer_4="GuardAttack"
+2d_physics/layer_5="Obstacles"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
