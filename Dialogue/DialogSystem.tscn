@@ -13,10 +13,10 @@ character_image = ExtResource("2_cyj5f")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1691811739]
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -173.0
-offset_top = -103.0
-offset_right = 187.0
-offset_bottom = 123.0
+offset_left = -192.0
+offset_top = -91.0
+offset_right = 168.0
+offset_bottom = 135.0
 grow_horizontal = 2
 color = Color(0, 0, 0, 1)
 
