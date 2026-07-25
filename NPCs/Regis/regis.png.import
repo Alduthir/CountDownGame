@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5m0vq3rsvtdd"
-path="res://.godot/imported/regis.png-391f66bce1ac1f8a613d06efb8f6fa37.ctex"
+path="res://.godot/imported/regis.png-482d07a50ea5aa8bca3691a78d33e198.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/NPCS/regis.png"
-dest_files=["res://.godot/imported/regis.png-391f66bce1ac1f8a613d06efb8f6fa37.ctex"]
+source_file="res://NPCs/Regis/regis.png"
+dest_files=["res://.godot/imported/regis.png-482d07a50ea5aa8bca3691a78d33e198.ctex"]
 
 [params]
 

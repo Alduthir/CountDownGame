@@ -11,7 +11,7 @@ label = "‘Piss off, it’s far too early.’"
 values = Dictionary[int, int]({
 1: -1
 })
-color = Color(0.74509805, 0, 0, 1)
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_qtpgy"]
@@ -20,27 +20,28 @@ label = "‘I’m coming, I’m coming.’"
 values = Dictionary[int, int]({
 7: 3
 })
-color = Color(0.74509805, 0, 0, 1)
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_wy6ru"]
 script = ExtResource("1_k2goq")
-text = "[b]Regis:[/b] [color=orangered]‘Wake up!'[/color] [p]He knocks on the coffin. [color=orangered]‘Hello?!?’[/color][/p] [p][color=orangered]‘Wake up, Mr Downey!’[/color][/p]"
+text = "[b]Regis:[/b] [color=orangered]‘Wake up!'[/color] [p][/p] [p]He knocks on the coffin. [color=orangered]‘Hello?!?’[/color][/p] [p][/p] [p][color=orangered]‘Wake up, Mr Downey!’[/color][/p]"
 responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_pcam2"), SubResource("Resource_qtpgy")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
 [sub_resource type="Resource" id="Resource_o3bkd"]
 script = ExtResource("2_24uhq")
-label = "Count Downey: ‘Leave me alone!’ (-2h.)"
+label = "‘Leave me alone!’ (-2h.)"
 values = Dictionary[int, int]({
 1: -2,
 7: 1
 })
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_ykw1g"]
 script = ExtResource("2_24uhq")
-label = "Count Downey: Deep sigh. He opens the coffin."
+label = "Deep sigh. He opens the coffin."
 values = Dictionary[int, int]({
 7: 2
 })
@@ -54,8 +55,9 @@ metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
 [sub_resource type="Resource" id="Resource_71qao"]
 script = ExtResource("2_24uhq")
-label = "Sigh..."
+label = "'Sigh...'"
 action = 2
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_qhx4y"]
@@ -66,8 +68,9 @@ metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
 [sub_resource type="Resource" id="Resource_51gxk"]
 script = ExtResource("2_24uhq")
-label = "Count Downey: ‘Goddammit, I have a headache.’"
+label = "‘Goddammit, I have a headache.’"
 action = 2
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_lfvaf"]
@@ -128,6 +131,7 @@ metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 script = ExtResource("2_24uhq")
 label = "‘I’m going, I’m going.’"
 action = 2
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_sr2lq"]
@@ -140,6 +144,7 @@ metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 script = ExtResource("2_24uhq")
 label = "‘What?’"
 action = 2
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_qoqkc"]
@@ -152,6 +157,7 @@ metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 script = ExtResource("2_24uhq")
 label = "‘Yeah, yeah’"
 action = 1
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_ygnyh"]
