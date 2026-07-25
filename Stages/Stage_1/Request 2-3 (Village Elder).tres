@@ -18,32 +18,32 @@ metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
 [sub_resource type="Resource" id="Resource_4vgsm"]
 script = ExtResource("2_64bqk")
-label = "'Isn't that true, Regis.'"
+label = "1. 'Isn't that true, Regis.'"
 values = Dictionary[int, int]({
-1: -30,
-2: 20
+2: 1,
+3: 20
 })
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_hmxtj"]
 script = ExtResource("2_64bqk")
-label = "'I saw a rather big dog yesterday.'"
+label = "2. 'I saw a rather big dog yesterday.'"
 values = Dictionary[int, int]({
-1: -30,
-2: -20,
-3: -6
+2: 1,
+3: -20,
+4: -6
 })
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_bns57"]
 script = ExtResource("2_64bqk")
-label = "'As long as they leave me alone.'"
+label = "3. 'As long as they leave me alone.'"
 values = Dictionary[int, int]({
-1: -30,
-3: 2,
-4: 3
+2: 1,
+4: 2,
+5: 3
 })
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"

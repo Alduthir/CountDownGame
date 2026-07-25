@@ -3,9 +3,20 @@
 [ext_resource type="Script" uid="uid://c4vcpt1egjj56" path="res://Stages/Stage_1/wakeup.gd" id="1_8hhkg"]
 [ext_resource type="Resource" uid="uid://b034buufnmhal" path="res://Stages/Stage_1/dialog_wakeup_day_1.tres" id="2_td61u"]
 [ext_resource type="PackedScene" uid="uid://c7bqc5p3h1i5y" path="res://Dialogue/DialogSystem.tscn" id="2_vigwt"]
+[ext_resource type="Resource" uid="uid://btssmj0pwklkl" path="res://Stages/Stage_1/Request 1-1 (garlic farmer).tres" id="5_51gxk"]
+[ext_resource type="SpriteFrames" uid="uid://dcmrsqiift0m3" path="res://NPCs/Villagers/SpriteFrames/villager_m_lavender.tres" id="5_pcam2"]
+[ext_resource type="PackedScene" uid="uid://3wmic5xtouks" path="res://NPCs/QuestNpc.tscn" id="6_pcam2"]
+[ext_resource type="Resource" uid="uid://b5i4nqj8iu6nv" path="res://Stages/Stage_1/Request 1-2 (bewaker).tres" id="6_qoqkc"]
 [ext_resource type="PackedScene" uid="uid://da78i5tfnn7os" path="res://Maps/world.tscn" id="6_qtpgy"]
+[ext_resource type="Resource" uid="uid://ima1dbl2m8mr" path="res://Stages/Stage_1/Request 1-3 (vampire hunter).tres" id="7_fdr1h"]
 [ext_resource type="PackedScene" uid="uid://cp66iwqtk3574" path="res://UI/Overlay/Pauze/pausemenu.tscn" id="6_wy6ru"]
+
 [ext_resource type="PackedScene" uid="uid://dcmqw5sgnqpo0" path="res://UI/Overlay/Gui/Gui.tscn" id="7_pcam2"]
+[ext_resource type="Resource" uid="uid://cn6fweke4q8sk" path="res://Stages/Stage_1/Request 2-1 (female vampire).tres" id="8_ygnyh"]
+[ext_resource type="Resource" uid="uid://bawjvn4m7b1ru" path="res://Stages/Stage_1/Request 2-2 (Gravedigger).tres" id="10_w6nbp"]
+[ext_resource type="Resource" uid="uid://c0xy6fdg6ygr8" path="res://Stages/Stage_1/Request 2-3 (Village Elder).tres" id="11_hqhtd"]
+[ext_resource type="Resource" uid="uid://cx3nb62pl3w3w" path="res://Stages/Stage_1/Request 3-1 (Doctor).tres" id="12_m3k83"]
+[ext_resource type="SpriteFrames" uid="uid://bgma6kow8081f" path="res://NPCs/Regis/Regis.tres" id="13_4m54n"]
 
 [node name="Wakeup" type="Control" unique_id=35681556]
 layout_mode = 3
@@ -23,6 +34,39 @@ dialog_data = ExtResource("2_td61u")
 
 [node name="World" parent="." unique_id=1902833331 instance=ExtResource("6_qtpgy")]
 position = Vector2(-2, 2)
+
+[node name="Garlic Farmer" parent="World" unique_id=1953275210 instance=ExtResource("6_pcam2")]
+position = Vector2(1333, 790)
+dialog = ExtResource("5_51gxk")
+
+[node name="Guard" parent="World" unique_id=365638173 instance=ExtResource("6_pcam2")]
+position = Vector2(1276, 147)
+dialog = ExtResource("6_qoqkc")
+
+[node name="Vampire Hunter" parent="World" unique_id=1430950598 instance=ExtResource("6_pcam2")]
+position = Vector2(575, 561)
+dialog = ExtResource("7_fdr1h")
+
+[node name="Female Vampire" parent="World" unique_id=2131082483 instance=ExtResource("6_pcam2")]
+position = Vector2(37, 30)
+dialog = ExtResource("8_ygnyh")
+sprite_frames = ExtResource("5_pcam2")
+
+[node name="Gravedigger" parent="World" unique_id=558126722 instance=ExtResource("6_pcam2")]
+position = Vector2(805, 1009)
+dialog = ExtResource("10_w6nbp")
+
+[node name="Village Elder" parent="World" unique_id=1385689995 instance=ExtResource("6_pcam2")]
+position = Vector2(394, 172)
+dialog = ExtResource("11_hqhtd")
+
+[node name="Doctor" parent="World" unique_id=1150604647 instance=ExtResource("6_pcam2")]
+position = Vector2(954, 272)
+dialog = ExtResource("12_m3k83")
+
+[node name="Regis" parent="World" unique_id=1921017077 instance=ExtResource("6_pcam2")]
+position = Vector2(900, 1220)
+sprite_frames = ExtResource("13_4m54n")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1466623364]
 
