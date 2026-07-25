@@ -143,10 +143,15 @@ func play_idle() -> void:
 			animator.play("idle_left")
 
 func deal_damage(body: Node2D) -> void:
+	var direction_to_target = (body.global_position - global_position).normalized()
 	if body is Guard:
-		var direction_to_guard = (body.global_position - global_position).normalized()
 		body.take_damage(10)
-		body.apply_knockback(direction_to_guard * knockback_force)
+		body.apply_knockback(direction_to_target * knockback_force)
+	elif body is Villager:
+		print_debug("hit villager")
+		body.apply_knockback(direction_to_target * -knockback_force)
+		drink()	
+		body.die()
 		
 func _on_animation_finished() -> void:
 	if animator.animation.begins_with("attack_"):
