@@ -48,16 +48,20 @@ func _render_buttons():
 		responses_container.add_child(btn)
 
 func _on_response(response: DialogResponse):
-	var amount_steps = 1
-	if response.action != null:
-		var action = response.action
-		if action == response.Actions.END:
+	var steps_to_skip = response.values.get(DialogResponse.Values.AMOUNT_STEPS, 1)
+	if steps_to_skip <= 0:
+		steps_to_skip = 1
+
+	match response.action:
+		DialogResponse.Actions.END:
 			_end_dialog()
 			return
-		if action == response.Actions.SET_VALUES:
+		DialogResponse.Actions.SET_VALUES:
 			dialog_finished.emit({"set_values": response.values})
-			
-	current_step += amount_steps
+		DialogResponse.Actions.CONTINUE:
+			pass
+
+	current_step += steps_to_skip
 	_show_step()
 
 func _end_dialog():
