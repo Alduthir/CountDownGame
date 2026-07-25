@@ -10,6 +10,9 @@ class_name Count extends CharacterBody2D
 @onready var hitbox_right : Area2D = %HitBoxRight
 @onready var hitbox_up : Area2D = %HitBoxUp
 @onready var hitbox_down : Area2D = %HitBoxDown
+@onready var attack_sound: AudioStreamPlayer2D = %attackSound
+@onready var drink_sound: AudioStreamPlayer2D = %drinkSound
+@onready var death_sound: AudioStreamPlayer2D = %deathSound
 
 var facing := "down"
 var is_attacking := false
@@ -140,9 +143,11 @@ func play_idle() -> void:
 func deal_damage(body: Node2D) -> void:
 	var direction_to_target = (body.global_position - global_position).normalized()
 	if body is Guard:
+		attack_sound.play()
 		body.take_damage(10)
 		body.apply_knockback(direction_to_target * knockback_force)
 	elif body is Villager:
+		drink_sound.play()
 		print_debug("hit villager")
 		body.apply_knockback(direction_to_target * -knockback_force)
 		drink()	

@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://oh7pux67pcy2" path="res://Player/count.gd" id="1_ml1wn"]
 [ext_resource type="Material" uid="uid://c38evxe5k2k4s" path="res://Shared/hit_flash.tres" id="2_3n1ey"]
 [ext_resource type="Texture2D" uid="uid://bjh3quk4q3n5e" path="res://Player/count.png" id="2_km60a"]
+[ext_resource type="AudioStream" uid="uid://bun63hjw8fpej" path="res://Resources/Sound/effects/u_2ttqv1v1rq-16_swoosh-473895.mp3" id="4_3n1ey"]
+[ext_resource type="AudioStream" uid="uid://cs0nppxvkspmq" path="res://Resources/Sound/effects/nahtt-drink-323882.mp3" id="5_am4p3"]
+[ext_resource type="AudioStream" uid="uid://cie7ip2bepugo" path="res://Resources/Sound/effects/universfield-male-death-scream-123078.mp3" id="6_xp44b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m7p6y"]
 radius = 5.0
@@ -353,3 +356,15 @@ monitorable = false
 position = Vector2(-2, 8)
 shape = SubResource("CircleShape2D_nbq3e")
 debug_color = Color(4.428029e-06, 0.6419006, 0.33187148, 0.41960785)
+
+[node name="attackSound" type="AudioStreamPlayer2D" parent="." unique_id=826792624]
+unique_name_in_owner = true
+stream = ExtResource("4_3n1ey")
+
+[node name="drinkSound" type="AudioStreamPlayer2D" parent="." unique_id=1612288055]
+unique_name_in_owner = true
+stream = ExtResource("5_am4p3")
+
+[node name="deathSound" type="AudioStreamPlayer2D" parent="." unique_id=1798421237]
+unique_name_in_owner = true
+stream = ExtResource("6_xp44b")
