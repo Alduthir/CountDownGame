@@ -7,6 +7,7 @@
 [sub_resource type="Resource" id="Resource_jrqby"]
 script = ExtResource("2_jrqby")
 label = "‘Gods?’"
+action = 2
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
@@ -19,6 +20,7 @@ metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 [sub_resource type="Resource" id="Resource_o1xan"]
 script = ExtResource("2_jrqby")
 label = "‘Garlic, yuck!’"
+action = 2
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
@@ -32,8 +34,8 @@ metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 script = ExtResource("2_jrqby")
 label = "1. Count Downey: ‘Fuck off with your garlic.’"
 values = Dictionary[int, int]({
-1: -30,
-2: 20
+2: 1,
+3: 20
 })
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
@@ -42,15 +44,15 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 script = ExtResource("2_jrqby")
 label = "2. Regis: ‘Thank you very much for the offer.’"
 values = Dictionary[int, int]({
-1: -30,
-3: 7
+2: 1,
+4: 5
 })
 color = Color(1, 0.27058825, 0, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_ntbfp"]
 script = ExtResource("1_ntbfp")
-text = "Garlic Farmer: [color=forestgreen]‘We have so much left over that we would like to donate the garlic and hang it around the village. That should keep the vampires at a safe distance.’[/color] [p][/p] [p]Regis: [color=orangered]'How would you care to help our friend?'[/color][/p] [p][/p] [p]Option 1: [color=orangered]'Would you politely send him away?'[/color][/p] [p]Result: +20 suspicion[/p] [p]Public opinion: [color=dodgerblue]Why does he hate garlic so much?[/color][/p] [p][/p] [p]Option 2: [color=orangered]'Or would you follow through on his offer?'[/color][/p] [p][/p] [p]Result: +7 villagers & [color=forestgreen]Garlic[/color] is hung throughout the village.[/p] [p]Public opinion: [color=dodgerblue]The town is a little safer and attracts new residents.[/color][/p]"
+text = "[right]Garlic Farmer: [color=forestgreen]‘We have so much left over that we would like to donate the garlic and hang it around the village. That should keep the vampires at a safe distance.’[/color][/right] [p][/p] [p][right]Regis: [color=orangered]'How would you care to help our friend?'[/color][/right][/p] [p][/p] [p]Option 1: [color=orangered]'Would you politely send him away?'[/color][/p] [p]Result: +20 suspicion[/p] [p]Public opinion: [color=dodgerblue]Why does he hate garlic so much?[/color][/p] [p][/p] [p]Option 2: [color=orangered]'Or would you follow through on his offer?'[/color][/p] [p][/p] [p]Result: +7 villagers & [color=forestgreen]Garlic[/color] is hung throughout the village.[/p] [p]Public opinion: [color=dodgerblue]The town is a little safer and attracts new residents.[/color][/p]"
 responses = Array[ExtResource("2_jrqby")]([SubResource("Resource_7lx1f"), SubResource("Resource_hpiya")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
