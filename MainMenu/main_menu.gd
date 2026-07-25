@@ -10,6 +10,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_btn_start_pressed() -> void:
+	GameState.villagers = 0
 	get_tree().change_scene_to_file("res://Stages/Stage_1/Wakeup.tscn")
 
 func _on_btn_settings_pressed() -> void:

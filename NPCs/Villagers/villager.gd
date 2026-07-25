@@ -1,0 +1,72 @@
+extends CharacterBody2D
+
+@export var speed: float = 20.0
+
+@onready var animator: AnimatedSprite2D = $AnimatedSprite2D
+@onready var wander_timer: Timer = $WanderTimer
+
+var direction := Vector2.ZERO
+
+var sprite_options: Array[SpriteFrames] = [
+	preload("res://NPCs/Villagers/SpriteFrames/villager_f_green.tres"),
+	preload("res://NPCs/Villagers/SpriteFrames/villager_f_pink.tres"),
+	preload("res://NPCs/Villagers/SpriteFrames/villager_f_red.tres"),
+	preload("res://NPCs/Villagers/SpriteFrames/villager_m_blue.tres"),
+	preload("res://NPCs/Villagers/SpriteFrames/villager_m_green.tres"),
+	preload("res://NPCs/Villagers/SpriteFrames/villager_m_lavender.tres"),
+	preload("res://NPCs/Villagers/SpriteFrames/villager_m_red.tres")
+]
+
+func _ready() -> void:
+	randomize()
+
+	animator.sprite_frames = sprite_options.pick_random()
+
+	wander_timer.one_shot = true
+	wander_timer.timeout.connect(_choose_new_direction)
+
+	_choose_new_direction()
+
+
+func _physics_process(_delta: float) -> void:
+	velocity = direction * speed
+	move_and_slide()
+
+	# Als we ergens tegenaan lopen, kies direct een nieuwe richting
+	if get_slide_collision_count() > 0:
+		_choose_new_direction()
+
+	if direction == Vector2.ZERO:
+		animator.play("default")
+		return
+
+	# Speel de juiste animatie af
+	if abs(direction.y) > abs(direction.x):
+		animator.flip_h = false
+
+		if direction.y < 0:
+			animator.play("walk_up")
+		else:
+			animator.play("walk_down")
+	else:
+		if direction.x < 0:
+			animator.flip_h = false
+		else:
+			animator.flip_h = true
+
+		animator.play("walk_left")
+
+
+func _choose_new_direction() -> void:
+	var directions = [
+		Vector2.ZERO,	# even stilstaan
+		Vector2.LEFT,
+		Vector2.RIGHT,
+		Vector2.UP,
+		Vector2.DOWN
+	]
+
+	direction = directions.pick_random()
+
+	# Kies na 1-3 seconden opnieuw een richting
+	wander_timer.start(randf_range(1.0, 3.0))
