@@ -9,6 +9,8 @@
 [ext_resource type="Resource" uid="uid://b5i4nqj8iu6nv" path="res://Stages/Stage_1/Request 1-2 (bewaker).tres" id="6_qoqkc"]
 [ext_resource type="PackedScene" uid="uid://da78i5tfnn7os" path="res://Maps/world.tscn" id="6_qtpgy"]
 [ext_resource type="Resource" uid="uid://ima1dbl2m8mr" path="res://Stages/Stage_1/Request 1-3 (vampire hunter).tres" id="7_fdr1h"]
+[ext_resource type="PackedScene" uid="uid://cp66iwqtk3574" path="res://UI/Overlay/Pauze/pausemenu.tscn" id="6_wy6ru"]
+
 [ext_resource type="PackedScene" uid="uid://dcmqw5sgnqpo0" path="res://UI/Overlay/Gui/Gui.tscn" id="7_pcam2"]
 [ext_resource type="Resource" uid="uid://cn6fweke4q8sk" path="res://Stages/Stage_1/Request 2-1 (female vampire).tres" id="8_ygnyh"]
 [ext_resource type="Resource" uid="uid://bawjvn4m7b1ru" path="res://Stages/Stage_1/Request 2-2 (Gravedigger).tres" id="10_w6nbp"]
@@ -25,6 +27,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8hhkg")
 dialog_data = ExtResource("2_td61u")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=973820382]
+
+[node name="Pausemenu" parent="CanvasLayer2" unique_id=2054648775 instance=ExtResource("6_wy6ru")]
 
 [node name="World" parent="." unique_id=1902833331 instance=ExtResource("6_qtpgy")]
 position = Vector2(-2, 2)

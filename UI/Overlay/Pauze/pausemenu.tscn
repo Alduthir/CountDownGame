@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://cp66iwqtk3574"]
+
+[ext_resource type="Script" uid="uid://bbsrg4oc6rjl1" path="res://UI/Overlay/Pauze/control.gd" id="1_5gkfq"]
+[ext_resource type="FontFile" uid="uid://cp64hlqrv4k0q" path="res://Resources/fonts/Feathergraphy2.ttf" id="2_r7nof"]
+
+[sub_resource type="GDScript" id="GDScript_r7nof"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3crwy"]
+font_size = 60
+font_color = Color(1, 0.07450981, 0.050980393, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_wwxk1"]
+base_font = ExtResource("2_r7nof")
+spacing_glyph = 4
+
+[node name="Pausemenu" type="Control" unique_id=2054648775]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_r7nof")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1018882892]
+process_mode = 3
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=629495999]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5gkfq")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=1481095921]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.10980392)
+
+[node name="lb_title" type="Label" parent="CanvasLayer/Control" unique_id=442543656]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -30.0
+offset_right = 160.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+offset_transform_enabled = true
+offset_transform_rotation = -0.41887903
+theme_type_variation = &"HeaderLarge"
+theme_override_fonts/font = ExtResource("2_r7nof")
+theme_override_font_sizes/font_size = 75
+text = "Pause"
+label_settings = SubResource("LabelSettings_3crwy")
+horizontal_alignment = 1
+
+[node name="mainscreen" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=108854661]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 135.0
+offset_top = 110.0
+offset_right = 135.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+alignment = 2
+
+[node name="btn_start" type="Button" parent="CanvasLayer/Control/mainscreen" unique_id=1010323328]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7372549, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = SubResource("FontVariation_wwxk1")
+theme_override_font_sizes/font_size = 22
+text = "Kont & nu"
+
+[node name="inlinebox" type="HBoxContainer" parent="CanvasLayer/Control/mainscreen" unique_id=1651271799]
+layout_mode = 2
+
+[node name="btn_exit" type="Button" parent="CanvasLayer/Control/mainscreen/inlinebox" unique_id=139158909]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+keep_pressed_outside = true
+text = "Exit Game"
+
+[connection signal="pressed" from="CanvasLayer/Control/mainscreen/btn_start" to="CanvasLayer/Control" method="_on_btn_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/mainscreen/inlinebox/btn_exit" to="CanvasLayer/Control" method="_on_btn_exit_pressed"]
