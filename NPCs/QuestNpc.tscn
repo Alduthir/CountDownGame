@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://3wmic5xtouks"]
+
+[ext_resource type="Script" uid="uid://cp01cgemcso38" path="res://NPCs/quest_npc.gd" id="1_5qekf"]
+[ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="2_5a7s0"]
+[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="3_jidpp"]
+[ext_resource type="Texture2D" uid="uid://cbrr47lsi4udj" path="res://Shared/speech_bubbles.png" id="3_mkdlu"]
+[ext_resource type="Texture2D" uid="uid://5xmko42jclas" path="res://Resources/portraits/peer.png" id="4_etfpl"]
+[ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="5_fufoh"]
+[ext_resource type="SpriteFrames" uid="uid://2wlmt4kepyh6" path="res://NPCs/Villagers/SpriteFrames/villager_m_blue.tres" id="6_5pakt"]
+
+[sub_resource type="Resource" id="Resource_br3sh"]
+script = ExtResource("3_jidpp")
+label = "Heeeeeeeyyy ;)"
+action = 1
+color = Color(0.9607843, 0.6392157, 0.9607843, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_nbq3e"]
+script = ExtResource("2_5a7s0")
+text = "Hey Guuuurrrrl"
+responses = Array[ExtResource("3_jidpp")]([SubResource("Resource_br3sh")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_4jfah"]
+script = ExtResource("5_fufoh")
+portrait = ExtResource("4_etfpl")
+conversation = Array[ExtResource("2_5a7s0")]([SubResource("Resource_nbq3e")])
+metadata/_custom_type_script = "uid://b543j03pna7xr"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g8qg4"]
+radius = 6.0827627
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eka6j"]
+radius = 15.132746
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tfrwm"]
+radius = 150.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvy8b"]
+atlas = ExtResource("3_mkdlu")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2ymy"]
+atlas = ExtResource("3_mkdlu")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pakt"]
+atlas = ExtResource("3_mkdlu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a7s0"]
+atlas = ExtResource("3_mkdlu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jidpp"]
+atlas = ExtResource("3_mkdlu")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etfpl"]
+atlas = ExtResource("3_mkdlu")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fufoh"]
+atlas = ExtResource("3_mkdlu")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67ko5"]
+atlas = ExtResource("3_mkdlu")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wleve"]
+atlas = ExtResource("3_mkdlu")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8svp"]
+atlas = ExtResource("3_mkdlu")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hbxb"]
+atlas = ExtResource("3_mkdlu")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tfrwm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvy8b")
+}],
+"loop": 1,
+"name": &"alert",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2ymy")
+}],
+"loop": 1,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pakt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a7s0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jidpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etfpl")
+}],
+"loop": 0,
+"name": &"appear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fufoh")
+}],
+"loop": 1,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67ko5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wleve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8svp")
+}],
+"loop": 1,
+"name": &"has_dialogue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hbxb")
+}],
+"loop": 1,
+"name": &"heart",
+"speed": 5.0
+}]
+
+[node name="QuestNpc" type="StaticBody2D" unique_id=1953275210]
+z_index = 1
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_5qekf")
+dialog = SubResource("Resource_4jfah")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=528288333]
+unique_name_in_owner = true
+sprite_frames = ExtResource("6_5pakt")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=954269528]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_g8qg4")
+
+[node name="InteractionZone" type="Area2D" parent="." unique_id=1852127809]
+unique_name_in_owner = true
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=626638344]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_eka6j")
+debug_color = Color(0.7001393, 0.34216547, 0.8909991, 0.41960785)
+
+[node name="SpawnBubbleZone" type="Area2D" parent="." unique_id=607016237]
+unique_name_in_owner = true
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnBubbleZone" unique_id=166613293]
+shape = SubResource("CircleShape2D_tfrwm")
+debug_color = Color(0.563891, 0.548824, 0.30316302, 0.41960785)
+
+[node name="SpeechBubble" type="AnimatedSprite2D" parent="." unique_id=480245456]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-9, -13)
+sprite_frames = SubResource("SpriteFrames_tfrwm")
+animation = &"angry"
+autoplay = "has_dialogue"
+
+[connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]
+[connection signal="body_entered" from="SpawnBubbleZone" to="." method="_on_spawn_bubble_zone_body_entered"]
+[connection signal="body_exited" from="SpawnBubbleZone" to="." method="_on_spawn_bubble_zone_body_exited"]
