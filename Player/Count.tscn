@@ -1,7 +1,12 @@
 [gd_scene format=3 uid="uid://b4dbotui4udo"]
 
 [ext_resource type="Script" uid="uid://oh7pux67pcy2" path="res://Player/count.gd" id="1_ml1wn"]
+[ext_resource type="Material" uid="uid://c38evxe5k2k4s" path="res://Shared/hit_flash.tres" id="2_3n1ey"]
 [ext_resource type="Texture2D" uid="uid://bjh3quk4q3n5e" path="res://Player/count.png" id="2_km60a"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m7p6y"]
+radius = 5.0
+height = 20.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3n1ey"]
 atlas = ExtResource("2_km60a")
@@ -70,6 +75,14 @@ region = Rect2(0, 480, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_580l1"]
 atlas = ExtResource("2_km60a")
 region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml1wn"]
+atlas = ExtResource("2_km60a")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km60a"]
+atlas = ExtResource("2_km60a")
+region = Rect2(48, 192, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a71ma"]
 atlas = ExtResource("2_km60a")
@@ -182,7 +195,23 @@ animations = [{
 "texture": SubResource("AtlasTexture_580l1")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml1wn")
+}],
+"loop": 1,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km60a")
+}],
+"loop": 1,
+"name": &"idle_up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -237,28 +266,90 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sti7c"]
-radius = 4.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_5pw01"]
+radius = 15.0
 
-[node name="count" type="CharacterBody2D" unique_id=1855185321]
-y_sort_enabled = true
+[sub_resource type="CircleShape2D" id="CircleShape2D_n0nxi"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_br3sh"]
+radius = 15.008331
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nbq3e"]
+radius = 15.0
+
+[node name="Count" type="CharacterBody2D" unique_id=1855185321]
+collision_mask = 28
 script = ExtResource("1_ml1wn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35010276]
+y_sort_enabled = true
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_m7p6y")
+debug_color = Color(0.93333334, 0.18039216, 0.46666667, 0.5176471)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1041239756]
 unique_name_in_owner = true
 y_sort_enabled = true
+material = ExtResource("2_3n1ey")
 position = Vector2(1, 13)
 sprite_frames = SubResource("SpriteFrames_6v2qs")
-animation = &"walk_up"
-autoplay = "default"
+animation = &"idle_down"
+autoplay = "idle_down"
 offset = Vector2(-1, -13)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35010276]
-y_sort_enabled = true
-position = Vector2(1, 12)
-shape = SubResource("CircleShape2D_sti7c")
+flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1484967754]
 
 [node name="player_timer" type="Timer" parent="." unique_id=1801509808]
 unique_name_in_owner = true
+
+[node name="HitBoxes" type="Node2D" parent="." unique_id=709800746]
+
+[node name="HitBoxLeft" type="Area2D" parent="HitBoxes" unique_id=1925275254]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxes/HitBoxLeft" unique_id=1886782090]
+position = Vector2(-10, 0)
+shape = SubResource("CircleShape2D_5pw01")
+debug_color = Color(0, 0.6457507, 0.26000378, 0.41960785)
+
+[node name="HitBoxRight" type="Area2D" parent="HitBoxes" unique_id=946091690]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxes/HitBoxRight" unique_id=1382120251]
+position = Vector2(11, 0)
+shape = SubResource("CircleShape2D_n0nxi")
+debug_color = Color(2.3584068e-06, 0.6428458, 0.31607735, 0.41960785)
+
+[node name="HitBoxUp" type="Area2D" parent="HitBoxes" unique_id=824809435]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxes/HitBoxUp" unique_id=1230716465]
+position = Vector2(0, -11)
+shape = SubResource("CircleShape2D_br3sh")
+debug_color = Color(8.1822276e-07, 0.63879764, 0.37806082, 0.41960785)
+
+[node name="HitBoxDown" type="Area2D" parent="HitBoxes" unique_id=1300580273]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxes/HitBoxDown" unique_id=241264875]
+position = Vector2(-2, 8)
+shape = SubResource("CircleShape2D_nbq3e")
+debug_color = Color(4.428029e-06, 0.6419006, 0.33187148, 0.41960785)

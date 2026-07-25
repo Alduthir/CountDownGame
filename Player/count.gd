@@ -2,24 +2,45 @@ class_name Count extends CharacterBody2D
 
 @export var speed := 75.0
 @export var sprint_speed := 120
+@export var knockback_force := 200.0
 
 @onready var animator: AnimatedSprite2D = %AnimatedSprite2D
 @onready var playerTimer: Timer = %player_timer
+@onready var hitbox_left : Area2D = %HitBoxLeft
+@onready var hitbox_right : Area2D = %HitBoxRight
+@onready var hitbox_up : Area2D = %HitBoxUp
+@onready var hitbox_down : Area2D = %HitBoxDown
 
 var facing := "down"
 var is_attacking := false
-
+var is_knocked_back = false
+var knockback_velocity := Vector2.ZERO
+var shader : ShaderMaterial
+var is_invulnerable := false
 
 func _ready() -> void:
+	hitbox_left.body_entered.connect(deal_damage)
+	hitbox_right.body_entered.connect(deal_damage)
+	hitbox_up.body_entered.connect(deal_damage)
+	hitbox_down.body_entered.connect(deal_damage)
 	animator.animation_finished.connect(_on_animation_finished)
-	GameState.health_changed.connect(_on_health_changed)
 	play_idle()
+	
 	playerTimer.wait_time = 1.0
 	playerTimer.timeout.connect(drainThirst)
 	playerTimer.start()
+	
+	shader = animator.material
 
 
 func _physics_process(delta: float) -> void:
+	if is_knocked_back:
+		
+		velocity = knockback_velocity
+		knockback_velocity = knockback_velocity.lerp(Vector2.ZERO, 5*delta)
+		if knockback_velocity.length() < 100: is_knocked_back = false
+		move_and_slide()
+		return
 	# Tijdens een aanval niet bewegen
 	if is_attacking:
 		velocity = Vector2.ZERO
@@ -63,6 +84,7 @@ func play_walk(direction: Vector2) -> void:
 			facing = "down"
 			animator.play("walk_down")
 	else:
+		animator.play("walk_left")
 		if direction.x < 0:
 			facing = "left"
 			animator.flip_h = false
@@ -70,50 +92,36 @@ func play_walk(direction: Vector2) -> void:
 			facing = "right"
 			animator.flip_h = true
 
-		animator.play("walk_left")
+		
 
 
 func play_attack() -> void:
 	is_attacking = true
 	
 	var mouse_direction = (get_global_mouse_position() - global_position).normalized()
-	if abs(mouse_direction.y) > abs(mouse_direction.x):
-		# Verticale aanval
-		animator.flip_h = false
-
-		if mouse_direction.y < 0:
-			facing = "up"
-			animator.play("attack_up")
+	if abs(mouse_direction.x) > abs(mouse_direction.y):
+		# horizontal attack
+		animator.play("attack_left")
+		if mouse_direction.x > 0:
+			animator.flip_h = true
+			facing = "right"
+			hitbox_right.monitoring = true
 		else:
+			animator.flip_h = false
+			facing = "left"
+			hitbox_left.monitoring = true
+	else:
+		# vertical attack
+		animator.flip_h = false
+		if mouse_direction.y > 0:
 			facing = "down"
 			animator.play("attack_down")
-	else:
-		# Horizontale aanval
-		if mouse_direction.x < 0:
-			facing = "left"
-			animator.flip_h = false
+			hitbox_down.monitoring = true
 		else:
-			facing = "right"
-			animator.flip_h = true
-
-		animator.play("attack_left")
-		
-	match facing:
-		"up":
-			animator.flip_h = false
+			facing = "up"
 			animator.play("attack_up")
+			hitbox_up.monitoring = true
 
-		"down":
-			animator.flip_h = false
-			animator.play("attack_down")
-
-		"left":
-			animator.flip_h = false
-			animator.play("attack_left")
-
-		"right":
-			animator.flip_h = true
-			animator.play("attack_left")
 
 
 func play_idle() -> void:
@@ -134,18 +142,33 @@ func play_idle() -> void:
 			animator.flip_h = true
 			animator.play("idle_left")
 
-
+func deal_damage(body: Node2D) -> void:
+	if body is Guard:
+		var direction_to_guard = (body.global_position - global_position).normalized()
+		body.take_damage(10)
+		body.apply_knockback(direction_to_guard * knockback_force)
+		
 func _on_animation_finished() -> void:
 	if animator.animation.begins_with("attack_"):
 		is_attacking = false
+		hitbox_left.monitoring = false
+		hitbox_right.monitoring = false
+		hitbox_up.monitoring = false
+		hitbox_down.monitoring = false
 		play_idle()
 		
 func take_damage(amount: int) -> void:
-	if amount <= 0:
+	if is_invulnerable:
 		return
-
-	GameState.health -= amount
-
+		
+	is_invulnerable = true
+	shader.set_shader_parameter("flash_amount", 1.0)
+	await get_tree().create_timer(0.15).timeout
+	shader.set_shader_parameter("flash_amount", 0.0)
+	is_invulnerable = false
+	GameState.health = maxi(0, GameState.health - amount)
+	if GameState.health <= 0:
+		die()
 
 func heal(amount: int) -> void:
 	if amount <= 0:
@@ -153,17 +176,12 @@ func heal(amount: int) -> void:
 
 	GameState.health += amount
 
-func _on_health_changed(new_health: int) -> void:
-	print("Player health: ", new_health)
-
-	if new_health <= 0:
-		die()
-
 func die() -> void:
-	velocity = Vector2.ZERO
-	set_physics_process(false)
 	animator.play("dead")
 	print("Player is dood")
+	velocity = Vector2.ZERO
+	set_physics_process(false)
+	set_deferred("monitoring", false)
 	
 func drink() -> void:
 	if GameState.is_day() == true:
@@ -180,5 +198,7 @@ func drainThirst() -> void:
 	else:
 		GameState.health -= 1
 
-		
+func apply_knockback(force: Vector2) -> void:
+	is_knocked_back = true
+	knockback_velocity = force	
 	
