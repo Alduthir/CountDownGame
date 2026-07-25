@@ -1,6 +1,6 @@
 class_name DialogSystem extends Node2D
 
-signal dialog_finished(result: Dictionary)
+signal dialog_finished()
 
 @export var character_image: Texture2D
 @onready var portrait = $VBoxContainer/HBoxContainer/Villager
@@ -11,6 +11,7 @@ var steps: Array[DialogStep] = []
 var current_step: int = 0
 
 func start_dialog(persona_image: Texture2D, conversation: Array[DialogStep]):
+	GameState.timer.stop()
 	character_image = persona_image
 	portrait.texture = character_image
 	steps = conversation
@@ -49,20 +50,38 @@ func _render_buttons():
 
 func _on_response(response: DialogResponse):
 	var steps_to_skip = response.values.get(DialogResponse.Values.AMOUNT_STEPS, 1)
-	if steps_to_skip <= 0:
-		steps_to_skip = 1
-
+	
+	update_stats(response.values)
 	match response.action:
 		DialogResponse.Actions.END:
 			_end_dialog()
 			return
-		DialogResponse.Actions.SET_VALUES:
-			dialog_finished.emit({"set_values": response.values})
 		DialogResponse.Actions.CONTINUE:
 			pass
+		
 
 	current_step += steps_to_skip
 	_show_step()
 
 func _end_dialog():
+	GameState.timer.start()
 	visible = false
+	dialog_finished.emit()
+
+func update_stats(result):
+	if result:
+		for key in result:
+			match key:
+				DialogResponse.Values.HEALTH:
+					GameState.health += result[key]
+				DialogResponse.Values.TIME:
+					GameState.hours += result[key]
+				DialogResponse.Values.SUSPICION:
+					GameState.suspicion += result[key]
+				DialogResponse.Values.VILLAGERS:
+					GameState.villagers += result[key]
+				DialogResponse.Values.GUARDS:
+					GameState.guards += result[key]
+				DialogResponse.Values.BUSY_GUARDS:
+					GameState.guards_busy += result[key]
+			pass

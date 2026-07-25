@@ -25,13 +25,8 @@ func _ready() -> void:
 	hitbox_down.body_entered.connect(deal_damage)
 	animator.animation_finished.connect(_on_animation_finished)
 	play_idle()
-	
-	playerTimer.wait_time = 1.0
-	playerTimer.timeout.connect(drainThirst)
-	playerTimer.start()
-	
+	GameState.timer.timeout.connect(drainThirst)
 	shader = animator.material
-
 
 func _physics_process(delta: float) -> void:
 	if is_knocked_back:
@@ -192,13 +187,13 @@ func drink() -> void:
 func drainThirst() -> void:
 	if GameState.thirst > 0:
 		if GameState.is_day() == true:
-			GameState.thirst -= 2
+			GameState.thirst -= GameState.thirst_day
 		else:
-			GameState.thirst -= 1
+			GameState.thirst -= GameState.thirst_night
 	else:
-		GameState.health -= 1
+		GameState.thirst_health_lost_counter += 1
+		GameState.health -= GameState.thirst_health_lost * (GameState.thirst_health_lost_counter / GameState.thirst_health_lost_multiplier)
 
 func apply_knockback(force: Vector2) -> void:
 	is_knocked_back = true
 	knockback_velocity = force	
-	

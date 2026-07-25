@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://b230mc76e0whg"]
+
+[ext_resource type="Shader" uid="uid://cdflkgc45o4xi" path="res://MainMenu/MainMenu.gdshader" id="1_afhy6"]
+[ext_resource type="Script" uid="uid://dm3qa6q7ytyl6" path="res://UI/Overlay/End/end.gd" id="1_oo1tb"]
+[ext_resource type="FontFile" uid="uid://cp64hlqrv4k0q" path="res://Resources/fonts/Feathergraphy2.ttf" id="2_oo1tb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_afhy6"]
+resource_local_to_scene = true
+shader = ExtResource("1_afhy6")
+shader_parameter/center_color = Color(0.03, 0.08, 0.22, 1)
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oo1tb"]
+font_size = 60
+font_color = Color(1, 0.07450981, 0.050980393, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_oo1tb"]
+base_font = ExtResource("2_oo1tb")
+spacing_glyph = 4
+
+[node name="End" type="Control" unique_id=1840888304]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_oo1tb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=906785148]
+material = SubResource("ShaderMaterial_afhy6")
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="Title" type="Label" parent="." unique_id=334251147]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 24.0
+offset_right = 298.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+offset_transform_enabled = true
+offset_transform_rotation = -0.20943952
+theme_type_variation = &"HeaderLarge"
+theme_override_fonts/font = ExtResource("2_oo1tb")
+theme_override_font_sizes/font_size = 75
+text = "Test"
+label_settings = SubResource("LabelSettings_oo1tb")
+horizontal_alignment = 1
+
+[node name="mainscreen" type="VBoxContainer" parent="." unique_id=1103829720]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = 80.0
+offset_right = 470.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="mainscreen" unique_id=1339725348]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="btn_close" type="Button" parent="mainscreen" unique_id=944996573]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7372549, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = SubResource("FontVariation_oo1tb")
+theme_override_font_sizes/font_size = 22
+text = "Close Game"
+
+[connection signal="pressed" from="mainscreen/btn_close" to="." method="_on_btn_close_pressed"]
