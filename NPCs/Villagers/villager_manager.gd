@@ -6,6 +6,7 @@ extends Node2D
 @export var spawn_area_top_left := Vector2(-200, -120)
 @export var spawn_area_bottom_right := Vector2(200, 120)
 
+@export var spawn_locations : Array[Vector2]
 var villagers: Array[Node] = []
 
 
