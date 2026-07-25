@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://b5kej41yhiaqw"]
+
+[ext_resource type="Texture2D" uid="uid://cvc7dc2gx11x2" path="res://NPCs/Serena/serena.png" id="1_746qv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kxgs"]
+atlas = ExtResource("1_746qv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qekf"]
+atlas = ExtResource("1_746qv")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kxgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qekf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
