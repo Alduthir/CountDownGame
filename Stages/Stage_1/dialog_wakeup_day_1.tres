@@ -7,7 +7,8 @@
 
 [sub_resource type="Resource" id="Resource_pcam2"]
 script = ExtResource("2_24uhq")
-label = "‘Piss off, it’s far too early.’"
+label = "‘Piss off, it’s far too early.’ (-1h)"
+action = 2
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
@@ -15,15 +16,14 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 script = ExtResource("2_24uhq")
 label = "‘I’m coming, I’m coming.’"
 values = Dictionary[int, int]({
-1: 3,
-7: 3
+1: 3
 })
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_wy6ru"]
 script = ExtResource("1_k2goq")
-text = "[b]Regis:[/b] [color=orangered]‘Wake up!'[/color] [p][/p] [p]He knocks on the coffin. [color=orangered]‘Hello?!?’[/color][/p] [p][/p] [p][color=orangered]‘Wake up, Mr Downey!’[/color][/p]"
+text = "[right]Regis: [color=orangered]‘Wake up!'[/color][p][right]…[/right][/p] [p][right]He knocks on the coffin. [color=orangered]‘Hello?!?’[/color][/right][/p] [p][right][color=orangered]‘Wake up, Mr Downey!’[/color][/right][/p]"
 responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_pcam2"), SubResource("Resource_qtpgy")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
@@ -31,7 +31,7 @@ metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 script = ExtResource("2_24uhq")
 label = "‘Leave me alone!’ (-2h.)"
 values = Dictionary[int, int]({
-1: 0,
+1: -1,
 2: 2
 })
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
@@ -41,13 +41,13 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 script = ExtResource("2_24uhq")
 label = "Deep sigh. He opens the coffin."
 values = Dictionary[int, int]({
-7: 2
+1: 1
 })
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_un1s2"]
 script = ExtResource("1_k2goq")
-text = "[color=orangered]‘Sir, it really is time to get up now.’[/color] [p]...[/p] [p]Regis knocks even harder on the coffin.[/p] [p][/p] [p][color=orangered]‘Time is running out, sir! The people in the village need your help.’[/color][/p]"
+text = "[right][color=orangered]‘Sir, it really is time to get up now.’[/color][/right] [p][right]Regis knocks even harder on the coffin.[/right][/p] [p][right][color=orangered]‘Time is running out, sir! The people in the village need your help.’[/color][/right][/p]"
 responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_o3bkd"), SubResource("Resource_ykw1g")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
@@ -60,7 +60,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_qhx4y"]
 script = ExtResource("1_k2goq")
-text = "After snoozing a little while longer, you finally wake up and open the coffin. [p][/p] [p][color=orangered]‘About time, for God's sake. Hopefully, you can still make it in time.’[/color][/p] "
+text = "[left]After snoozing a little while longer, you finally wake up and open the coffin.[/left] [p][/p] [p][right][color=orangered]‘About time, for God's sake. Hopefully, you can still make it in time.’[/color][/right][/p] "
 responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_71qao")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
@@ -73,19 +73,19 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_lfvaf"]
 script = ExtResource("1_k2goq")
-text = "[color=orangered]‘Mr Downey, it’s good that you’re finally awake. I hope you showed at least some restraint last night.’[/color]"
+text = "[right][color=orangered]‘Mr Downey, it’s good that you’re finally awake. I hope you showed at least some restraint last night.’[/color][/right]"
 responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_51gxk")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
 [sub_resource type="Resource" id="Resource_tfx1c"]
 script = ExtResource("2_24uhq")
-label = "Count Downey rubs his head and his eyes. "
+label = "Count Downey (Jr.) rubs his head and his eyes. "
 action = 2
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_7r7mw"]
 script = ExtResource("1_k2goq")
-text = "[color=crimson]‘Oof. I had one hell of a trip. I was a detective in a red iron suit and could talk to animals.’[/color]"
+text = "[color=crimson]‘I had one hell of a trip. I was a detective in a red iron suit and could talk to animals.’[/color]"
 responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_tfx1c")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
@@ -97,7 +97,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_m3k83"]
 script = ExtResource("1_k2goq")
-text = "[color=orangered]‘Just hurry up. People are waiting for you at the castle.’[/color]"
+text = "[right][color=orangered]‘Just hurry up. People are waiting for you at the castle.’[/color][/right]"
 responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_hqhtd")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
@@ -109,7 +109,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_sbo8a"]
 script = ExtResource("1_k2goq")
-text = "[color=orangered]‘You only have five days left until the feast.’[/color] [p][/p] [p][color=crimson]‘There are still nowhere near enough villagers to feed everyone.’[/color][/p]"
+text = "[right][color=orangered]‘You only have five days left until the feast.’[/color][/right] [p][/p] [p][left][color=crimson]‘There are still nowhere near enough villagers to feed everyone.’[/color][/left][/p]"
 responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_4m54n")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
@@ -121,7 +121,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_6eav1"]
 script = ExtResource("1_k2goq")
-text = "[color=orangered]‘Then perhaps sir should consider drinking less himself.’[/color] [p][/p] [p][color=crimson]‘Oh, come on, Regis, that abstinence of yours will be the death of you one day.’[/color][/p]"
+text = "[right][color=orangered]‘Then perhaps sir should consider drinking less himself.’[/color][/right] [p][/p] [p][left][color=crimson]‘Oh, come on, Regis, that abstinence of yours will be the death of you one day.’[/color][/left][/p]"
 responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_3d4p0")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
@@ -134,7 +134,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_sr2lq"]
 script = ExtResource("1_k2goq")
-text = "[color=orangered]‘If you have no intention of stopping, then if I were you, I would make sure there are enough villagers. And not to many guards around.’[/color]"
+text = "[right][color=orangered]‘If you have no intention of stopping, then if I were you, I would make sure there are enough villagers. And not to many guards around.’[/color][/right]"
 responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_fi5m4")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
@@ -147,7 +147,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_qoqkc"]
 script = ExtResource("1_k2goq")
-text = "[color=orangered]‘And Count…’[/color]"
+text = "[right][color=orangered]‘And Count…’[/color][/right]"
 responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_fdr1h")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
@@ -160,7 +160,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_ygnyh"]
 script = ExtResource("1_k2goq")
-text = "[color=orangered]‘Stay out of the light and try not to draw attention to yourself.’[/color]"
+text = "[right][color=orangered]‘Stay out of the light and try not to draw attention to yourself.’[/color][/right]"
 responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_w6nbp")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 

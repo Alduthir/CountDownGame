@@ -1,0 +1,41 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bgma6kow8081f"]
+
+[ext_resource type="Texture2D" uid="uid://b5m0vq3rsvtdd" path="res://NPCs/Regis/regis.png" id="1_72p5b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gxlw"]
+atlas = ExtResource("1_72p5b")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqkyc"]
+atlas = ExtResource("1_72p5b")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21lb6"]
+atlas = ExtResource("1_72p5b")
+region = Rect2(0, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_8gxlw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqkyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21lb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqkyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21lb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqkyc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
