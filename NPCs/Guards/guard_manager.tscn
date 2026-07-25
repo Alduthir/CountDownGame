@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cxycwddunrh5n"]
+
+[ext_resource type="Script" uid="uid://gvdjp00cb63p" path="res://NPCs/Guards/guard_manager.gd" id="1_3lvg0"]
+
+[node name="GuardManager" type="Node2D" unique_id=290531858]
+script = ExtResource("1_3lvg0")

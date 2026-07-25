@@ -105,8 +105,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sti7c"]
-radius = 4.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1a4f"]
+size = Vector2(13, 5)
 
 [node name="villager" type="CharacterBody2D" unique_id=1855185321]
 y_sort_enabled = true
@@ -121,8 +121,8 @@ autoplay = "default"
 offset = Vector2(-1, -13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35010276]
-position = Vector2(1, 8)
-shape = SubResource("CircleShape2D_sti7c")
+position = Vector2(0.5, 10.5)
+shape = SubResource("RectangleShape2D_g1a4f")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1484967754]
 
