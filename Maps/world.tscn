@@ -28925,7 +28925,6 @@ position = Vector2(983, 1255)
 [node name="VillagerManager" parent="." unique_id=1575749568 instance=ExtResource("20_nd6ba")]
 script = ExtResource("21_trlpu")
 villager_scene = ExtResource("22_g1a4f")
-start_villagers = null
 spawn_area_top_left = Vector2(0, -250)
 spawn_area_bottom_right = Vector2(1200, 200)
 spawn_locations = Array[Vector2]([Vector2(824, 695)])

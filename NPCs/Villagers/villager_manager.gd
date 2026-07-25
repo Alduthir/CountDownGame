@@ -22,7 +22,7 @@ func spawn_villagers(amount: int) -> void:
 	if amount <= 0:
 		return
 
-	for i in amount:ssss
+	for i in amount:
 		spawn_villager()
 
 
