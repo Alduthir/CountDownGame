@@ -21,7 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://b4dbotui4udo" path="res://Player/Count.tscn" id="18_7ukdt"]
 [ext_resource type="PackedScene" uid="uid://1pacybqng5kn" path="res://NPCs/Villagers/villager_manager.tscn" id="20_nd6ba"]
 [ext_resource type="Script" uid="uid://dhvbl7cloe6qg" path="res://NPCs/Villagers/villager_manager.gd" id="21_trlpu"]
-[ext_resource type="PackedScene" uid="uid://buck8o4epxs7t" path="res://NPCs/Villagers/villager.tscn" id="22_g1a4f"]
+[ext_resource type="Script" uid="uid://b3hrdugomvli8" path="res://NPCs/Villagers/villager.gd" id="22_qn3oc"]
+[ext_resource type="PackedScene" uid="uid://cxycwddunrh5n" path="res://NPCs/Guards/guard_manager.tscn" id="23_f0i0x"]
+[ext_resource type="Texture2D" uid="uid://bjh3quk4q3n5e" path="res://Player/count.png" id="23_pvpuk"]
+[ext_resource type="PackedScene" uid="uid://d24je1a35auko" path="res://NPCs/Guards/Guard.tscn" id="25_7wrt7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7b22"]
 texture = ExtResource("1_7ukdt")
@@ -28885,6 +28888,126 @@ sources/1 = SubResource("TileSetAtlasSource_ki0eh")
 sources/2 = SubResource("TileSetAtlasSource_rl7qf")
 sources/3 = SubResource("TileSetAtlasSource_qo1jc")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg5j8"]
+atlas = ExtResource("23_pvpuk")
+region = Rect2(47, 0, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lv5h"]
+atlas = ExtResource("23_pvpuk")
+region = Rect2(0, 0, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsrd8"]
+atlas = ExtResource("23_pvpuk")
+region = Rect2(47, 0, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4yky"]
+atlas = ExtResource("23_pvpuk")
+region = Rect2(94, 0, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpsdo"]
+atlas = ExtResource("23_pvpuk")
+region = Rect2(0, 94, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sti7c"]
+atlas = ExtResource("23_pvpuk")
+region = Rect2(47, 94, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip432"]
+atlas = ExtResource("23_pvpuk")
+region = Rect2(94, 94, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6vfb"]
+atlas = ExtResource("23_pvpuk")
+region = Rect2(0, 188, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hs6m"]
+atlas = ExtResource("23_pvpuk")
+region = Rect2(47, 188, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8s7ic"]
+atlas = ExtResource("23_pvpuk")
+region = Rect2(94, 188, 47, 47)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6v2qs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yg5j8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lv5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsrd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4yky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsrd8")
+}],
+"loop": 1,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpsdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sti7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ip432")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sti7c")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6vfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hs6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8s7ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hs6m")
+}],
+"loop": 1,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1a4f"]
+size = Vector2(13, 5)
+
+[sub_resource type="PackedScene" id="PackedScene_a4kiq"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("villager", "y_sort_enabled", "script", "CharacterBody2D", "AnimatedSprite2D", "unique_name_in_owner", "position", "sprite_frames", "animation", "autoplay", "offset", "CollisionShape2D", "shape", "Camera2D", "WanderTimer", "Timer"),
+"node_count": 5,
+"node_ids": PackedInt32Array(1855185321, 1041239756, 35010276, 1484967754, 1381560576),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 3, 0, -1, 2, 1, 0, 2, 1, 0, 0, 0, 4, 4, -1, 6, 5, 0, 6, 2, 7, 3, 8, 4, 9, 5, 10, 6, 0, 0, 0, 11, 11, -1, 2, 6, 7, 12, 8, 0, 0, 0, 13, 13, -1, 0, 0, 0, 0, 15, 14, -1, 0, 0),
+"variants": [true, ExtResource("22_qn3oc"), Vector2(1, 13), SubResource("SpriteFrames_6v2qs"), &"walk_up", "default", Vector2(-1, -13), Vector2(0.5, 10.5), SubResource("RectangleShape2D_g1a4f")],
+"version": 3
+}
+
 [node name="World" type="Node2D" unique_id=1902833331]
 y_sort_enabled = true
 
@@ -28924,7 +29047,11 @@ position = Vector2(983, 1255)
 
 [node name="VillagerManager" parent="." unique_id=1575749568 instance=ExtResource("20_nd6ba")]
 script = ExtResource("21_trlpu")
-villager_scene = ExtResource("22_g1a4f")
+villager_scene = SubResource("PackedScene_a4kiq")
 spawn_area_top_left = Vector2(0, -250)
 spawn_area_bottom_right = Vector2(1200, 200)
 spawn_locations = Array[Vector2]([Vector2(824, 695)])
+
+[node name="GuardManager" parent="." unique_id=290531858 instance=ExtResource("23_f0i0x")]
+guard_scene = ExtResource("25_7wrt7")
+spawn_locations = Array[Vector2]([Vector2(238, 327), Vector2(478, 146), Vector2(667, 282), Vector2(605, 437), Vector2(718, 443), Vector2(1312, 282), Vector2(949, 800), Vector2(603, 604)])
