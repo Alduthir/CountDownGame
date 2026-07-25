@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://c8d0bdw05u5o0"]
+[gd_scene format=4 uid="uid://cj352f0kueafh"]
 
 [ext_resource type="Texture2D" uid="uid://d36amkjkn74gw" path="res://Resources/TheFan-TasyTileset/The Fan-tasy Tileset (Free)/Tiled/Tilemaps/Beginning Fields.png" id="1_mxe1n"]
 [ext_resource type="Texture2D" uid="uid://divprplaxv0vo" path="res://Resources/MedievalVillageExterior/MedievalVillageExteriorv1.0/RawAssets/Ground.png" id="2_4rma8"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://sk8ufv6nx78v" path="res://Resources/MedievalVillageExterior/MedievalVillageExteriorv1.0/RPGMaker/MedievalVillage_B.png" id="9_kkmk3"]
 [ext_resource type="Texture2D" uid="uid://brnap4fhgkvr6" path="res://Resources/rauo_free/topDown_baseTiles.png" id="10_b3se2"]
 [ext_resource type="Texture2D" uid="uid://cmmfn6olxtojx" path="res://Resources/TheFantasyTileSet/The Fan-tasy Tileset (Free)/Art/Props/Atlas/Props.png" id="11_7nbo8"]
-[ext_resource type="PackedScene" uid="uid://b4dbotui4udo" path="res://Player/Count.tscn" id="12_o8g31"]
+[ext_resource type="PackedScene" uid="uid://co8or8g5t7ydw" path="res://Player/Count.tscn" id="12_o8g31"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8g31"]
 texture = ExtResource("1_mxe1n")

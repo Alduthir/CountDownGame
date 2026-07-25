@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://srgij36fmr62"]
+[gd_scene format=4 uid="uid://rxcfhft0i030"]
 
 [ext_resource type="Texture2D" uid="uid://dvvnqgsrngf44" path="res://Resources/TopDownNature/16x16 TopDown Nature (1)/16x16 TopDown Nature/4_Seasons_Ground_Tiles.png" id="1_qwrmp"]
 [ext_resource type="Texture2D" uid="uid://b0jwbhodre5i8" path="res://Resources/MedievalVillageExterior/MedievalVillageExteriorv1.0/RPGMaker/MedievalVillage_A2.png" id="2_bvp0o"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b86g5onr6qay2" path="res://Resources/TheFantasyTileSet/The Fan-tasy Tileset (Free)/Art/Buildings/CityWall_Gate_1.png" id="4_xhbd0"]
 [ext_resource type="Texture2D" uid="uid://3xycxp3jf0rf" path="res://Resources/TheFantasyTileSet/The Fan-tasy Tileset (Free)/Art/Trees and Bushes/Atlas/Trees_Bushes.png" id="5_w7a4o"]
 [ext_resource type="Texture2D" uid="uid://h23x8d3x6pix" path="res://Resources/GraveyardTileSet/TilesetGraveyard.png" id="6_xhbd0"]
-[ext_resource type="Texture2D" uid="uid://dqjq482s18wsx" path="res://Resources/NPCS/villager_red.png" id="7_w7a4o"]
+[ext_resource type="Texture2D" uid="uid://dqjq482s18wsx" path="res://NPCs/Villagers/villager_red.png" id="7_w7a4o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5efgp"]
 texture = ExtResource("1_qwrmp")

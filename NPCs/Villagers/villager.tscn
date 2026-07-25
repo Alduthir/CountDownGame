@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://buck8o4epxs7t"]
 
-[ext_resource type="Script" path="res://Villagers/villager.gd" id="1_tpsdo"]
-[ext_resource type="Texture2D" uid="uid://bjh3quk4q3n5e" path="res://Resources/count/count.png" id="2_sti7c"]
+[ext_resource type="Script" uid="uid://b3hrdugomvli8" path="res://NPCs/Villagers/villager.gd" id="1_tpsdo"]
+[ext_resource type="Texture2D" uid="uid://bjh3quk4q3n5e" path="res://Player/count.png" id="2_sti7c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yg5j8"]
 atlas = ExtResource("2_sti7c")
@@ -105,11 +105,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sti7c"]
-radius = 4.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1a4f"]
+size = Vector2(13, 5)
 
 [node name="villager" type="CharacterBody2D" unique_id=1855185321]
 y_sort_enabled = true
+collision_layer = 4
+collision_mask = 21
 script = ExtResource("1_tpsdo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1041239756]
@@ -121,7 +123,9 @@ autoplay = "default"
 offset = Vector2(-1, -13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35010276]
-position = Vector2(1, 8)
-shape = SubResource("CircleShape2D_sti7c")
+position = Vector2(0.5, 10.5)
+shape = SubResource("RectangleShape2D_g1a4f")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1484967754]
+
+[node name="WanderTimer" type="Timer" parent="." unique_id=1381560576]
