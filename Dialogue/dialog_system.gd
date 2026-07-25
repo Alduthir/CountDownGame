@@ -84,4 +84,6 @@ func update_stats(result):
 					GameState.guards += result[key]
 				DialogResponse.Values.BUSY_GUARDS:
 					GameState.guards_busy += result[key]
+				DialogResponse.Values.GAMEOVER:
+					GameState.gameover_changed.emit(true)
 			pass
