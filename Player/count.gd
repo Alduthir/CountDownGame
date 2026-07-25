@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Count extends CharacterBody2D
 
 @export var speed := 75.0
 @export var sprint_speed := 120
