@@ -110,6 +110,8 @@ size = Vector2(13, 5)
 
 [node name="villager" type="CharacterBody2D" unique_id=1855185321]
 y_sort_enabled = true
+collision_layer = 4
+collision_mask = 21
 script = ExtResource("1_tpsdo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1041239756]

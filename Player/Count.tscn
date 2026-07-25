@@ -242,6 +242,7 @@ radius = 4.0
 
 [node name="count" type="CharacterBody2D" unique_id=1855185321]
 y_sort_enabled = true
+collision_mask = 20
 script = ExtResource("1_ml1wn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1041239756]
