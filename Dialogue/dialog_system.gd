@@ -1,5 +1,7 @@
 class_name DialogSystem extends Node2D
 
+signal dialog_finished()
+
 @export var character_image: Texture2D
 @onready var portrait = $VBoxContainer/HBoxContainer/Villager
 @onready var dialog_text = $VBoxContainer/DialogueContainer/Dialogue
@@ -64,6 +66,7 @@ func _on_response(response: DialogResponse):
 func _end_dialog():
 	GameState.timer.start()
 	visible = false
+	dialog_finished.emit()
 
 func update_stats(result):
 	if result:
