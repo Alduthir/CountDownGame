@@ -13,8 +13,5 @@ func _on_btn_start_pressed() -> void:
 	GameState.villagers = 0
 	get_tree().change_scene_to_file("res://Stages/Stage_1/Wakeup.tscn")
 
-func _on_btn_settings_pressed() -> void:
-	get_tree().change_scene_to_file("res://MainMenu/Settings/Settings.tscn") # Replace with function body.
-
 func _on_btn_exit_pressed() -> void:
 	get_tree().quit()
