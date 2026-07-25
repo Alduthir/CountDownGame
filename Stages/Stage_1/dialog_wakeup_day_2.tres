@@ -1,0 +1,129 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://c8y64rijas6vk"]
+
+[ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="1_inp46"]
+[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_8b03m"]
+[ext_resource type="Texture2D" uid="uid://5xmko42jclas" path="res://Resources/portraits/peer.png" id="3_qhjp3"]
+[ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="4_qey67"]
+
+[sub_resource type="Resource" id="Resource_td61u"]
+script = ExtResource("2_8b03m")
+label = "'This again? Go away!' (-1h)"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_wy6ru"]
+script = ExtResource("2_8b03m")
+label = "'Yes, let's organize a party. Sigh!'"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_6qtk6"]
+script = ExtResource("1_inp46")
+text = "[b]Regis:[/b] [color=orangered]'It’s time, Mr. Downey! Wake up!'[/color] [p][/p] [p]Regis knocks on the coffin.[/p]"
+responses = Array[ExtResource("2_8b03m")]([SubResource("Resource_td61u"), SubResource("Resource_wy6ru")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_pcam2"]
+script = ExtResource("2_8b03m")
+label = "'I'll wake up when I wake up!' (-2h)"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_qtpgy"]
+script = ExtResource("2_8b03m")
+label = "'You should sleep in more often too.'"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_nbar7"]
+script = ExtResource("1_inp46")
+text = "[color=orangered]'I’m not going to keep waking you up, Mr. Downey.'[/color]"
+responses = Array[ExtResource("2_8b03m")]([SubResource("Resource_pcam2"), SubResource("Resource_qtpgy")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_lfvaf"]
+script = ExtResource("2_8b03m")
+label = "'I'm awake, I'm awake.'"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_36yly"]
+script = ExtResource("1_inp46")
+text = "The Count wakes up and opens the coffin."
+responses = Array[ExtResource("2_8b03m")]([SubResource("Resource_lfvaf")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_inp46"]
+script = ExtResource("2_8b03m")
+label = "'Well...'"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_myoev"]
+script = ExtResource("1_inp46")
+text = "[color=orangered]'Had to much to drink again, sir?'[/color]"
+responses = Array[ExtResource("2_8b03m")]([SubResource("Resource_inp46")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_8b03m"]
+script = ExtResource("2_8b03m")
+label = "Downey coughs up some blood..."
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_j6771"]
+script = ExtResource("1_inp46")
+text = "[color=crimson]'I was on an island with a man I met, Dantès or something. We found a treasure. It was too heavy to bring back home in bat form, so I gave it to him. I don’t think I’ll ever see a penny of it again.'[/color]"
+responses = Array[ExtResource("2_8b03m")]([SubResource("Resource_8b03m")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_qhjp3"]
+script = ExtResource("2_8b03m")
+label = "'Certainly, Goody Two-Shoes.'"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_od3j0"]
+script = ExtResource("1_inp46")
+text = "[color=orangered]'Wouldn’t you be better off just reading a book tonight?'[/color]"
+responses = Array[ExtResource("2_8b03m")]([SubResource("Resource_qhjp3")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_un1s2"]
+script = ExtResource("2_8b03m")
+label = "He rubs his head again."
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_qey67"]
+script = ExtResource("1_inp46")
+text = "[color=orangered]'You have four days left. Have you gained more villagers, or have you eaten most of them?'[/color] [p][/p] [p][color=crimson]'Keep your snarky comments to yourself. Come up with some good ideas instead.'[/color]"
+responses = Array[ExtResource("2_8b03m")]([SubResource("Resource_un1s2")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_o3bkd"]
+script = ExtResource("2_8b03m")
+label = "The Count clenches his fist."
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_60wqk"]
+script = ExtResource("1_inp46")
+text = "[color=orangered]'I once knew a monster hunter with an unparalleled reputation. Perhaps you should protect your villagers more.'[/color] [p][/p] [p][color=crimson]'Even more guards?! There are already too many of them walking around.[/color][/p]"
+responses = Array[ExtResource("2_8b03m")]([SubResource("Resource_o3bkd")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_ykw1g"]
+script = ExtResource("2_8b03m")
+label = "'Pfft...'"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_gm242"]
+script = ExtResource("1_inp46")
+text = "[color=orangered]'Then I suggest you head back to town to help your people. The sooner you get there, the more people you can help.'[/color]"
+responses = Array[ExtResource("2_8b03m")]([SubResource("Resource_ykw1g")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[resource]
+script = ExtResource("4_qey67")
+portrait = ExtResource("3_qhjp3")
+conversation = Array[ExtResource("1_inp46")]([SubResource("Resource_6qtk6"), SubResource("Resource_nbar7"), SubResource("Resource_36yly"), SubResource("Resource_myoev"), SubResource("Resource_j6771"), SubResource("Resource_od3j0"), SubResource("Resource_qey67"), SubResource("Resource_60wqk"), SubResource("Resource_gm242")])
+metadata/_custom_type_script = "uid://b543j03pna7xr"

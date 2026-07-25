@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://ima1dbl2m8mr"]
+
+[ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="1_51kc8"]
+[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_akh58"]
+[ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="2_i6023"]
+
+[sub_resource type="Resource" id="Resource_g8ds7"]
+script = ExtResource("2_akh58")
+label = "'We should have you hanged!''"
+values = Dictionary[int, int]({
+1: -30,
+2: 20,
+6: 3,
+7: 0
+})
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_pkca6"]
+script = ExtResource("2_akh58")
+label = "'Carry on.'"
+values = Dictionary[int, int]({
+1: -30,
+2: 40,
+3: 10
+})
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_akh58"]
+script = ExtResource("1_51kc8")
+text = "You spot a famous vampire hunter. There are supposedly vampires nearby."
+responses = Array[ExtResource("2_akh58")]([SubResource("Resource_g8ds7"), SubResource("Resource_pkca6")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_68lk4"]
+script = ExtResource("2_akh58")
+label = "‘Hang that lunatic!’"
+action = 1
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_fbt2a"]
+script = ExtResource("1_51kc8")
+text = "Count Downey: [color=crimson]‘How many village lunatics are wandering around here?!’[/color] [p][/p] [p]Vampire Hunter: [color=gold]‘Vampires are not to be taken lightly.’[/color][/p] [p][/p] [p]Count Downey: [color=crimson]‘Nonsense! Vampires do not exist. It is ridiculous!’[/color][/p] [p][/p] [p]Vampire Hunter: [color=gold]‘I believe you are the village lunatic here.’[/color][/p] [p][/p] [p]Results:[/p] [p]+20 suspicion[/p] [p]Public opinion: [color=dodgerblue]The villagers do not quite understand why you are having him hanged. Could it be that you have something to hide, or is he really just another village lunatic?[/color][/p] [p]3 guards busy — Three guards will be occupied for a while, as they have to hang the rather strong man.[/p] [p]-30 min.[/p]"
+responses = Array[ExtResource("2_akh58")]([SubResource("Resource_68lk4")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_i6023"]
+script = ExtResource("2_akh58")
+label = "'Maybe I shouldn't have...'"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_gbxo2"]
+script = ExtResource("1_51kc8")
+text = "Count Downey: [color=crimson]‘Not that I expect any vampires to be wandering around here, but the people in the village think otherwise.’[/color] [p][/p] [p]Vampire Hunter: [color=gold]‘The people in your village are wise. You can never know for certain who is a vampire. From vagrants to regents, I have encountered all kinds.’[/color][/p] [p][/p] [p]Count Downey: [color=crimson]‘Yes, yes, yes. As I already said, I am not going to send you away. I simply do not believe you will find anything in my village.’[/color] [/p] [p][/p] [p]Vampire Hunter: [color=gold]‘Should I unexpectedly encounter such a monstrosity, you will be the first to hear about it.’[/color] [/p] [p][/p] [p]Results:[/p] [p]+40 suspicion[/p] [p][color=gold]The vampire hunter teaches the villagers to remain vigilant. He also points out that you or your adviser could very well be a vampire.[/color][/p] [p]+10 villagers[/p] [p][color=dodgerblue]The news that a vampire hunter is patrolling the area gives people throughout the region confidence that your village is free of vampires.[/color]"
+responses = Array[ExtResource("2_akh58")]([SubResource("Resource_i6023")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[resource]
+script = ExtResource("2_i6023")
+conversation = Array[ExtResource("1_51kc8")]([SubResource("Resource_akh58"), SubResource("Resource_fbt2a"), SubResource("Resource_gbxo2")])
+metadata/_custom_type_script = "uid://b543j03pna7xr"

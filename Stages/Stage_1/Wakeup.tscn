@@ -1,175 +1,12 @@
 [gd_scene format=3 uid="uid://db20vgbosllb3"]
 
 [ext_resource type="Script" uid="uid://c4vcpt1egjj56" path="res://Stages/Stage_1/wakeup.gd" id="1_8hhkg"]
-[ext_resource type="Texture2D" uid="uid://5xmko42jclas" path="res://Resources/portraits/peer.png" id="2_348wc"]
-[ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="2_td61u"]
+[ext_resource type="Resource" uid="uid://cx3nb62pl3w3w" path="res://Stages/Stage_1/Request 3-1 (Doctor).tres" id="2_td61u"]
 [ext_resource type="PackedScene" uid="uid://c7bqc5p3h1i5y" path="res://Dialogue/DialogSystem.tscn" id="2_vigwt"]
-[ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="3_td61u"]
-[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="3_wy6ru"]
 [ext_resource type="PackedScene" uid="uid://da78i5tfnn7os" path="res://Maps/world.tscn" id="6_qtpgy"]
 [ext_resource type="PackedScene" uid="uid://dcmqw5sgnqpo0" path="res://UI/Overlay/Gui/Gui.tscn" id="7_pcam2"]
 
-[sub_resource type="Resource" id="Resource_pcam2"]
-script = ExtResource("3_wy6ru")
-label = "Kom binnen"
-values = Dictionary[int, int]({
-1: 2
-})
-color = Color(0.81960785, 0, 0, 1)
-metadata/_custom_type_script = "uid://bt7dbtglx23uf"
-
-[sub_resource type="Resource" id="Resource_qtpgy"]
-script = ExtResource("3_wy6ru")
-label = "[b]Count Downey:[/b] [color=crimson]‘I’m coming, I’m coming.’[/color]"
-values = Dictionary[int, int]({
-7: 3
-})
-metadata/_custom_type_script = "uid://bt7dbtglx23uf"
-
-[sub_resource type="Resource" id="Resource_wy6ru"]
-script = ExtResource("2_td61u")
-text = "[b]Regis:[/b] [color=orangered]‘Wake up!'[/color] [p]He knocks on the coffin. [color=orangered]‘Hello?!?’[/color][/p] [p][color=orangered]‘Wake up, Mr Downey!’[/color][/p]"
-responses = Array[ExtResource("3_wy6ru")]([SubResource("Resource_pcam2"), SubResource("Resource_qtpgy")])
-metadata/_custom_type_script = "uid://c2k7ystm53bkf"
-
-[sub_resource type="Resource" id="Resource_o3bkd"]
-script = ExtResource("3_wy6ru")
-label = "Count Downey: ‘Leave me alone!’ (-2h.)"
-values = Dictionary[int, int]({
-1: -2,
-7: 1
-})
-metadata/_custom_type_script = "uid://bt7dbtglx23uf"
-
-[sub_resource type="Resource" id="Resource_ykw1g"]
-script = ExtResource("3_wy6ru")
-label = "Count Downey: Deep sigh. He opens the coffin."
-values = Dictionary[int, int]({
-7: 2
-})
-metadata/_custom_type_script = "uid://bt7dbtglx23uf"
-
-[sub_resource type="Resource" id="Resource_un1s2"]
-script = ExtResource("2_td61u")
-text = "[color=orangered]‘Sir, it really is time to get up now.’[/color] [p]...[/p] [p]Regis knocks even harder on the coffin.[/p] [p][/p] [p][color=orangered]‘Time is running out, sir! The people in the village need your help.’[/color][/p]"
-responses = Array[ExtResource("3_wy6ru")]([SubResource("Resource_o3bkd"), SubResource("Resource_ykw1g")])
-metadata/_custom_type_script = "uid://c2k7ystm53bkf"
-
-[sub_resource type="Resource" id="Resource_71qao"]
-script = ExtResource("3_wy6ru")
-label = "Sigh..."
-action = 2
-metadata/_custom_type_script = "uid://bt7dbtglx23uf"
-
-[sub_resource type="Resource" id="Resource_qhx4y"]
-script = ExtResource("2_td61u")
-text = "After snoozing a little while longer, you finally wake up and open the coffin. [p][/p] [p][color=orangered]‘About time, for God's sake. Hopefully, you can still make it in time.’[/color][/p] "
-responses = Array[ExtResource("3_wy6ru")]([SubResource("Resource_71qao")])
-metadata/_custom_type_script = "uid://c2k7ystm53bkf"
-
-[sub_resource type="Resource" id="Resource_51gxk"]
-script = ExtResource("3_wy6ru")
-label = "Count Downey: ‘Goddammit, I have a headache.’"
-action = 2
-metadata/_custom_type_script = "uid://bt7dbtglx23uf"
-
-[sub_resource type="Resource" id="Resource_lfvaf"]
-script = ExtResource("2_td61u")
-text = "[color=orangered]‘Mr Downey, it’s good that you’re finally awake. I hope you showed at least some restraint last night.’[/color]"
-responses = Array[ExtResource("3_wy6ru")]([SubResource("Resource_51gxk")])
-metadata/_custom_type_script = "uid://c2k7ystm53bkf"
-
-[sub_resource type="Resource" id="Resource_tfx1c"]
-script = ExtResource("3_wy6ru")
-label = "Count Downey rubs his head and his eyes. "
-action = 2
-metadata/_custom_type_script = "uid://bt7dbtglx23uf"
-
-[sub_resource type="Resource" id="Resource_7r7mw"]
-script = ExtResource("2_td61u")
-text = "Count Downey: ‘Oof. I had one hell of a trip. I was a detective in a red iron suit and could talk to animals.’"
-responses = Array[ExtResource("3_wy6ru")]([SubResource("Resource_tfx1c")])
-metadata/_custom_type_script = "uid://c2k7ystm53bkf"
-
-[sub_resource type="Resource" id="Resource_hqhtd"]
-script = ExtResource("3_wy6ru")
-label = "He slowly gets to his feet."
-action = 2
-metadata/_custom_type_script = "uid://bt7dbtglx23uf"
-
-[sub_resource type="Resource" id="Resource_m3k83"]
-script = ExtResource("2_td61u")
-text = "[color=orangered]‘Just hurry up. People are waiting for you at the castle.’[/color/"
-responses = Array[ExtResource("3_wy6ru")]([SubResource("Resource_hqhtd")])
-metadata/_custom_type_script = "uid://c2k7ystm53bkf"
-
-[sub_resource type="Resource" id="Resource_4m54n"]
-script = ExtResource("3_wy6ru")
-label = "The Count gives a big Yawn."
-action = 2
-metadata/_custom_type_script = "uid://bt7dbtglx23uf"
-
-[sub_resource type="Resource" id="Resource_sbo8a"]
-script = ExtResource("2_td61u")
-text = "[color=orangered]‘You only have five days left until the feast.’[/color/ [p] [/p] [p][color=crimson]‘There are still nowhere near enough villagers to feed everyone.’[/color][/p]"
-responses = Array[ExtResource("3_wy6ru")]([SubResource("Resource_4m54n")])
-metadata/_custom_type_script = "uid://c2k7ystm53bkf"
-
-[sub_resource type="Resource" id="Resource_3d4p0"]
-script = ExtResource("3_wy6ru")
-label = "Count Downey stretches his back."
-action = 2
-metadata/_custom_type_script = "uid://bt7dbtglx23uf"
-
-[sub_resource type="Resource" id="Resource_6eav1"]
-script = ExtResource("2_td61u")
-text = "[color=orangered]‘Then perhaps sir should consider drinking less himself.’[/color] [p][/p] [p][color=crimson]‘Oh, come on, Regis, that abstinence of yours will be the death of you one day.’[/color][/p]"
-responses = Array[ExtResource("3_wy6ru")]([SubResource("Resource_3d4p0")])
-metadata/_custom_type_script = "uid://c2k7ystm53bkf"
-
-[sub_resource type="Resource" id="Resource_fi5m4"]
-script = ExtResource("3_wy6ru")
-label = "‘I’m going, I’m going.’"
-action = 2
-metadata/_custom_type_script = "uid://bt7dbtglx23uf"
-
-[sub_resource type="Resource" id="Resource_sr2lq"]
-script = ExtResource("2_td61u")
-text = "[color=orangered]‘If you have no intention of stopping, then if I were you, I would make sure there are enough villagers. And not to many guards around.’[/color]"
-responses = Array[ExtResource("3_wy6ru")]([SubResource("Resource_fi5m4")])
-metadata/_custom_type_script = "uid://c2k7ystm53bkf"
-
-[sub_resource type="Resource" id="Resource_fdr1h"]
-script = ExtResource("3_wy6ru")
-label = "Count Downey: ‘What?’"
-action = 2
-metadata/_custom_type_script = "uid://bt7dbtglx23uf"
-
-[sub_resource type="Resource" id="Resource_qoqkc"]
-script = ExtResource("2_td61u")
-text = "[color=orangered]‘And Count…’[/color]"
-responses = Array[ExtResource("3_wy6ru")]([SubResource("Resource_fdr1h")])
-metadata/_custom_type_script = "uid://c2k7ystm53bkf"
-
-[sub_resource type="Resource" id="Resource_w6nbp"]
-script = ExtResource("3_wy6ru")
-label = "‘Yeah, yeah’"
-action = 1
-metadata/_custom_type_script = "uid://bt7dbtglx23uf"
-
-[sub_resource type="Resource" id="Resource_ygnyh"]
-script = ExtResource("2_td61u")
-text = "[color=orangered]‘Stay out of the light and try not to draw attention to yourself.’[/color]"
-responses = Array[ExtResource("3_wy6ru")]([SubResource("Resource_w6nbp")])
-metadata/_custom_type_script = "uid://c2k7ystm53bkf"
-
-[sub_resource type="Resource" id="Resource_wsrf3"]
-script = ExtResource("3_td61u")
-portrait = ExtResource("2_348wc")
-conversation = Array[ExtResource("2_td61u")]([SubResource("Resource_wy6ru"), SubResource("Resource_un1s2"), SubResource("Resource_qhx4y"), SubResource("Resource_lfvaf"), SubResource("Resource_7r7mw"), SubResource("Resource_m3k83"), SubResource("Resource_sbo8a"), SubResource("Resource_6eav1"), SubResource("Resource_sr2lq"), SubResource("Resource_qoqkc"), SubResource("Resource_ygnyh")])
-metadata/_custom_type_script = "uid://b543j03pna7xr"
-
-[node name="Wakeup" type="Control" unique_id=35681556]
+[node name="Wakeup3" type="Control" unique_id=35681556]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -177,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8hhkg")
-dialog_data = SubResource("Resource_wsrf3")
+dialog_data = ExtResource("2_td61u")
 
 [node name="World" parent="." unique_id=1902833331 instance=ExtResource("6_qtpgy")]
 position = Vector2(-2, 2)

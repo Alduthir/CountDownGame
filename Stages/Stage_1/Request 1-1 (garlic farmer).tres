@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://btssmj0pwklkl"]
+
+[ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="1_ntbfp"]
+[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_jrqby"]
+[ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="4_7lx1f"]
+
+[sub_resource type="Resource" id="Resource_jrqby"]
+script = ExtResource("2_jrqby")
+label = "‘Gods?’"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_ryr1m"]
+script = ExtResource("1_ntbfp")
+text = "Garlic Farmer: [color=forestgreen]‘Sir, great news! The gods blessed us!’[/color]"
+responses = Array[ExtResource("2_jrqby")]([SubResource("Resource_jrqby")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_o1xan"]
+script = ExtResource("2_jrqby")
+label = "‘Garlic, yuck!’"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_g2ptj"]
+script = ExtResource("1_ntbfp")
+text = "Garlic Farmer: [color=forestgreen]‘They have blessed us with a bountiful harvest. More garlic than a village can eat!’[/color]"
+responses = Array[ExtResource("2_jrqby")]([SubResource("Resource_o1xan")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_7lx1f"]
+script = ExtResource("2_jrqby")
+label = "1. Count Downey: ‘Fuck off with your garlic.’"
+values = Dictionary[int, int]({
+1: -30,
+2: 20
+})
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_hpiya"]
+script = ExtResource("2_jrqby")
+label = "2. Regis: ‘Thank you very much for the offer.’"
+values = Dictionary[int, int]({
+1: -30,
+3: 7
+})
+color = Color(1, 0.27058825, 0, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_ntbfp"]
+script = ExtResource("1_ntbfp")
+text = "Garlic Farmer: [color=forestgreen]‘We have so much left over that we would like to donate the garlic and hang it around the village. That should keep the vampires at a safe distance.’[/color] [p][/p] [p]Regis: [color=orangered]'How would you care to help our friend?'[/color][/p] [p][/p] [p]Option 1: [color=orangered]'Would you politely send him away?'[/color][/p] [p]Result: +20 suspicion[/p] [p]Public opinion: [color=dodgerblue]Why does he hate garlic so much?[/color][/p] [p][/p] [p]Option 2: [color=orangered]'Or would you follow through on his offer?'[/color][/p] [p][/p] [p]Result: +7 villagers & [color=forestgreen]Garlic[/color] is hung throughout the village.[/p] [p]Public opinion: [color=dodgerblue]The town is a little safer and attracts new residents.[/color][/p]"
+responses = Array[ExtResource("2_jrqby")]([SubResource("Resource_7lx1f"), SubResource("Resource_hpiya")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[resource]
+script = ExtResource("4_7lx1f")
+conversation = Array[ExtResource("1_ntbfp")]([SubResource("Resource_ryr1m"), SubResource("Resource_g2ptj"), SubResource("Resource_ntbfp")])
+metadata/_custom_type_script = "uid://b543j03pna7xr"

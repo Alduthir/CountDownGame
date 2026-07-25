@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cdtayklefiism" path="res://Dialogue/dialog_system.gd" id="1_u62x5"]
 [ext_resource type="Texture2D" uid="uid://b1mrsita7sr7o" path="res://icon.svg" id="2_cyj5f"]
+[ext_resource type="Texture2D" uid="uid://dsaplp1htgnex" path="res://Player/p_count.png" id="3_4lu40"]
 [ext_resource type="Theme" uid="uid://duarm5fhevydq" path="res://Castle/castle_theme.tres" id="3_ey7y4"]
 
 [node name="DialogSystem" type="Node2D" unique_id=1480868554]
@@ -12,10 +13,10 @@ character_image = ExtResource("2_cyj5f")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1691811739]
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -173.0
-offset_top = -103.0
-offset_right = 187.0
-offset_bottom = 123.0
+offset_left = -192.0
+offset_top = -91.0
+offset_right = 168.0
+offset_bottom = 135.0
 grow_horizontal = 2
 color = Color(0, 0, 0, 1)
 
@@ -40,8 +41,8 @@ alignment = 1
 
 [node name="Count" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=967117667]
 layout_mode = 2
-texture = ExtResource("2_cyj5f")
-expand_mode = 2
+texture = ExtResource("3_4lu40")
+expand_mode = 3
 
 [node name="Villager" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1601390216]
 layout_mode = 2

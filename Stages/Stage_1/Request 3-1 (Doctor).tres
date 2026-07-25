@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://cx3nb62pl3w3w"]
+
+[ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="1_npjfi"]
+[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_di02v"]
+[ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="2_yyjbd"]
+
+[sub_resource type="Resource" id="Resource_64bqk"]
+script = ExtResource("2_di02v")
+label = "1. ‘Who eats vegetables anyway?’"
+values = Dictionary[int, int]({
+1: -30,
+2: -20,
+3: -3
+})
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_hohwl"]
+script = ExtResource("2_di02v")
+label = "2. ‘Get rid of that shitty Garlic! Hahaha!’"
+values = Dictionary[int, int]({
+1: -30,
+2: 10,
+3: -6
+})
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_sp5d7"]
+script = ExtResource("2_di02v")
+label = "3. ‘Someone call for de docter?’"
+values = Dictionary[int, int]({
+1: -30,
+3: -6
+})
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_umpah"]
+script = ExtResource("1_npjfi")
+text = "You come across the towns doctor. She is concerned about the people who ate at the vegetable stall. [p][/p][p]Doctor: [color=salmon]‘Something must be done. People are vomiting everything back up, and several people have already died.’[/color][/p] [p][/p][p]Option 1: [color=crimson]‘Have them clear out the stall.’[/color][/p][p]Result: -20 suspicion & -3 villagers[/p] [p][/p][p]Option 2: [color=crimson]‘It’s because of that garlic!’[/color][/p][p]Result: remove [color=forestgreen]garlic[/color] in the village & -6 villagers & +10 suspicion[/p] [p][/p][p]Option 3: [color=crimson]‘Leave it. It’s flu season. Do I really have to explain that to you?’[/color][/p][p]Result: -6 villagers[/p]"
+responses = Array[ExtResource("2_di02v")]([SubResource("Resource_64bqk"), SubResource("Resource_hohwl"), SubResource("Resource_sp5d7")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[resource]
+script = ExtResource("2_yyjbd")
+conversation = Array[ExtResource("1_npjfi")]([SubResource("Resource_umpah")])
+metadata/_custom_type_script = "uid://b543j03pna7xr"
