@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://da78i5tfnn7os" path="res://Maps/world.tscn" id="6_qtpgy"]
 [ext_resource type="PackedScene" uid="uid://dcmqw5sgnqpo0" path="res://UI/Overlay/Gui/Gui.tscn" id="7_pcam2"]
 
-[node name="Wakeup3" type="Control" unique_id=35681556]
+[node name="Wakeup" type="Control" unique_id=35681556]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

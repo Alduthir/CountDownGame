@@ -4,7 +4,6 @@ class_name Count extends CharacterBody2D
 @export var sprint_speed := 120
 
 @onready var animator: AnimatedSprite2D = %AnimatedSprite2D
-@onready var playerTimer: Timer = %player_timer
 
 var facing := "down"
 var is_attacking := false
@@ -14,9 +13,7 @@ func _ready() -> void:
 	animator.animation_finished.connect(_on_animation_finished)
 	GameState.health_changed.connect(_on_health_changed)
 	play_idle()
-	playerTimer.wait_time = 1.0
-	playerTimer.timeout.connect(drainThirst)
-	playerTimer.start()
+	GameState.timer.timeout.connect(drainThirst)
 
 
 func _physics_process(delta: float) -> void:
@@ -174,11 +171,9 @@ func drink() -> void:
 func drainThirst() -> void:
 	if GameState.thirst > 0:
 		if GameState.is_day() == true:
-			GameState.thirst -= 2
+			GameState.thirst -= GameState.thirst_day
 		else:
-			GameState.thirst -= 1
+			GameState.thirst -= GameState.thirst_night
 	else:
-		GameState.health -= 1
-
-		
-	
+		GameState.thirst_health_lost_counter += 1
+		GameState.health -= GameState.thirst_health_lost * (GameState.thirst_health_lost_counter / GameState.thirst_health_lost_multiplier)

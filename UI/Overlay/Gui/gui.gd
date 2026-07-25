@@ -8,7 +8,10 @@ extends Node2D
 @onready var time_label: Label = $header/timer/tooth/time
 @onready var time_wheel: TextureRect = $header/center/time_wheel
 @onready var villagers_label: Label = $header/left/villagers
-@onready var timer: Timer = Timer.new()
+
+var tween_health : Tween
+var tween_suspicion : Tween
+var tween_thirst : Tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,11 +23,6 @@ func _ready() -> void:
 	setup_time()
 	setup_time_wheel()
 	setup_villages()
-	
-	timer.wait_time = GameState.time_speed
-	timer.autostart = true
-	timer.timeout.connect(_on_minute_tick)
-	add_child(timer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -33,22 +31,40 @@ func _process(delta: float) -> void:
 func _on_day_changed(new_value: int) -> void:
 	var days_left: int = GameState.next_event - GameState.days
 	day_label.text = str("%02d" % days_left)
-	timer.stop()
 
 func _on_gaurd_changed(new_value: int) -> void:
 	guards_label.text = "[font_size=8]"+str("%02d" % GameState.guards)+"[/font_size][font_size=4]/"+str("%02d" % GameState.guards_busy)+"[/font_size]"
 
 func _on_health_changed(new_value: int) -> void:
-	health_bar.value = new_value
-
-func _on_minute_tick():
-	GameState.minutes += 1
+	var speed: float = 1
+	if new_value == 0:
+		speed = 0.2
+	
+	if tween_health:
+		tween_health.stop()
+	tween_health = create_tween()
+	tween_health.tween_property(health_bar, "value", new_value, speed).set_ease(Tween.EASE_OUT)
 
 func _on_suspicion_changed(new_value: int) -> void:
-	suspicion_bar.value = new_value
+	var speed: float = 1
+	if new_value == 0:
+		speed = 0.2
+	
+	if tween_suspicion:
+		tween_suspicion.stop()
+	tween_suspicion = create_tween()
+	tween_suspicion.tween_property(suspicion_bar, "value", new_value, speed).set_ease(Tween.EASE_OUT)
+
 
 func _on_thirst_changed(new_value: int) -> void:
-	thirst_bar.value = new_value
+	var speed: float = 1
+	if new_value == 0:
+		speed = 0.2
+		
+	if tween_thirst:
+		tween_thirst.stop()
+	tween_thirst = create_tween()
+	tween_thirst.tween_property(thirst_bar, "value", new_value, speed).set_ease(Tween.EASE_OUT)
 
 func _on_time_changed(new_value: int) -> void:
 	time_label.text = str("%02d" % GameState.hours) + ":" + str("%02d" % GameState.minutes)

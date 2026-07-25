@@ -7,12 +7,15 @@ signal guards_changed(new_value: int)
 signal guards_busy_changed(new_value: int)
 signal health_changed(new_value: int)
 signal hours_changed(new_value: int)
+signal kills_changed(new_value: int)
 signal minutes_changed(new_value: int)
 signal suspicion_changed(new_value: int)
 signal thirst_changed(new_value: int)
 signal villagers_changed(new_value: int)
 
+@onready var timer: Timer = Timer.new()
 var max_int = 9223372036854775807
+var won: bool = false
 
 var max_health: int = 100
 var max_hours: int = 24
@@ -25,14 +28,31 @@ var start_days: int = 0
 var start_guards: int = 0
 var start_guards_busy: int = 0
 var start_health: int = max_health
-var start_time_hours: int = 16
-var start_time_minutes: int = 25
+var start_kills: int = 0
 var start_suspicion: int = 0
+var start_time_hours: int = 16
+var start_time_minutes: int = 00
 var start_thirst: int = max_thirst
 var starter_villagers: int = 3
 
 var next_event: int = 5
-var time_speed: float = 1
+var sunrise_hour: int = 6
+var sunset_hour: int = 20
+var time_speed: float = 5
+var thirst_day: int = 2
+var thirst_night: int = 1
+var thirst_health_lost_counter: int = 0
+var thirst_health_lost_multiplier: int = 3
+var thirst_health_lost: int = 1
+
+func _ready() -> void:
+	timer.wait_time = 1
+	timer.autostart = true
+	timer.timeout.connect(_on_minute_tick)
+	add_child(timer)
+
+func _on_minute_tick():
+	GameState.minutes += time_speed
 
 var ate: int = start_ate:
 	set(value):
@@ -57,9 +77,9 @@ var guards_busy: int = start_guards_busy:
 var health: int = start_health:
 	set(value):
 		health = clampi(value, 0, max_health)
-		health_changed.emit(health)
 		if health == 0:
 			gameover_changed.emit(true)
+		health_changed.emit(health)
 
 var hours: int = start_time_hours:
 	set(value):
@@ -69,6 +89,11 @@ var hours: int = start_time_hours:
 			days += 1
 			days_changed.emit(days)
 		hours_changed.emit(hours)
+
+var kills: int = start_kills:
+	set(value):
+		kills = clampi(value, kills, max_int)
+		kills_changed.emit(kills)
 
 var minutes: int = start_time_minutes:
 	set(value):
@@ -88,6 +113,8 @@ var suspicion: int = start_suspicion:
 
 var thirst: int = start_thirst:
 	set(value):
+		if value > thirst:
+			thirst_health_lost_counter = 0
 		thirst = clampi(value, 0, max_thirst)
 		thirst_changed.emit(thirst)
 
@@ -97,11 +124,6 @@ var villagers: int = starter_villagers:
 		if villagers == 0:
 			gameover_changed.emit(true)
 		villagers_changed.emit(villagers)
-		
-		
-		
-var sunrise_hour: int = 6
-var sunset_hour: int = 20
 
 func is_day() -> bool:
 	return hours >= sunrise_hour and hours < sunset_hour
