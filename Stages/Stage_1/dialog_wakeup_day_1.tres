@@ -8,9 +8,6 @@
 [sub_resource type="Resource" id="Resource_pcam2"]
 script = ExtResource("2_24uhq")
 label = "‘Piss off, it’s far too early.’"
-values = Dictionary[int, int]({
-1: -1
-})
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
