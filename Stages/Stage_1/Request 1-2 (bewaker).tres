@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://b5i4nqj8iu6nv"]
+
+[ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="1_xorxa"]
+[ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="2_ak310"]
+[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_c0hgo"]
+
+[sub_resource type="Resource" id="Resource_s4d1k"]
+script = ExtResource("2_c0hgo")
+label = "The Count looks bored."
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_c0hgo"]
+script = ExtResource("1_xorxa")
+text = "Guard: [color=dimgray]‘Mr. Downey, sir.’[/color] [p][/p] [p]Count Downey looks at the guard.[/p] [p][/p] [p]The guard keeps his eyes lowered and waits for the Count’s response.[/p]"
+responses = Array[ExtResource("2_c0hgo")]([SubResource("Resource_s4d1k")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_vjnkr"]
+script = ExtResource("2_c0hgo")
+label = "'Congratulations.'"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_kkik2"]
+script = ExtResource("1_xorxa")
+text = "Regis: [color=orangered]‘Go on.’[/color] [p][/p] [p]Guard: [color=dimgray]‘Thank you, sir. There is a group of refugees at the edge of the village, sir.’[/color][/p]"
+responses = Array[ExtResource("2_c0hgo")]([SubResource("Resource_vjnkr")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_k80qm"]
+script = ExtResource("2_c0hgo")
+label = "'Fine.'"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_fvj1w"]
+script = ExtResource("1_xorxa")
+text = "Regis: [color=orangered]‘What sir means to ask is what the refugees want.’[/color] [p][/p] [p]Guard: [color=dimgray]‘They were attacked by wolves in the forest. They are now weakened and injured, and they wish to stay here. At least until they have regained their strength.’[/color][/p] [p][/p] [p]Count Downey: [color=crimson]‘And why do I have to decide that?’[/color][/p] [p][/p] [p]Guard: [color=dimgray]‘To properly… help them, we need people to keep an eye on them.’[/color][/p]"
+responses = Array[ExtResource("2_c0hgo")]([SubResource("Resource_k80qm")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_vcupf"]
+script = ExtResource("2_c0hgo")
+label = "1. 'Good idea!'"
+values = Dictionary[int, int]({
+1: -30,
+4: 2
+})
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_m6q1r"]
+script = ExtResource("2_c0hgo")
+label = "2. 'Get rid of them!'"
+values = Dictionary[int, int]({
+1: -30,
+2: -20
+})
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_t2t3n"]
+script = ExtResource("2_c0hgo")
+label = "3. 'Yum yum yum...'"
+values = Dictionary[int, int]({
+1: -30,
+3: 7
+})
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_xoxbe"]
+script = ExtResource("1_xorxa")
+text = "Option 1: [color=crimson]‘Keep them outside the village and assign a few guards to watch them.’[/color] [p][/p] [p]Result: 2 guards busy[/p] [p]The guard has sent two guards to the group of refugees to keep them away from the village. They may stay in the forest, but they are not allowed to set foot inside the village.[/p] [p][/p] [p]Option 2: [color=crimson]‘Take all your men and drive them away… or kill them. Before you know it, there will be a vampire among them.’[/color][/p] [p][/p] [p]Result: -20 suspicion[/p] [p]Public opinion: [color=dodgerblue]The villagers think it is very sensible of you to exterminate the refugees as a precaution. You can never be too careful: before you know it, someone gets hurt.[/color][/p] [p][/p] [p]Option 3: [color=crimson]‘Let them in. They are more than welcome.’[/color][/p] [p][/p] [p]Result: +7 villagers[/p] [p][color=dodgerblue]Such gastronomic hospitality![/color][/p]"
+responses = Array[ExtResource("2_c0hgo")]([SubResource("Resource_vcupf"), SubResource("Resource_m6q1r"), SubResource("Resource_t2t3n")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[resource]
+script = ExtResource("2_ak310")
+conversation = Array[ExtResource("1_xorxa")]([SubResource("Resource_c0hgo"), SubResource("Resource_kkik2"), SubResource("Resource_fvj1w"), SubResource("Resource_xoxbe")])
+metadata/_custom_type_script = "uid://b543j03pna7xr"

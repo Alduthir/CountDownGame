@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://cn6fweke4q8sk"]
+
+[ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="1_f8eo5"]
+[ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="2_6ab6y"]
+[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_vq3qt"]
+
+[sub_resource type="Resource" id="Resource_30bgd"]
+script = ExtResource("2_vq3qt")
+label = "Wave the guards away."
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_vq3qt"]
+script = ExtResource("1_f8eo5")
+text = "A young lady—a vampire not yet 200 years old—walks up to you. [p][/p][p]Count Downey: [color=crimson]‘Time for a coffee break. This young lady will not cause anyone any trouble.’[/color][/p]"
+responses = Array[ExtResource("2_vq3qt")]([SubResource("Resource_30bgd")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_1fiol"]
+script = ExtResource("2_vq3qt")
+label = "'Shut up, will you please.'"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_7yahd"]
+script = ExtResource("1_f8eo5")
+text = "[color=mediumvioletred]‘Good afternoon, Count Downey.’[/color] [p][/p][p][color=crimson]‘Good afternoon, young lady.’[/color][/p] [p][/p][p]Regis: [color=orangered]‘Welcome to the—’[/color][/p]"
+responses = Array[ExtResource("2_vq3qt")]([SubResource("Resource_1fiol")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_of357"]
+script = ExtResource("2_vq3qt")
+label = "'Are you sure you won't bother anyone?'"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_v2lqg"]
+script = ExtResource("1_f8eo5")
+text = "Downey loses himself in the eyes of the beauty standing before him. [p][/p][p][color=mediumvioletred]‘I am looking for a place to sleep. I promise I will not bother anyone.’[/color] She smiles mischievously.[/p] [p][/p][p]Regis: [color=orangered]‘I don’t think—’[/color][/p] "
+responses = Array[ExtResource("2_vq3qt")]([SubResource("Resource_of357")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_w2smt"]
+script = ExtResource("2_vq3qt")
+label = "‘You may stay!’"
+values = Dictionary[int, int]({
+3: -7
+})
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_oticw"]
+script = ExtResource("1_f8eo5")
+text = "She blushes. [color=mediumvioletred]‘What do you say? Can I stay?’[/color] [p][/p][p]Option 1: [color=crimson]‘What an excellent idea!’[/color][/p] [p][/p][p]Result: -7 villagers[/p][p]A beautiful lady is staying in the village, with an appetite to rival your own.[/p] [p][/p][p]Option 2: [color=crimson]‘Regis, could you leave us alone for a moment?’[/color][/p][p]Result: -7 villagers[/p][p]A beautiful lady is staying in the village, with an appetite to rival your own.[/p] [p][/p][p]Option 3: [color=crimson]‘Regis, what do you think?’[/color][/p][p][color=orangered]‘As if there is any point in saying it is a bad idea. You are going to let her stay anyway.’[/color][/p][p]Result: -7 villagers[/p][p]A beautiful lady is staying in the village, with an appetite to rival your own.[/p]"
+responses = Array[ExtResource("2_vq3qt")]([SubResource("Resource_w2smt")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[resource]
+script = ExtResource("2_6ab6y")
+conversation = Array[ExtResource("1_f8eo5")]([SubResource("Resource_vq3qt"), SubResource("Resource_7yahd"), SubResource("Resource_v2lqg"), SubResource("Resource_oticw")])
+metadata/_custom_type_script = "uid://b543j03pna7xr"

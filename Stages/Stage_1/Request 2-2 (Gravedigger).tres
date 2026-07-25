@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://bawjvn4m7b1ru"]
+
+[ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="1_sihnl"]
+[ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="2_ae5t7"]
+[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_iim1n"]
+
+[sub_resource type="Resource" id="Resource_tqirw"]
+script = ExtResource("2_iim1n")
+label = "'There was a reason I kept avoiding you.'"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_787j1"]
+script = ExtResource("2_iim1n")
+label = "'Old people always complain.'"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_iim1n"]
+script = ExtResource("1_sihnl")
+text = "A sheperd walks by, but the gravedigger brutally shoves him aside. [p][/p][p][color=dimgray]‘I have been waiting out here for two days because I want to speak to you!’[/color][/p]"
+responses = Array[ExtResource("2_iim1n")]([SubResource("Resource_tqirw"), SubResource("Resource_787j1")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_d2j8w"]
+script = ExtResource("2_iim1n")
+label = "Nod."
+values = Dictionary[int, int]({
+1: -30,
+2: 20
+})
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_osxlw"]
+script = ExtResource("2_iim1n")
+label = "'Is he still here?'"
+values = Dictionary[int, int]({
+1: -30,
+2: 30
+})
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_te3wr"]
+script = ExtResource("2_iim1n")
+label = "'Don't worry!'"
+values = Dictionary[int, int]({
+1: -30,
+4: 3
+})
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_ijhxo"]
+script = ExtResource("1_sihnl")
+text = "[color=dimgray]‘With all the deaths lately, we will have to start clearing out graves. Unless sir makes the tomb available for us to use.’ [/color][p][/p][p]Option 1: [color=crimson]‘Go ahead.’[/color][/p][p]Result: +20 suspicion[/p][p]It has proved unwise to have people wandering around the graveyard while you are sleeping there.[/p][p][/p][p]Option 2: [color=crimson]‘Get rid of him.’[/color][/p][p]Result: +30 suspicion[/p][p]The villagers wonder why the Count hates the gravedigger so much.[/p][p][/p][p]Option 3: [color=crimson]‘We will make sure fewer people die.’[/color][/p][p]Result: +3 guards[/p][p]As promised, more guards are now patrolling the streets.[/p]"
+responses = Array[ExtResource("2_iim1n")]([SubResource("Resource_d2j8w"), SubResource("Resource_osxlw"), SubResource("Resource_te3wr")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[resource]
+script = ExtResource("2_ae5t7")
+conversation = Array[ExtResource("1_sihnl")]([SubResource("Resource_iim1n"), SubResource("Resource_ijhxo")])
+metadata/_custom_type_script = "uid://b543j03pna7xr"
