@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://c5alsvdco5qij" path="res://NPCs/Guards/guard.png" id="1_2u555"]
 [ext_resource type="Script" uid="uid://d2dg0882c6uy0" path="res://NPCs/Guards/guard.gd" id="1_m7p6y"]
 [ext_resource type="Material" uid="uid://c38evxe5k2k4s" path="res://Shared/hit_flash.tres" id="2_5e3yv"]
+[ext_resource type="AudioStream" uid="uid://d0ob1jwdg0a4b" path="res://Resources/Sound/effects/666herohero-monster-death-grunt-131480.mp3" id="4_hadwc"]
+[ext_resource type="AudioStream" uid="uid://dtm56uw875pfp" path="res://Resources/Sound/effects/voicebosch-sword-block-the-ballad-of-blades-257226.mp3" id="4_vrafg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m7p6y"]
 atlas = ExtResource("1_2u555")
@@ -335,6 +337,14 @@ debug_color = Color(0.5905234, 0.53541917, 0.33330646, 0.41960785)
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=1516621801]
 unique_name_in_owner = true
+
+[node name="deathSound" type="AudioStreamPlayer2D" parent="." unique_id=1451281719]
+unique_name_in_owner = true
+stream = ExtResource("4_hadwc")
+
+[node name="attackSound" type="AudioStreamPlayer2D" parent="." unique_id=1808559632]
+unique_name_in_owner = true
+stream = ExtResource("4_vrafg")
 
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]
 [connection signal="body_entered" from="FollowRange" to="." method="_on_follow_range_body_entered"]
