@@ -17,12 +17,19 @@ func _process(delta: float) -> void:
 	pass
 
 func write_stats():
+	var hours = GameState.hours
+	var days = GameState.days
+	if hours < 16:
+		days -= 1
+		hours += 24
+	hours -= 16
+	
 	var text = "
 	[table=2]
 	[cell]Villagers:[/cell][cell]"+ str(GameState.villagers) +"[/cell]
 	[cell]Villagers eaten:[/cell][cell]"+ str(GameState.ate) +"[/cell]
 	[cell]Guards killed:[/cell][cell]"+ str(GameState.kills) +"[/cell]
-	[cell]Time Survived:[/cell][cell]"+ str(GameState.days) +" day "+ str(GameState.hours) +" hour "+ str(GameState.minutes) +" minutes[/cell]
+	[cell]Time Survived:[/cell][cell]"+ str(days) +" day "+ str(hours) +" hour "+ str(GameState.minutes) +" minutes[/cell]
 	[/table]
 	"
 	stats_label.text = text
