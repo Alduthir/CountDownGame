@@ -1,0 +1,110 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://ce86v5ryjyv4r"]
+
+[ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="1_kjbih"]
+[ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="2_7vk2b"]
+[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_ub12a"]
+
+[sub_resource type="Resource" id="Resource_tfx1c"]
+script = ExtResource("2_ub12a")
+label = "‘Goddammit, I have a headache.’"
+action = 2
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_4m54n"]
+script = ExtResource("1_kjbih")
+text = "[right][color=orangered]‘Mr Downey, it’s good that you’re finally awake. I hope you showed at least some restraint last night.’[/color][/right]"
+responses = Array[ExtResource("2_ub12a")]([SubResource("Resource_tfx1c")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_1ivyq"]
+script = ExtResource("2_ub12a")
+label = "Count Downey (Jr.) rubs his head and his eyes. "
+action = 2
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_sbo8a"]
+script = ExtResource("1_kjbih")
+text = "[color=crimson]‘I had one hell of a trip. I was a detective in a red iron suit and could talk to animals.’[/color]"
+responses = Array[ExtResource("2_ub12a")]([SubResource("Resource_1ivyq")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_447f3"]
+script = ExtResource("2_ub12a")
+label = "The Count gives a big Yawn."
+action = 2
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_3d4p0"]
+script = ExtResource("1_kjbih")
+text = "[right][color=orangered]‘Just hurry up. People are waiting for you at the castle.’[/color][/right]"
+responses = Array[ExtResource("2_ub12a")]([SubResource("Resource_447f3")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_qlt2w"]
+script = ExtResource("2_ub12a")
+label = "‘I need more time.’"
+action = 2
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_6eav1"]
+script = ExtResource("1_kjbih")
+text = "[right][color=orangered]‘You only have 16 hours left until the feast.’[/color][/right] [p][/p] [p][left][color=crimson]‘There are still nowhere near enough villagers to feed everyone.’[/color][/left][/p]"
+responses = Array[ExtResource("2_ub12a")]([SubResource("Resource_qlt2w")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_q7vy6"]
+script = ExtResource("2_ub12a")
+label = "Count Downey stretches his back."
+action = 2
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_fi5m4"]
+script = ExtResource("1_kjbih")
+text = "[right][color=orangered]‘Then perhaps sir should’ve considered drinking less himself.’[/color][/right] [p][/p] [p][left][color=crimson]‘Oh, come on, Regis, that abstinence of yours will be the death of you one day.’[/color][/left][/p]"
+responses = Array[ExtResource("2_ub12a")]([SubResource("Resource_q7vy6")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_6dw0o"]
+script = ExtResource("2_ub12a")
+label = "‘I’m going, I’m going.’"
+action = 2
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_sr2lq"]
+script = ExtResource("1_kjbih")
+text = "[right][color=orangered]‘If you have no intention of stopping, then if I were you, I would make sure there are enough villagers. And not to many guards around.’[/color][/right]"
+responses = Array[ExtResource("2_ub12a")]([SubResource("Resource_6dw0o")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_k2c6q"]
+script = ExtResource("2_ub12a")
+label = "‘What?’"
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_d2ydq"]
+script = ExtResource("1_kjbih")
+text = "[right][color=orangered]‘And Count…’[/color][/right]"
+responses = Array[ExtResource("2_ub12a")]([SubResource("Resource_k2c6q")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[sub_resource type="Resource" id="Resource_5x3ft"]
+script = ExtResource("2_ub12a")
+label = "‘Yeah, yeah’"
+action = 1
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_7r7mw"]
+script = ExtResource("1_kjbih")
+text = "[right][color=orangered]‘Stay out of the light and try not to draw attention to yourself.’[/color][/right]"
+responses = Array[ExtResource("2_ub12a")]([SubResource("Resource_5x3ft")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[resource]
+script = ExtResource("2_7vk2b")
+conversation = Array[ExtResource("1_kjbih")]([SubResource("Resource_4m54n"), SubResource("Resource_sbo8a"), SubResource("Resource_3d4p0"), SubResource("Resource_6eav1"), SubResource("Resource_fi5m4"), SubResource("Resource_sr2lq"), SubResource("Resource_d2ydq"), SubResource("Resource_7r7mw")])
+metadata/_custom_type_script = "uid://b543j03pna7xr"
