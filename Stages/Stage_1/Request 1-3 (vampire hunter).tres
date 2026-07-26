@@ -9,7 +9,6 @@ script = ExtResource("2_akh58")
 label = "'We should have you hanged!''"
 values = Dictionary[int, int]({
 1: 1,
-2: 1,
 3: 20,
 5: -3
 })
@@ -21,7 +20,6 @@ script = ExtResource("2_akh58")
 label = "'What brings you here?'"
 values = Dictionary[int, int]({
 1: 2,
-2: 1,
 3: 35,
 4: 10
 })
@@ -36,14 +34,14 @@ metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
 [sub_resource type="Resource" id="Resource_68lk4"]
 script = ExtResource("2_akh58")
-label = "‘Hang that lunatic!’"
+label = "‘Get lost!’"
 action = 1
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_fbt2a"]
 script = ExtResource("1_51kc8")
-text = "[p align=left]Count Downey: [color=crimson]‘How many village lunatics are wandering around here?!’[/color][/p] [p align=right]Vampire Hunter: [color=gold]‘Vampires are not to be taken lightly.’[/color][/p] [p align=left]Count Downey: [color=crimson]‘Nonsense! Vampires do not exist. It is ridiculous!’[/color][/p] [p align=right]Vampire Hunter: [color=gold]‘I believe you are the village lunatic here.’[/color][/p][p][/p] [p]Results:[/p] [p]+20 suspicion[/p] [p]Public opinion: [color=dodgerblue]The villagers do not quite understand why you are having him hanged. Could it be that you have something to hide, or is he really just another village lunatic?[/color][/p] [p]3 guards busy — Three guards will be occupied for a while, as they have to hang the rather strong man.[/p] [p]-30 min.[/p]"
+text = "[p align=left]Count Downey: [color=crimson]‘How many village lunatics are wandering around here?!’[/color][/p] [p align=right]Vampire Hunter: [color=gold]‘Vampires are not to be taken lightly.’[/color][/p] [p align=left]Count Downey: [color=crimson]‘Nonsense! Vampires do not exist. It is ridiculous!’[/color][/p] [p align=right]Vampire Hunter: [color=gold]‘I believe you are the village lunatic here.’[/color][/p][p][/p] [p]Results:[/p] [p]+20 suspicion[/p] [p]Public opinion: [color=dodgerblue]The villagers do not quite understand why you are sending him away. Could it be that you have something to hide, or is he really just another village lunatic?[/color][/p] [p]3 guards busy — Three guards will be occupied for a while, as they have to guide out the rather strong man.[/p]"
 responses = Array[ExtResource("2_akh58")]([SubResource("Resource_68lk4")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
