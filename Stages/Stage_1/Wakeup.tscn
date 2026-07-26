@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4vcpt1egjj56" path="res://Stages/Stage_1/wakeup.gd" id="1_8hhkg"]
 [ext_resource type="Resource" uid="uid://ce86v5ryjyv4r" path="res://Stages/Stage_1/Conversation Regis.tres" id="2_4m54n"]
-[ext_resource type="Resource" uid="uid://hwqjkncomo3d" path="res://Stages/Stage_1/Request Peter (Teacher).tres" id="2_sbo8a"]
+[ext_resource type="Resource" uid="uid://b034buufnmhal" path="res://Stages/Stage_1/dialog_wakeup_day_1.tres" id="2_qoqkc"]
 [ext_resource type="PackedScene" uid="uid://c7bqc5p3h1i5y" path="res://Dialogue/DialogSystem.tscn" id="2_vigwt"]
 [ext_resource type="Resource" uid="uid://btssmj0pwklkl" path="res://Stages/Stage_1/Request 1-1 (garlic farmer).tres" id="5_51gxk"]
 [ext_resource type="SpriteFrames" uid="uid://dcmrsqiift0m3" path="res://NPCs/Villagers/SpriteFrames/villager_m_lavender.tres" id="5_pcam2"]
@@ -32,7 +32,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8hhkg")
-dialog_data = ExtResource("2_sbo8a")
+dialog_data = ExtResource("2_qoqkc")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=973820382]
 
