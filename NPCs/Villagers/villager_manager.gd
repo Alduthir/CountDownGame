@@ -43,7 +43,7 @@ func spawn_villager() -> void:
 		_on_villager_removed.bind(villager)
 	)
 
-	update_villager_count()
+	#update_villager_count()
 	print("Villager gespawned op: ", villager.position)
 
 
@@ -85,8 +85,7 @@ func get_villager_count() -> int:
 
 func _on_villager_removed(villager: Node) -> void:
 	villagers.erase(villager)
-	update_villager_count()
+	#update_villager_count()
 
-
-func update_villager_count() -> void:
-	GameState.villagers = villagers.size()
+#func update_villager_count() -> void:
+	#GameState.villagers = villagers.size()

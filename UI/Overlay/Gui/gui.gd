@@ -74,7 +74,7 @@ func _on_time_changed(new_value: int) -> void:
 	setup_time_wheel()
 
 func _on_villager_changed(new_value: int) -> void:
-	villagers_label.text = str("%02d" % new_value)
+	villagers_label.text = str("%02d" % GameState.villagers)
 
 func setup_hours_remaining() -> void:
 	_on_hours_remaining_changed(GameState.hours_remaining)

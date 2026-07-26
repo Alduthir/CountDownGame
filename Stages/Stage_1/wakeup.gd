@@ -1,5 +1,8 @@
 extends Control
+@onready var end_dialog : DialogData = preload("res://Stages/Stage_1/dialog_wakeup_day_2.tres")
+@onready var end_portrait : Texture2D = preload("res://Player/p_count.png")
 
+@export var dialog : DialogData
 @export var dialog_data: DialogData
 
 @onready var DialogSystem : DialogSystem = %DialogSystem
@@ -23,7 +26,16 @@ func setup_endgame():
 func check_stories():
 	if check_all_quests_completed():
 		GameState.won = true
-		GameState.gameover_changed.emit(true)
+		
+		var dialog_system = get_tree().current_scene.find_child("DialogSystem", true, false)
+		if dialog_system == null: 
+			print_debug("DialogSystem not found in scene tree")
+			return
+		dialog_system.start_dialog(end_portrait, end_dialog)
+		dialog_system.dialog_finished.connect(_dialog_done)
+
+func _dialog_done() -> void:
+	pass
 
 func check_all_quests_completed() -> bool:
 	var npcs = get_tree().get_nodes_in_group("quest_npcs")

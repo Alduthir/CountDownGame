@@ -154,7 +154,7 @@ func _dialog_done() -> void:
 	dialog_completed = true
 
 
-var villagers: int = starter_villagers:
+var villagers: int = 0:
 	set(value):
 		villagers = clampi(value, 0, max_int)
 		if villagers == 0:
