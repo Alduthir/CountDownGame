@@ -19,9 +19,14 @@ func spawn_guards() -> void:
 	if spawn_locations.is_empty():
 		push_warning("GuardManager: er zijn geen spawn_locations ingesteld.")
 		return
-
+	
 	for spawn_position in spawn_locations:
-		spawn_guard(spawn_position)
+		if GameState.guards <= GameState.start_guards:
+			spawn_guard(spawn_position)
+	
+	if GameState.guards != GameState.start_guards:
+		push_warning("GuardManager: er zijn niet genoeg spawn_locations ingesteld.")
+		return
 
 
 func spawn_guard(spawn_position: Vector2) -> void:

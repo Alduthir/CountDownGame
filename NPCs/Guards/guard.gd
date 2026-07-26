@@ -17,9 +17,6 @@ class_name Guard extends CharacterBody2D
 @onready var attack_sound: AudioStreamPlayer2D = %attackSound
 @onready var death_sound: AudioStreamPlayer2D = %deathSound
 
-
-
-
 var is_following := false
 var is_attacking := false
 var can_attack := true
@@ -92,7 +89,7 @@ func _process(delta: float) -> void:
 
 func resize_detection_radius(new_value: int) -> void:
 	var shape = follow_range_shape.get_shape() as CircleShape2D
-	shape.radius = max(minimal_detection_radius, new_value * 10)
+	shape.radius = max(minimal_detection_radius, new_value * 5)
 
 func play_walking_animation() -> void:
 	if abs(velocity.x) > abs(velocity.y):
@@ -129,6 +126,7 @@ func die() -> void:
 	set_deferred("monitoring", false)
 	GameState.guards -= 1
 	GameState.guards_killed += 1
+	GameState.suspicion += GameState.max_suspicion / GameState.start_guards
 	print("nr guards changed:", GameState.guards)
 	despawn_timer.start()
 

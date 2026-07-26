@@ -30,6 +30,7 @@ func _ready() -> void:
 	animator.animation_finished.connect(_on_animation_finished)
 	play_idle()
 	GameState.timer.timeout.connect(drainThirst)
+	GameState.timer.timeout.connect(drainSuspicion)
 	shader = animator.material
 
 func _physics_process(delta: float) -> void:
@@ -209,6 +210,10 @@ func drainThirst() -> void:
 	else:
 		GameState.thirst_health_lost_counter += 1
 		GameState.health -= GameState.thirst_health_lost * (GameState.thirst_health_lost_counter / GameState.thirst_health_lost_multiplier)
+
+func drainSuspicion() -> void:
+	if GameState.suspicion > 0 && GameState.minutes % 2 == 0:
+		GameState.suspicion -= 1
 
 func apply_knockback(force: Vector2) -> void:
 	is_knocked_back = true

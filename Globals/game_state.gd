@@ -26,7 +26,7 @@ var max_thirst: int = 100
 
 var start_ate: int = 0
 var start_days: int = 0
-var start_guards: int = 0
+var start_guards: int = 8
 var start_guards_busy: int = 0
 var start_health: int = max_health
 var start_kills: int = 0
@@ -70,7 +70,7 @@ var days: int = start_days:
 		days = clampi(value, days, max_int)
 		days_changed.emit(days)
 
-var guards: int = start_guards:
+var guards: int = 0:
 	set(value):
 		guards = clampi(value, 0, max_int)
 		guards_changed.emit(guards)
