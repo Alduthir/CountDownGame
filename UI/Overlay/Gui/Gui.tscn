@@ -1,11 +1,23 @@
 [gd_scene format=3 uid="uid://dcmqw5sgnqpo0"]
 
 [ext_resource type="Script" uid="uid://b324652qjt01v" path="res://UI/Overlay/Gui/gui.gd" id="1_n4itr"]
+[ext_resource type="Shader" uid="uid://dt66w2ol4fqt5" path="res://Shared/day_night.gdshader" id="2_d8kre"]
 [ext_resource type="Texture2D" uid="uid://dvnmo20jip6nk" path="res://UI/Fang.png" id="2_jdrlu"]
 [ext_resource type="Texture2D" uid="uid://b0sipjatsdd7m" path="res://UI/house_icon.png" id="2_q6ge2"]
 [ext_resource type="FontFile" uid="uid://cp64hlqrv4k0q" path="res://Resources/fonts/Feathergraphy2.ttf" id="3_uke80"]
 [ext_resource type="Texture2D" uid="uid://ft1w545hq5ed" path="res://UI/day_night_spinner.png" id="5_d8kre"]
 [ext_resource type="Texture2D" uid="uid://dgnq0yc5qys3h" path="res://UI/shield_icon.png" id="5_evs6x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c7xb1"]
+shader = ExtResource("2_d8kre")
+shader_parameter/darkness = 0.0
+shader_parameter/night_color = Color(0.02, 0.04, 0.12, 1)
+shader_parameter/fog_strength = 0.45
+shader_parameter/fog_size = 0.65
+shader_parameter/fog_softness = 0.35
+shader_parameter/fog_speed = 0.15
+shader_parameter/fog_scale = 7.0
+shader_parameter/fog_color = Color(0.25, 0.3, 0.42, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsrf3"]
 bg_color = Color(0.9607843, 0.9607843, 0.9607843, 1)
@@ -66,6 +78,17 @@ border_blend = true
 
 [node name="Gui" type="Node2D" unique_id=921643240]
 script = ExtResource("1_n4itr")
+
+[node name="NightOverlay" type="ColorRect" parent="." unique_id=1084949688]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_c7xb1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Background_header" type="Panel" parent="." unique_id=311915413]
 custom_minimum_size = Vector2(210, 15)
