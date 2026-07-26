@@ -4,8 +4,14 @@
 [ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="2_a8gks"]
 [ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_wchnf"]
 
+[sub_resource type="Resource" id="Resource_unvca"]
+script = ExtResource("2_wchnf")
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
 [sub_resource type="Resource" id="Resource_sbo8a"]
 script = ExtResource("1_fmisq")
+responses = Array[ExtResource("2_wchnf")]([SubResource("Resource_unvca")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
 [resource]
