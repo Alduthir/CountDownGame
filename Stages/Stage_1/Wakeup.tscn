@@ -23,6 +23,9 @@
 [ext_resource type="SpriteFrames" uid="uid://cmq58n52bwsr2" path="res://NPCs/Gravedigger/Gravedigger.tres" id="14_w6nbp"]
 [ext_resource type="SpriteFrames" uid="uid://bss3s5xelv6k3" path="res://NPCs/Elder/Elder.tres" id="17_m3k83"]
 [ext_resource type="SpriteFrames" uid="uid://b1uodiv7bfybf" path="res://NPCs/Doctor/Doctor.tres" id="19_4m54n"]
+[ext_resource type="Resource" uid="uid://dm0jh5kf75mmj" path="res://Stages/Stage_1/Request Butcher.tres" id="22_6eav1"]
+[ext_resource type="Resource" uid="uid://pccwfcdeggus" path="res://Stages/Stage_1/Dialoog Peter.tres" id="22_fi5m4"]
+[ext_resource type="Resource" uid="uid://cv51od8l4ho5q" path="res://Stages/Stage_1/Request Priest.tres" id="23_fi5m4"]
 [ext_resource type="Shader" uid="uid://dt66w2ol4fqt5" path="res://Shared/day_night.gdshader" id="24_3d4p0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6eav1"]
@@ -95,26 +98,17 @@ sprite_frames = ExtResource("13_4m54n")
 
 [node name="Peter (Teacher)" parent="World" unique_id=1748538170 instance=ExtResource("6_pcam2")]
 position = Vector2(838, 413)
+dialog = ExtResource("22_fi5m4")
 
 [node name="Butcher" parent="World" unique_id=967916280 instance=ExtResource("6_pcam2")]
 position = Vector2(192, 250)
+dialog = ExtResource("22_6eav1")
 
 [node name="Priest" parent="World" unique_id=1166464916 instance=ExtResource("6_pcam2")]
 position = Vector2(283, 112)
+dialog = ExtResource("23_fi5m4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1466623364]
-
-[node name="ShaderCanvas" type="CanvasLayer" parent="CanvasLayer" unique_id=1820793046]
-unique_name_in_owner = true
-
-[node name="NightOverlay" type="ColorRect" parent="CanvasLayer/ShaderCanvas" unique_id=951607359]
-unique_name_in_owner = true
-material = SubResource("ShaderMaterial_6eav1")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Gui" parent="CanvasLayer" unique_id=921643240 instance=ExtResource("7_pcam2")]
 

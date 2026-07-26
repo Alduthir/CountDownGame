@@ -34,7 +34,6 @@ metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 script = ExtResource("2_jrqby")
 label = "1. Count Downey: ‘Fuck off with your garlic.’"
 values = Dictionary[int, int]({
-2: 1,
 3: 20
 })
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
@@ -44,7 +43,6 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 script = ExtResource("2_jrqby")
 label = "2. Regis: ‘Thank you very much for the offer.’"
 values = Dictionary[int, int]({
-2: 1,
 4: 5
 })
 color = Color(1, 0.27058825, 0, 1)

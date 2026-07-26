@@ -1,8 +1,35 @@
 [gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://dm0jh5kf75mmj"]
 
 [ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="1_tcmv4"]
+[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_bgb2x"]
 [ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="2_cqarb"]
+
+[sub_resource type="Resource" id="Resource_fi5m4"]
+script = ExtResource("2_bgb2x")
+label = "'Go for it!'"
+values = Dictionary[int, int]({
+4: 10
+})
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_sr2lq"]
+script = ExtResource("2_bgb2x")
+label = "'Save some for me!'"
+values = Dictionary[int, int]({
+0: 50,
+4: 7
+})
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_6eav1"]
+script = ExtResource("1_tcmv4")
+text = "[p align=right]The village butcher approaches you and whispers, [color=lightslategray]“Couldn’t we arrange for me to receive some of the bodies of deceased villagers?”[/color][/p][p align=left][color=crimson]“That’s not exactly an everyday request. What are you going to do with them?”[/color][/p][p align=right][color=lightslategray]“Let’s just say I can provide more food for the village.”[/color][/p]"
+responses = Array[ExtResource("2_bgb2x")]([SubResource("Resource_fi5m4"), SubResource("Resource_sr2lq")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
 [resource]
 script = ExtResource("2_cqarb")
+conversation = Array[ExtResource("1_tcmv4")]([SubResource("Resource_6eav1")])
 metadata/_custom_type_script = "uid://b543j03pna7xr"
