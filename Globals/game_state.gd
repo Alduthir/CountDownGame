@@ -15,6 +15,12 @@ signal villagers_changed(new_value: int)
 signal hours_remaining_changed(new_value: int)
 
 @onready var timer: Timer = Timer.new()
+
+@onready var end_dialog : DialogData = preload("res://Stages/Stage_1/dialog_wakeup_day_2.tres")
+@onready var end_portrait : Texture2D = preload("res://Player/p_count.png")
+
+@export var dialog : DialogData
+
 var max_int = 9223372036854775807
 var won: bool = false
 
@@ -50,12 +56,14 @@ var thirst_health_lost_multiplier: int = 3
 var thirst_health_lost: int = 1
 var guards_killed: int = 0
 
+var dialog_completed := false
+
 func _ready() -> void:
 	timer.wait_time = 1
 	timer.autostart = true
 	timer.timeout.connect(_on_minute_tick)
+	timer.timeout.connect(remaining_time)
 	add_child(timer)
-	update_hours_remaining()
 
 func _on_minute_tick():
 	GameState.minutes += time_speed
@@ -110,7 +118,6 @@ var minutes: int = start_time_minutes:
 			hours += 1
 
 		minutes_changed.emit(minutes)
-		update_hours_remaining()
 
 var suspicion: int = start_suspicion:
 	set(value):
@@ -126,36 +133,26 @@ var thirst: int = start_thirst:
 		thirst = clampi(value, 0, max_thirst)
 		thirst_changed.emit(thirst)
 
-func update_hours_remaining() -> void:
-	var start_total_minutes := (
-		start_days * 24 * 60
-		+ start_time_hours * 60
-		+ start_time_minutes
-	)
+func remaining_time():
+	var hours_res = days * 24 + hours
+	hours_res -= start_time_hours
+	hours_remaining = start_hours_remaining - hours_res
+	hours_remaining_changed.emit(hours_remaining)
+	
+	if hours_remaining <= 0:
+		print_debug(hours_remaining)
+		var dialog_system = get_tree().current_scene.find_child("DialogSystem", true, false)
+		if dialog_system == null: 
+			print_debug("DialogSystem not found in scene tree")
+			return
+		dialog_system.start_dialog(end_portrait, end_dialog)
+		dialog_system.dialog_finished.connect(_dialog_done)
+			
+		#dialog_system.start_dialog(dialog_data.portrait, dialog_data.conversation)
 
-	var current_total_minutes := (
-		days * 24 * 60
-		+ hours * 60
-		+ minutes
-	)
+func _dialog_done() -> void:
+	dialog_completed = true
 
-	var elapsed_minutes := current_total_minutes - start_total_minutes
-	var remaining_minutes := maxi(
-		0,
-		start_hours_remaining * 60 - elapsed_minutes
-	)
-
-	# Naar boven afronden:
-	# 15 uur en 55 minuten over wordt als 16 getoond.
-	var new_hours_remaining := ceili(remaining_minutes / 60.0)
-
-	if new_hours_remaining != hours_remaining:
-		hours_remaining = new_hours_remaining
-		hours_remaining_changed.emit(hours_remaining)
-
-	if remaining_minutes <= 0 and not deadline_reached:
-		deadline_reached = true
-		gameover_changed.emit(true)
 
 var villagers: int = starter_villagers:
 	set(value):
