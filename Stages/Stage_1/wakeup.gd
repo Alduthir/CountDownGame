@@ -8,6 +8,7 @@ func _ready() -> void:
 	setup_endgame()
 	DialogSystem.start_dialog(dialog_data.portrait, dialog_data.conversation)
 
+
 func _process(delta: float) -> void:
 	pass
 
