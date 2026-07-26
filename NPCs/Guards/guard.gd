@@ -127,6 +127,9 @@ func die() -> void:
 	death_sound.play()
 	set_process(false)
 	set_deferred("monitoring", false)
+	GameState.guards -= 1
+	GameState.guards_killed += 1
+	print("nr guards changed:", GameState.guards)
 	despawn_timer.start()
 
 func animation_finished()->void:

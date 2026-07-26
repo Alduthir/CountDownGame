@@ -35,7 +35,7 @@ func spawn_guard(spawn_position: Vector2) -> void:
 	guard.tree_exiting.connect(
 		_on_guard_removed.bind(guard)
 	)
-
+	GameState.guards += 1
 	print("Guard gespawned op: ", guard.position)
 
 

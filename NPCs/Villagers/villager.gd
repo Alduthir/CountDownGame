@@ -10,6 +10,7 @@ class_name Villager extends CharacterBody2D
 var direction := Vector2.ZERO
 var is_knocked_back = false
 var knockback_velocity = Vector2.ZERO
+var is_dead := false
 
 var sprite_options: Array[SpriteFrames] = [
 	preload("res://NPCs/Villagers/SpriteFrames/villager_f_green.tres"),
@@ -28,6 +29,9 @@ func _ready() -> void:
 
 	wander_timer.one_shot = true
 	wander_timer.timeout.connect(_choose_new_direction)
+	
+	despawn_timer.one_shot = true
+	despawn_timer.timeout.connect(_on_despawn_timer_timeout)
 
 	_choose_new_direction()
 
@@ -83,10 +87,26 @@ func _choose_new_direction() -> void:
 	wander_timer.start(randf_range(1.0, 3.0))
 	
 func die() -> void:
+	if is_dead:
+		return
+
+	is_dead = true
+	direction = Vector2.ZERO
+	velocity = Vector2.ZERO
+	is_knocked_back = false
+	knockback_velocity = Vector2.ZERO
+
 	animator.play("die")
+
 	set_physics_process(false)
-	set_deferred("monitoring", false)
+
+	collision_layer = 0
+	collision_mask = 0
+
+	print("Villager dood, despawn over ", despawn_timer.wait_time, " seconden")
 	despawn_timer.start()
+	GameState.ate += 1
+	GameState.villagers -= 1
 
 func _on_despawn_timer_timeout() -> void:
 	queue_free()

@@ -24,6 +24,7 @@ func spawn_villagers(amount: int) -> void:
 
 	for i in amount:
 		spawn_villager()
+		GameState.villagers += 1
 
 
 func spawn_villager() -> void:
