@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://pccwfcdeggus"]
+
+[ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="1_73jf4"]
+[ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_2yfyg"]
+[ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="2_trgjv"]
+
+[sub_resource type="Resource" id="Resource_p3v1g"]
+script = ExtResource("2_2yfyg")
+label = "'I have no time for this.'"
+action = 1
+color = Color(0.8627451, 0.078431375, 0.23529412, 1)
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_2yfyg"]
+script = ExtResource("1_73jf4")
+text = "[p align=left]The village Teacher is about to start his lessons.[/p][p align=right][color=indigo]‘Listen up, first lesson of today: Reading the error explains the error. So allways remember to read! Second…’[/color][/p]"
+responses = Array[ExtResource("2_2yfyg")]([SubResource("Resource_p3v1g")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
+[resource]
+script = ExtResource("2_trgjv")
+conversation = Array[ExtResource("1_73jf4")]([SubResource("Resource_2yfyg")])
+metadata/_custom_type_script = "uid://b543j03pna7xr"
