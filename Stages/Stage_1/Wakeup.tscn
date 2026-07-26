@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://db20vgbosllb3"]
 
 [ext_resource type="Script" uid="uid://c4vcpt1egjj56" path="res://Stages/Stage_1/wakeup.gd" id="1_8hhkg"]
-[ext_resource type="Resource" uid="uid://b034buufnmhal" path="res://Stages/Stage_1/dialog_wakeup_day_1.tres" id="2_qoqkc"]
+[ext_resource type="Resource" uid="uid://ce86v5ryjyv4r" path="res://Stages/Stage_1/Conversation Regis.tres" id="2_4m54n"]
+[ext_resource type="Resource" uid="uid://hwqjkncomo3d" path="res://Stages/Stage_1/Request Peter (Teacher).tres" id="2_sbo8a"]
 [ext_resource type="PackedScene" uid="uid://c7bqc5p3h1i5y" path="res://Dialogue/DialogSystem.tscn" id="2_vigwt"]
 [ext_resource type="Resource" uid="uid://btssmj0pwklkl" path="res://Stages/Stage_1/Request 1-1 (garlic farmer).tres" id="5_51gxk"]
 [ext_resource type="SpriteFrames" uid="uid://dcmrsqiift0m3" path="res://NPCs/Villagers/SpriteFrames/villager_m_lavender.tres" id="5_pcam2"]
@@ -31,7 +32,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8hhkg")
-dialog_data = ExtResource("2_qoqkc")
+dialog_data = ExtResource("2_sbo8a")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=973820382]
 
@@ -55,7 +56,7 @@ position = Vector2(575, 561)
 dialog = ExtResource("7_fdr1h")
 sprite_frames = ExtResource("10_hqhtd")
 
-[node name="Female Vampire" parent="World" unique_id=2131082483 instance=ExtResource("6_pcam2")]
+[node name="Serena" parent="World" unique_id=2131082483 instance=ExtResource("6_pcam2")]
 position = Vector2(37, 30)
 dialog = ExtResource("8_ygnyh")
 sprite_frames = ExtResource("5_pcam2")
@@ -66,7 +67,7 @@ dialog = ExtResource("10_w6nbp")
 sprite_frames = ExtResource("14_w6nbp")
 
 [node name="Village Elder" parent="World" unique_id=1385689995 instance=ExtResource("6_pcam2")]
-position = Vector2(394, 172)
+position = Vector2(483, 246)
 dialog = ExtResource("11_hqhtd")
 sprite_frames = ExtResource("17_m3k83")
 
@@ -77,7 +78,17 @@ sprite_frames = ExtResource("19_4m54n")
 
 [node name="Regis" parent="World" unique_id=1921017077 instance=ExtResource("6_pcam2")]
 position = Vector2(900, 1220)
+dialog = ExtResource("2_4m54n")
 sprite_frames = ExtResource("13_4m54n")
+
+[node name="Peter (Teacher)" parent="World" unique_id=1748538170 instance=ExtResource("6_pcam2")]
+position = Vector2(838, 413)
+
+[node name="Butcher" parent="World" unique_id=967916280 instance=ExtResource("6_pcam2")]
+position = Vector2(192, 250)
+
+[node name="Priest" parent="World" unique_id=1166464916 instance=ExtResource("6_pcam2")]
+position = Vector2(283, 112)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1466623364]
 
