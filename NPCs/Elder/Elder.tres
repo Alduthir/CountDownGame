@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bss3s5xelv6k3"]
+
+[ext_resource type="Texture2D" uid="uid://bjxc3jy67en2v" path="res://NPCs/Elder/elder.png" id="1_femyq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cpg2"]
+atlas = ExtResource("1_femyq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51m8e"]
+atlas = ExtResource("1_femyq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjtua"]
+atlas = ExtResource("1_femyq")
+region = Rect2(0, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_4cpg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51m8e")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_fjtua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51m8e")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
