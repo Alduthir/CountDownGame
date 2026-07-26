@@ -18,3 +18,15 @@ func _on_game_end(new_value: bool):
 
 func setup_endgame():
 	GameState.gameover_changed.connect(_on_game_end)
+	
+func check_stories():
+	if check_all_quests_completed():
+		GameState.won = true
+		GameState.gameover_changed.emit(true)
+
+func check_all_quests_completed() -> bool:
+	var npcs = get_tree().get_nodes_in_group("quest_npcs")
+	for npc in npcs:
+		if not npc.dialog_completed:
+			return false
+	return true
