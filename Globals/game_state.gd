@@ -12,6 +12,7 @@ signal minutes_changed(new_value: int)
 signal suspicion_changed(new_value: int)
 signal thirst_changed(new_value: int)
 signal villagers_changed(new_value: int)
+signal hours_remaining_changed(new_value: int)
 
 @onready var timer: Timer = Timer.new()
 var max_int = 9223372036854775807
@@ -34,6 +35,9 @@ var start_time_hours: int = 16
 var start_time_minutes: int = 00
 var start_thirst: int = max_thirst
 var starter_villagers: int = 3
+var start_hours_remaining: int = 16
+var hours_remaining: int = start_hours_remaining
+var deadline_reached := false
 
 var next_event: int = 5
 var sunrise_hour: int = 6
@@ -44,12 +48,14 @@ var thirst_night: int = 1
 var thirst_health_lost_counter: int = 0
 var thirst_health_lost_multiplier: int = 3
 var thirst_health_lost: int = 1
+var guards_killed: int = 0
 
 func _ready() -> void:
 	timer.wait_time = 1
 	timer.autostart = true
 	timer.timeout.connect(_on_minute_tick)
 	add_child(timer)
+	update_hours_remaining()
 
 func _on_minute_tick():
 	GameState.minutes += time_speed
@@ -98,11 +104,13 @@ var kills: int = start_kills:
 var minutes: int = start_time_minutes:
 	set(value):
 		minutes = clampi(value, minutes, max_int)
-		while minutes > max_minutes -1:
+
+		while minutes > max_minutes - 1:
 			minutes -= max_minutes
 			hours += 1
-			hours_changed.emit(hours)
+
 		minutes_changed.emit(minutes)
+		update_hours_remaining()
 
 var suspicion: int = start_suspicion:
 	set(value):
@@ -117,6 +125,37 @@ var thirst: int = start_thirst:
 			thirst_health_lost_counter = 0
 		thirst = clampi(value, 0, max_thirst)
 		thirst_changed.emit(thirst)
+
+func update_hours_remaining() -> void:
+	var start_total_minutes := (
+		start_days * 24 * 60
+		+ start_time_hours * 60
+		+ start_time_minutes
+	)
+
+	var current_total_minutes := (
+		days * 24 * 60
+		+ hours * 60
+		+ minutes
+	)
+
+	var elapsed_minutes := current_total_minutes - start_total_minutes
+	var remaining_minutes := maxi(
+		0,
+		start_hours_remaining * 60 - elapsed_minutes
+	)
+
+	# Naar boven afronden:
+	# 15 uur en 55 minuten over wordt als 16 getoond.
+	var new_hours_remaining := ceili(remaining_minutes / 60.0)
+
+	if new_hours_remaining != hours_remaining:
+		hours_remaining = new_hours_remaining
+		hours_remaining_changed.emit(hours_remaining)
+
+	if remaining_minutes <= 0 and not deadline_reached:
+		deadline_reached = true
+		gameover_changed.emit(true)
 
 var villagers: int = starter_villagers:
 	set(value):

@@ -28,9 +28,9 @@ func write_stats():
 	
 	var text = "
 	[table=2]
-	[cell]Villagers:[/cell][cell]"+ str(GameState.villagers) +"[/cell]
+	[cell]Villagers:[/cell][cell]"+ str("%02d" % GameState.villagers)+"[/cell]
 	[cell]Villagers eaten:[/cell][cell]"+ str(GameState.ate) +"[/cell]
-	[cell]Guards killed:[/cell][cell]"+ str(GameState.kills) +"[/cell]
+	[cell]Guards killed:[/cell][cell]"+ str(GameState.guards_killed) +"[/cell]
 	[cell]Time Survived:[/cell][cell]"+ str(days) +" day "+ str(hours) +" hour "+ str(GameState.minutes) +" minutes[/cell]
 	[/table]
 	"
