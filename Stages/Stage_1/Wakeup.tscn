@@ -110,18 +110,6 @@ dialog = ExtResource("23_fi5m4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1466623364]
 
-[node name="ShaderCanvas" type="CanvasLayer" parent="CanvasLayer" unique_id=1820793046]
-unique_name_in_owner = true
-
-[node name="NightOverlay" type="ColorRect" parent="CanvasLayer/ShaderCanvas" unique_id=951607359]
-unique_name_in_owner = true
-material = SubResource("ShaderMaterial_6eav1")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="Gui" parent="CanvasLayer" unique_id=921643240 instance=ExtResource("7_pcam2")]
 
 [node name="DialogSystem" parent="CanvasLayer" unique_id=1480868554 instance=ExtResource("2_vigwt")]

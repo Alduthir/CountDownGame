@@ -8,10 +8,12 @@ extends Node2D
 @onready var time_label: Label = $header/timer/tooth/time
 @onready var time_wheel: TextureRect = $header/center/time_wheel
 @onready var villagers_label: Label = $header/left/villagers
+@onready var night_overlay: ColorRect = $NightOverlay
 
 var tween_health : Tween
 var tween_suspicion : Tween
 var tween_thirst : Tween
+var tween_overlay = create_tween()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,6 +25,8 @@ func _ready() -> void:
 	setup_time()
 	setup_time_wheel()
 	setup_villages()
+	update_shader()
+	GameState.timer.timeout.connect(update_shader)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -115,3 +119,20 @@ func setup_time_wheel():
 func setup_villages():
 	villagers_label.text = str("%02d" % GameState.villagers)
 	GameState.villagers_changed.connect(_on_villager_changed)
+
+func update_shader():
+	night_overlay.material.set_shader_parameter("darkness", get_darkness(GameState.hours, GameState.minutes))
+
+func get_darkness(hour: int, minutes: int) -> float:
+	var keys := [0, 5, 7, 12, 17, 19, 24]
+	var values := [0.75, 0.6, 0.1, 0.0, 0.1, 0.6, 0.75]
+	
+	var time := float(hour) + float(minutes) / 60.0
+	time = clampf(time, 0.0, 24.0)
+	
+	for i in range(keys.size() - 1):
+		if time >= keys[i] and time <= keys[i + 1]:
+			var t: float = (time - keys[i]) / float(keys[i + 1] - keys[i])
+			return lerpf(values[i], values[i + 1], t)
+	
+	return values[0]
