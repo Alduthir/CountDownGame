@@ -26,18 +26,6 @@
 [ext_resource type="Resource" uid="uid://dm0jh5kf75mmj" path="res://Stages/Stage_1/Request Butcher.tres" id="22_6eav1"]
 [ext_resource type="Resource" uid="uid://pccwfcdeggus" path="res://Stages/Stage_1/Dialoog Peter.tres" id="22_fi5m4"]
 [ext_resource type="Resource" uid="uid://cv51od8l4ho5q" path="res://Stages/Stage_1/Request Priest.tres" id="23_fi5m4"]
-[ext_resource type="Shader" uid="uid://dt66w2ol4fqt5" path="res://Shared/day_night.gdshader" id="24_3d4p0"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6eav1"]
-shader = ExtResource("24_3d4p0")
-shader_parameter/darkness = 0.75
-shader_parameter/night_color = Color(0.02, 0.04, 0.12, 1)
-shader_parameter/fog_strength = 0.45
-shader_parameter/fog_size = 0.65
-shader_parameter/fog_softness = 0.35
-shader_parameter/fog_speed = 0.15
-shader_parameter/fog_scale = 7.0
-shader_parameter/fog_color = Color(0.25, 0.3, 0.42, 1)
 
 [node name="Wakeup" type="Control" unique_id=35681556]
 layout_mode = 3

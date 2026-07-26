@@ -2,12 +2,15 @@
 
 [ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="1_k2goq"]
 [ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_24uhq"]
-[ext_resource type="Texture2D" uid="uid://5xmko42jclas" path="res://Resources/portraits/peer.png" id="3_v3cbu"]
+[ext_resource type="Texture2D" uid="uid://c1mgcdgcfuo84" path="res://NPCs/Regis/p_regis.png" id="3_s3nn4"]
 [ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="4_shp5h"]
 
 [sub_resource type="Resource" id="Resource_pcam2"]
 script = ExtResource("2_24uhq")
-label = "‘Piss off, it’s far too early.’"
+label = "‘Piss off, it’s far too early.’ (-1h.)"
+values = Dictionary[int, int]({
+2: 1
+})
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
@@ -89,6 +92,6 @@ metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
 [resource]
 script = ExtResource("4_shp5h")
-portrait = ExtResource("3_v3cbu")
+portrait = ExtResource("3_s3nn4")
 conversation = Array[ExtResource("1_k2goq")]([SubResource("Resource_wy6ru"), SubResource("Resource_un1s2"), SubResource("Resource_qhx4y"), SubResource("Resource_unvca")])
 metadata/_custom_type_script = "uid://b543j03pna7xr"

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="1_ntbfp"]
 [ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_jrqby"]
+[ext_resource type="Texture2D" uid="uid://ce85jnbi7cu47" path="res://NPCs/Farmer/p_farmer.png" id="3_ntbfp"]
 [ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="4_7lx1f"]
 
 [sub_resource type="Resource" id="Resource_jrqby"]
@@ -43,7 +44,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 script = ExtResource("2_jrqby")
 label = "2. Regis: ‘Thank you very much for the offer.’"
 values = Dictionary[int, int]({
-4: 5
+4: 7
 })
 color = Color(1, 0.27058825, 0, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
@@ -56,5 +57,6 @@ metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
 [resource]
 script = ExtResource("4_7lx1f")
+portrait = ExtResource("3_ntbfp")
 conversation = Array[ExtResource("1_ntbfp")]([SubResource("Resource_ryr1m"), SubResource("Resource_g2ptj"), SubResource("Resource_ntbfp")])
 metadata/_custom_type_script = "uid://b543j03pna7xr"

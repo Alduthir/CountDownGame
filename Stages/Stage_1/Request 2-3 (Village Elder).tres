@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="1_qvdbd"]
 [ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_64bqk"]
 [ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="2_umpah"]
+[ext_resource type="Texture2D" uid="uid://bb318kvja3a17" path="res://NPCs/Elder/p_elder.png" id="3_64bqk"]
 
 [sub_resource type="Resource" id="Resource_sp5d7"]
 script = ExtResource("2_64bqk")
@@ -30,7 +31,7 @@ script = ExtResource("2_64bqk")
 label = "2. 'I saw a rather big dog yesterday.'"
 values = Dictionary[int, int]({
 3: -20,
-4: -6
+4: -4
 })
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
@@ -47,11 +48,12 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_hohwl"]
 script = ExtResource("1_qvdbd")
-text = "[p align=right]Regis: [color=orangered]‘Those rumours have indeed been circulating more frequently, sir.’[/color][/p] [p][/p][p]Option 1: [color=crimson]‘Not every vampire drinks blood.’[/color][/p][p]Result: +20 suspicion[/p][p]How does he suddenly know so much about vampires?[/p] [p][/p][p]Option 2: [color=crimson]‘Who says it wasn’t a werewolf?’[/color][/p][p]Result: = -6 villagers & -20 suspicion[/p][p]The people are now convinced that not a vampire but a werewolf is roaming around. People flee your village.[/p] [p][/p][p]Option 3: [color=crimson]‘Have more guards patrol the streets!’[/color][/p][p]Result: + 3 guards & +2 villagers[/p][p]More guards are patrolling the streets, which is not the most convenient choice for tonight.[/p]"
+text = "[p align=right]Regis: [color=orangered]‘Those rumours have indeed been circulating more frequently, sir.’[/color][/p] [p][/p][p]Option 1: [color=crimson]‘Not every vampire drinks blood.’[/color][/p][p]Result: +20 suspicion[/p][p]How does he suddenly know so much about vampires?[/p] [p][/p][p]Option 2: [color=crimson]‘Who says it wasn’t a werewolf?’[/color][/p][p]Result: = -4 villagers & -20 suspicion[/p][p]The people are now convinced that not a vampire but a werewolf is roaming around. People flee your village.[/p] [p][/p][p]Option 3: [color=crimson]‘Have more guards patrol the streets!’[/color][/p][p]Result: + 3 guards & +2 villagers[/p][p]More guards are patrolling the streets, which is not the most convenient choice for tonight.[/p]"
 responses = Array[ExtResource("2_64bqk")]([SubResource("Resource_4vgsm"), SubResource("Resource_hmxtj"), SubResource("Resource_bns57")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
 [resource]
 script = ExtResource("2_umpah")
+portrait = ExtResource("3_64bqk")
 conversation = Array[ExtResource("1_qvdbd")]([SubResource("Resource_64bqk"), SubResource("Resource_hohwl")])
 metadata/_custom_type_script = "uid://b543j03pna7xr"

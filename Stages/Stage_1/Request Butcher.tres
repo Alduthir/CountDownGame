@@ -25,7 +25,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_6eav1"]
 script = ExtResource("1_tcmv4")
-text = "[p align=right]The village butcher approaches you and whispers, [color=lightslategray]“Couldn’t we arrange for me to receive some of the bodies of deceased villagers?”[/color][/p][p align=left][color=crimson]“That’s not exactly an everyday request. What are you going to do with them?”[/color][/p][p align=right][color=lightslategray]“Let’s just say I can provide more food for the village.”[/color][/p]"
+text = "[p align=right]The village butcher approaches you and whispers, [color=lightslategray]“Couldn’t we arrange for me to receive some of the bodies of deceased villagers?”[/color][/p][p align=left][color=crimson]“That’s not exactly an everyday request. What are you going to do with them?”[/color][/p][p align=right][color=lightslategray]“Let’s just say I can provide more food for the village.”[/color][/p][p][/p][p]Option 1:[/p] [p]Result: +10 villagers[/p][p][/p][p]Option 2:[/p][p]Result: +7 villagers & +50 health[/p]"
 responses = Array[ExtResource("2_bgb2x")]([SubResource("Resource_fi5m4"), SubResource("Resource_sr2lq")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
