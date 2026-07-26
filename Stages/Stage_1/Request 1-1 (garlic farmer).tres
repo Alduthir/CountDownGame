@@ -43,7 +43,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 script = ExtResource("2_jrqby")
 label = "2. Regis: ‘Thank you very much for the offer.’"
 values = Dictionary[int, int]({
-4: 5
+4: 7
 })
 color = Color(1, 0.27058825, 0, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
