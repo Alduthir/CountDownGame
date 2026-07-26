@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bwirjkmtchfe"]
+
+[ext_resource type="Shader" uid="uid://dt66w2ol4fqt5" path="res://Shared/day_night.gdshader" id="1_r0f56"]
+
+[resource]
+shader = ExtResource("1_r0f56")
+shader_parameter/darkness = 0.6
+shader_parameter/night_color = Color(0.05, 0.08, 0.2, 1)

@@ -368,3 +368,7 @@ stream = ExtResource("5_am4p3")
 [node name="deathSound" type="AudioStreamPlayer2D" parent="." unique_id=1798421237]
 unique_name_in_owner = true
 stream = ExtResource("6_xp44b")
+
+[node name="deathTimer" type="Timer" parent="." unique_id=560225913]
+unique_name_in_owner = true
+wait_time = 2.0

@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://cdflkgc45o4xi" path="res://MainMenu/MainMenu.gdshader" id="1_afhy6"]
 [ext_resource type="Script" uid="uid://dm3qa6q7ytyl6" path="res://UI/Overlay/End/end.gd" id="1_oo1tb"]
 [ext_resource type="FontFile" uid="uid://cp64hlqrv4k0q" path="res://Resources/fonts/Feathergraphy2.ttf" id="2_oo1tb"]
+[ext_resource type="AudioStream" uid="uid://dtcphjvl5k4en" path="res://Resources/Sound/effects/alphix-game-over-417465.mp3" id="4_hc60r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_afhy6"]
 resource_local_to_scene = true
@@ -76,5 +77,9 @@ theme_override_constants/outline_size = 0
 theme_override_fonts/font = SubResource("FontVariation_oo1tb")
 theme_override_font_sizes/font_size = 22
 text = "Close Game"
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="." unique_id=1156662175]
+unique_name_in_owner = true
+stream = ExtResource("4_hc60r")
 
 [connection signal="pressed" from="mainscreen/btn_close" to="." method="_on_btn_close_pressed"]

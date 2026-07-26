@@ -13,6 +13,7 @@ class_name Count extends CharacterBody2D
 @onready var attack_sound: AudioStreamPlayer2D = %attackSound
 @onready var drink_sound: AudioStreamPlayer2D = %drinkSound
 @onready var death_sound: AudioStreamPlayer2D = %deathSound
+@onready var deathTimer: Timer = %deathTimer
 
 var facing := "down"
 var is_attacking := false
@@ -182,17 +183,20 @@ func heal(amount: int) -> void:
 	GameState.health += amount
 
 func die() -> void:
+	deathTimer.start()
+	death_sound.play()
 	animator.play("dead")
 	print("Player is dood")
 	velocity = Vector2.ZERO
 	set_physics_process(false)
 	set_deferred("monitoring", false)
+
 	
 func drink() -> void:
 	if GameState.is_day() == true:
-		GameState.thirst += 15
+		GameState.thirst += 40
 	else:
-		GameState.thirst += 30
+		GameState.thirst += 60
 
 func drainThirst() -> void:
 	if GameState.thirst > 0:

@@ -2,6 +2,7 @@ extends Control
 
 @onready var title : Label = $Title
 @onready var stats_label: RichTextLabel = $mainscreen/RichTextLabel
+@onready var gameOver_sound: AudioStreamPlayer2D = $GameOverSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,6 +11,7 @@ func _ready() -> void:
 		title_text = "Game Over"
 	
 	title.text = title_text
+	gameOver_sound.play()
 	write_stats()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
