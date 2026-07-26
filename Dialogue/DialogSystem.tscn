@@ -47,7 +47,7 @@ expand_mode = 3
 [node name="Villager" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1601390216]
 layout_mode = 2
 texture = ExtResource("2_cyj5f")
-expand_mode = 2
+expand_mode = 3
 
 [node name="DialogueContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1250846505]
 layout_mode = 2
