@@ -11,6 +11,7 @@ var steps: Array[DialogStep] = []
 var current_step: int = 0
 
 func start_dialog(persona_image: Texture2D, conversation: Array[DialogStep]):
+	get_tree().paused = true
 	GameState.timer.stop()
 	character_image = persona_image
 	portrait.texture = character_image
@@ -65,6 +66,7 @@ func _on_response(response: DialogResponse):
 
 func _end_dialog():
 	GameState.timer.start()
+	get_tree().paused = false
 	visible = false
 	dialog_finished.emit()
 
