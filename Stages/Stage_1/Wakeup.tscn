@@ -96,5 +96,6 @@ position = Vector2(283, 112)
 
 [node name="DialogSystem" parent="CanvasLayer" unique_id=1480868554 instance=ExtResource("2_vigwt")]
 unique_name_in_owner = true
+process_mode = 3
 visible = false
 position = Vector2(160, 60)
