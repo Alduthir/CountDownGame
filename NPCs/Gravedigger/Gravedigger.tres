@@ -1,0 +1,81 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cmq58n52bwsr2"]
+
+[ext_resource type="Texture2D" uid="uid://crf7gbn0ucfrn" path="res://NPCs/Gravedigger/gravedigger.png" id="1_nf2vo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugtve"]
+atlas = ExtResource("1_nf2vo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5o8f"]
+atlas = ExtResource("1_nf2vo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6k8f"]
+atlas = ExtResource("1_nf2vo")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oeph"]
+atlas = ExtResource("1_nf2vo")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lral"]
+atlas = ExtResource("1_nf2vo")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5h66y"]
+atlas = ExtResource("1_nf2vo")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss4ik"]
+atlas = ExtResource("1_nf2vo")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t4jt"]
+atlas = ExtResource("1_nf2vo")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st01x"]
+atlas = ExtResource("1_nf2vo")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5gie"]
+atlas = ExtResource("1_nf2vo")
+region = Rect2(32, 64, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_ugtve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5o8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6k8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oeph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lral")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5h66y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ss4ik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t4jt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st01x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5gie")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]

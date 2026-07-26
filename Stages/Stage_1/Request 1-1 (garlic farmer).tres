@@ -13,7 +13,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_ryr1m"]
 script = ExtResource("1_ntbfp")
-text = "Garlic Farmer: [color=forestgreen]‘Sir, great news! The gods blessed us!’[/color]"
+text = "[right]Garlic Farmer: [color=forestgreen]‘Sir, great news! The gods blessed us!’[/color][/right]"
 responses = Array[ExtResource("2_jrqby")]([SubResource("Resource_jrqby")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_g2ptj"]
 script = ExtResource("1_ntbfp")
-text = "Garlic Farmer: [color=forestgreen]‘They have blessed us with a bountiful harvest. More garlic than a village can eat!’[/color]"
+text = "[right]Garlic Farmer: [color=forestgreen]‘They have blessed us with a bountiful harvest. More garlic than a village can eat!’[/color][/right]"
 responses = Array[ExtResource("2_jrqby")]([SubResource("Resource_o1xan")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
