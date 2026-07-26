@@ -7,6 +7,7 @@ class_name QuestNPC extends StaticBody2D
 @onready var speech_bubble : AnimatedSprite2D = %SpeechBubble
 @onready var spawn_bubble_zone : Area2D = %SpawnBubbleZone
 @onready var interaction_zone : Area2D = %InteractionZone
+@onready var speech_sound: AudioStreamPlayer2D = %speechSound
 
 var dialog_completed := false
 var player_in_range := false
@@ -17,10 +18,11 @@ func _ready() -> void:
 	speech_bubble.animation_finished.connect(func()->void: speech_bubble.play("has_dialogue"))
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not player_in_range:
+	if not player_in_range || dialog_completed:
 		return
 	
-	if event.is_action_pressed("interact") || dialog_completed:
+	if event.is_action_pressed("interact"):
+		speech_sound.play()
 		get_viewport().set_input_as_handled()
 		var dialog_system = get_tree().current_scene.find_child("DialogSystem", true, false)
 		if dialog_system == null: 

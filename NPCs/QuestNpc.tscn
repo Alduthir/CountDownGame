@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://5xmko42jclas" path="res://Resources/portraits/peer.png" id="4_etfpl"]
 [ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="5_fufoh"]
 [ext_resource type="SpriteFrames" uid="uid://2wlmt4kepyh6" path="res://NPCs/Villagers/SpriteFrames/villager_m_blue.tres" id="6_5pakt"]
+[ext_resource type="AudioStream" uid="uid://dvx2irf0yua1h" path="res://Resources/Sound/effects/joentnt-talking-nya-2-291988.mp3" id="8_5a7s0"]
 
 [sub_resource type="Resource" id="Resource_br3sh"]
 script = ExtResource("3_jidpp")
@@ -186,6 +187,10 @@ position = Vector2(-9, -13)
 sprite_frames = SubResource("SpriteFrames_tfrwm")
 animation = &"angry"
 autoplay = "has_dialogue"
+
+[node name="speechSound" type="AudioStreamPlayer2D" parent="." unique_id=1289103661]
+unique_name_in_owner = true
+stream = ExtResource("8_5a7s0")
 
 [connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
 [connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]
