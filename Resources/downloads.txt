@@ -7,3 +7,22 @@ https://angrysnail.itch.io/pixel-art-graveyard-tileset/download/eyJleHBpcmVzIjox
 https://bitsmall.itch.io/topdown
 https://kepx.itch.io/pixel-houses-rpg-top-down-pixel-art-asset-pack-16x16/download/eyJpZCI6MzM5MDc1MSwiZXhwaXJlcyI6MTc4NDgyMTg2Mn0%3d%2eTvtRZimN9Q6tAe0zrlbfc%2bSWkdY%3d
 https://szadiart.itch.io/rogue-fantasy-catacombs
+
+
+Sounds
+
+swoosh:
+https://pixabay.com/users/u_2ttqv1v1rq-45415691/
+drink:
+https://pixabay.com/users/nahtt-49618517/
+Nya:
+https://pixabay.com/users/joentnt-47713256/
+game over:
+https://pixabay.com/users/alphix-52619918/
+
+deathscream:
+https://pixabay.com/users/universfield-28281460/
+monster deathgrunt:
+https://pixabay.com/users/666herohero-25759907/
+sword block:
+https://pixabay.com/users/voicebosch-30143949/

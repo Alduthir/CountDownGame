@@ -14,6 +14,11 @@ class_name Guard extends CharacterBody2D
 @onready var despawn_timer : Timer = %DespawnTimer
 @onready var attack_timer : Timer = %AttackTimer
 @onready var follow_range_shape : CollisionShape2D = %FollowRangeShape
+@onready var attack_sound: AudioStreamPlayer2D = %attackSound
+@onready var death_sound: AudioStreamPlayer2D = %deathSound
+
+
+
 
 var is_following := false
 var is_attacking := false
@@ -49,6 +54,7 @@ func _process(delta: float) -> void:
 		var direction_to_count := global_position.direction_to(count.global_position)
 		var distance_to_count := global_position.distance_to(count.global_position)
 		if can_attack &&  distance_to_count < 30.0:
+			attack_sound.play()
 			is_attacking = true
 			can_attack = false
 			if abs(direction_to_count.x) > abs(direction_to_count.y):
@@ -118,6 +124,7 @@ func take_damage(damage_amount : int) -> void:
 
 func die() -> void:
 	sprite.play("die")
+	death_sound.play()
 	set_process(false)
 	set_deferred("monitoring", false)
 	despawn_timer.start()

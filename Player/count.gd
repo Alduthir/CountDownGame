@@ -10,6 +10,9 @@ class_name Count extends CharacterBody2D
 @onready var hitbox_right : Area2D = %HitBoxRight
 @onready var hitbox_up : Area2D = %HitBoxUp
 @onready var hitbox_down : Area2D = %HitBoxDown
+@onready var attack_sound: AudioStreamPlayer2D = %attackSound
+@onready var drink_sound: AudioStreamPlayer2D = %drinkSound
+@onready var death_sound: AudioStreamPlayer2D = %deathSound
 
 var facing := "down"
 var is_attacking := false
@@ -25,13 +28,8 @@ func _ready() -> void:
 	hitbox_down.body_entered.connect(deal_damage)
 	animator.animation_finished.connect(_on_animation_finished)
 	play_idle()
-	
-	playerTimer.wait_time = 1.0
-	playerTimer.timeout.connect(drainThirst)
-	playerTimer.start()
-	
+	GameState.timer.timeout.connect(drainThirst)
 	shader = animator.material
-
 
 func _physics_process(delta: float) -> void:
 	if is_knocked_back:
@@ -143,10 +141,17 @@ func play_idle() -> void:
 			animator.play("idle_left")
 
 func deal_damage(body: Node2D) -> void:
+	var direction_to_target = (body.global_position - global_position).normalized()
 	if body is Guard:
-		var direction_to_guard = (body.global_position - global_position).normalized()
+		attack_sound.play()
 		body.take_damage(10)
-		body.apply_knockback(direction_to_guard * knockback_force)
+		body.apply_knockback(direction_to_target * knockback_force)
+	elif body is Villager:
+		drink_sound.play()
+		print_debug("hit villager")
+		body.apply_knockback(direction_to_target * -knockback_force)
+		drink()	
+		body.die()
 		
 func _on_animation_finished() -> void:
 	if animator.animation.begins_with("attack_"):
@@ -192,13 +197,13 @@ func drink() -> void:
 func drainThirst() -> void:
 	if GameState.thirst > 0:
 		if GameState.is_day() == true:
-			GameState.thirst -= 2
+			GameState.thirst -= GameState.thirst_day
 		else:
-			GameState.thirst -= 1
+			GameState.thirst -= GameState.thirst_night
 	else:
-		GameState.health -= 1
+		GameState.thirst_health_lost_counter += 1
+		GameState.health -= GameState.thirst_health_lost * (GameState.thirst_health_lost_counter / GameState.thirst_health_lost_multiplier)
 
 func apply_knockback(force: Vector2) -> void:
 	is_knocked_back = true
 	knockback_velocity = force	
-	
