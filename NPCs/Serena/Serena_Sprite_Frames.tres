@@ -13,10 +13,10 @@ region = Rect2(32, 0, 32, 32)
 [resource]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 10.0,
 "texture": SubResource("AtlasTexture_7kxgs")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_5qekf")
 }],
 "loop": 1,

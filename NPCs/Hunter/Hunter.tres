@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ceh8miwj1n584"]
+
+[ext_resource type="Texture2D" uid="uid://cvfcpy18ksqaa" path="res://NPCs/Hunter/vamphunter.png" id="1_5vbk2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqb5m"]
+atlas = ExtResource("1_5vbk2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im4yy"]
+atlas = ExtResource("1_5vbk2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66bvs"]
+atlas = ExtResource("1_5vbk2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0ayb"]
+atlas = ExtResource("1_5vbk2")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhuco"]
+atlas = ExtResource("1_5vbk2")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kblcv"]
+atlas = ExtResource("1_5vbk2")
+region = Rect2(64, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_bqb5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im4yy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66bvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0ayb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhuco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kblcv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
