@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c2k7ystm53bkf" path="res://Dialogue/dialog_step.gd" id="1_kjbih"]
 [ext_resource type="Script" uid="uid://b543j03pna7xr" path="res://Dialogue/dialog_data.gd" id="2_7vk2b"]
 [ext_resource type="Script" uid="uid://bt7dbtglx23uf" path="res://Dialogue/dialog_response.gd" id="2_ub12a"]
+[ext_resource type="Texture2D" uid="uid://c1mgcdgcfuo84" path="res://NPCs/Regis/p_regis.png" id="3_ub12a"]
 
 [sub_resource type="Resource" id="Resource_tfx1c"]
 script = ExtResource("2_ub12a")
@@ -106,5 +107,6 @@ metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
 [resource]
 script = ExtResource("2_7vk2b")
+portrait = ExtResource("3_ub12a")
 conversation = Array[ExtResource("1_kjbih")]([SubResource("Resource_4m54n"), SubResource("Resource_sbo8a"), SubResource("Resource_3d4p0"), SubResource("Resource_6eav1"), SubResource("Resource_fi5m4"), SubResource("Resource_sr2lq"), SubResource("Resource_d2ydq"), SubResource("Resource_7r7mw")])
 metadata/_custom_type_script = "uid://b543j03pna7xr"

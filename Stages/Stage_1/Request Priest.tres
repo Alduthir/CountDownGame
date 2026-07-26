@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 script = ExtResource("2_rbys0")
 label = "'Do as you wish!'"
 values = Dictionary[int, int]({
-0: -40,
+0: -50,
 3: -20,
 4: 10
 })
@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
 [sub_resource type="Resource" id="Resource_unda1"]
 script = ExtResource("1_i8we2")
-text = "[p align=right]Priest: [color=palegoldenrod]“Lord Downey, I’m glad I caught you.”[/color][/p][p align=left][color=crimson]“I’ll be the judge of that.”[/color][/p][p align=right][color=palegoldenrod]“Ahem, yes, of course. But what I wanted to ask was: could we hold a ceremony of light every day at nightfall? It would help keep vampires out of the village.”[/color][/p][p][/p][p align=left]Option 1: [color=crimson]“What if you all stopped claiming that vampires are real!”[/color][/p][p align=left]Result: +15 suspicion[/p][p align=left]Public Opinion: [color=dodgerblue]The villagers don’t understand. Even if it doesn’t help, it can’t hurt, can it?[/color][/p][p][/p][p align=left]Option 2: [color=crimson]“As long as you don’t bother me with it.”[/color][/p][p align=left]Result: +10 villagers, -20 suspicion & -40 health[/p][p align=left][color=crimson]If he is right, this could start to hurt.[/color][/p]"
+text = "[p align=right]Priest: [color=palegoldenrod]“Lord Downey, I’m glad I caught you.”[/color][/p][p align=left][color=crimson]“I’ll be the judge of that.”[/color][/p][p align=right][color=palegoldenrod]“Ahem, yes, of course. But what I wanted to ask was: could we hold a ceremony of light every day at nightfall? It would help keep vampires out of the village.”[/color][/p][p][/p][p align=left]Option 1: [color=crimson]“What if you all stopped claiming that vampires are real!”[/color][/p][p align=left]Result: +15 suspicion[/p][p align=left]Public Opinion: [color=dodgerblue]The villagers don’t understand. Even if it doesn’t help, it can’t hurt, can it?[/color][/p][p][/p][p align=left]Option 2: [color=crimson]“As long as you don’t bother me with it.”[/color][/p][p align=left]Result: +10 villagers, -20 suspicion & -50 health[/p][p align=left][color=crimson]If he is right, this could start to hurt.[/color][/p]"
 responses = Array[ExtResource("2_rbys0")]([SubResource("Resource_1c6ev"), SubResource("Resource_4d4x8")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
