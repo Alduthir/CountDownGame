@@ -21,10 +21,18 @@ values = Dictionary[int, int]({
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
 metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 
+[sub_resource type="Resource" id="Resource_k0xlr"]
+script = ExtResource("2_24uhq")
+label = "<Tutorial>"
+values = Dictionary[int, int]({
+1: 3
+})
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
 [sub_resource type="Resource" id="Resource_wy6ru"]
 script = ExtResource("1_k2goq")
 text = "[right]Regis: [color=orangered]‘Wake up!'[/color][p][right]…[/right][/p] [p][right]He knocks on the coffin. [color=orangered]‘Hello?!?’[/color][/right][/p] [p][right][color=orangered]‘Wake up, Mr Downey!’[/color][/right][/p]"
-responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_pcam2"), SubResource("Resource_qtpgy")])
+responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_pcam2"), SubResource("Resource_qtpgy"), SubResource("Resource_k0xlr")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
 [sub_resource type="Resource" id="Resource_o3bkd"]
@@ -65,8 +73,22 @@ text = "[left]After snoozing a little while longer, you finally wake up and open
 responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_71qao")])
 metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 
+[sub_resource type="Resource" id="Resource_a0s7e"]
+script = ExtResource("2_24uhq")
+label = "<Back>"
+values = Dictionary[int, int]({
+1: -3
+})
+metadata/_custom_type_script = "uid://bt7dbtglx23uf"
+
+[sub_resource type="Resource" id="Resource_unvca"]
+script = ExtResource("1_k2goq")
+text = "[b]Objective:[/b] Lure as many Villagers as possible by completing requests.[p][/p][p][b]Controls:[/b][/p][p][color=gray]Walk:[/color] WASD[/p][p][color=gray]Run:[/color] Shift + WASD[/p][p][color=gray]Interact with quest NPC:[/color] E[/p][p][color=gray]Attack:[/color] Left Mouse Button on a Villager[/p][p][color=gray]Drink from Villager:[/color] Left Mouse Button on a Guard[/p][p][/p][p][b]Bars:[/b][/p][p][color=blue]Suspicion[/color] (blue bar): Increases Guard aggro[/p][p][color=purple]Bloodthirst[/color] (purple bar): Must not run out, or you will slowly die[/p][p][color=red]Health[/color] (red bar): When it is empty, you die[/p][p][/p][p]The game ends after 16 hours. Keep an eye on the countdown in the upper-left fang.[/p][p][/p][p]Watch out for Guards![/p]"
+responses = Array[ExtResource("2_24uhq")]([SubResource("Resource_a0s7e")])
+metadata/_custom_type_script = "uid://c2k7ystm53bkf"
+
 [resource]
 script = ExtResource("4_shp5h")
 portrait = ExtResource("3_v3cbu")
-conversation = Array[ExtResource("1_k2goq")]([SubResource("Resource_wy6ru"), SubResource("Resource_un1s2"), SubResource("Resource_qhx4y")])
+conversation = Array[ExtResource("1_k2goq")]([SubResource("Resource_wy6ru"), SubResource("Resource_un1s2"), SubResource("Resource_qhx4y"), SubResource("Resource_unvca")])
 metadata/_custom_type_script = "uid://b543j03pna7xr"

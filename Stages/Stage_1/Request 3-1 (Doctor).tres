@@ -8,7 +8,6 @@
 script = ExtResource("2_di02v")
 label = "1. ‘Who eats vegetables anyway?’"
 values = Dictionary[int, int]({
-2: 1,
 3: -20,
 4: -3
 })
@@ -19,7 +18,6 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 script = ExtResource("2_di02v")
 label = "2. ‘Get rid of that shitty Garlic! Hahaha!’"
 values = Dictionary[int, int]({
-2: 1,
 3: 10,
 4: -6
 })
@@ -30,7 +28,6 @@ metadata/_custom_type_script = "uid://bt7dbtglx23uf"
 script = ExtResource("2_di02v")
 label = "3. ‘Someone call for de docter?’"
 values = Dictionary[int, int]({
-2: 1,
 4: -6
 })
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
