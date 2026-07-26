@@ -44,7 +44,6 @@ metadata/_custom_type_script = "uid://c2k7ystm53bkf"
 script = ExtResource("2_vq3qt")
 label = "1, 2 & 3: ‘You may stay!’"
 values = Dictionary[int, int]({
-2: 2,
 4: -7
 })
 color = Color(0.8627451, 0.078431375, 0.23529412, 1)
