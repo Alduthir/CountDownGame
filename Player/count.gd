@@ -195,8 +195,10 @@ func die() -> void:
 func drink() -> void:
 	if GameState.is_day() == true:
 		GameState.thirst += 40
+		heal(20)
 	else:
 		GameState.thirst += 60
+		heal(30)
 
 func drainThirst() -> void:
 	if GameState.thirst > 0:

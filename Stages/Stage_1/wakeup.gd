@@ -15,6 +15,7 @@ func _ready() -> void:
 	DialogSystem.start_dialog(dialog_data.portrait, dialog_data.conversation)
 	update_night_overlay()
 
+
 func _process(delta: float) -> void:
 	update_night_overlay()
 	pass
@@ -46,3 +47,4 @@ func update_night_overlay() -> void:
 		night_shader.set_shader_parameter("fog_softness", 0.60)
 		night_shader.set_shader_parameter("fog_speed", 0.50)
 		night_shader.set_shader_parameter("fog_scale", 2.0)
+		
