@@ -107,6 +107,7 @@ func die() -> void:
 	despawn_timer.start()
 	GameState.ate += 1
 	GameState.villagers -= 1
+	GameState.suspicion += 5
 
 func _on_despawn_timer_timeout() -> void:
 	queue_free()

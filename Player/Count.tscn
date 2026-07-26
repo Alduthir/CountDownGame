@@ -303,6 +303,7 @@ offset = Vector2(-1, -13)
 flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1484967754]
+zoom = Vector2(0.8, 0.8)
 
 [node name="player_timer" type="Timer" parent="." unique_id=1801509808]
 unique_name_in_owner = true
@@ -323,6 +324,7 @@ debug_color = Color(0, 0.6457507, 0.26000378, 0.41960785)
 
 [node name="HitBoxRight" type="Area2D" parent="HitBoxes" unique_id=946091690]
 unique_name_in_owner = true
+visible = false
 collision_layer = 0
 collision_mask = 4
 monitoring = false
