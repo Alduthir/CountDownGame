@@ -15,7 +15,7 @@ var tween_thirst : Tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	setup_day()
+	setup_hours_remaining()
 	setup_guards()
 	setup_health()
 	setup_suspicion()
@@ -28,9 +28,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_day_changed(new_value: int) -> void:
-	var days_left: int = GameState.next_event - GameState.days
-	day_label.text = str("%02d" % days_left)
+func _on_hours_remaining_changed(new_value: int) -> void:
+	day_label.text = "%02d" % new_value
 
 func _on_gaurd_changed(new_value: int) -> void:
 	guards_label.text = "[font_size=8]"+str("%02d" % GameState.guards)+"[/font_size][font_size=4]/"+str("%02d" % GameState.guards_busy)+"[/font_size]"
@@ -73,9 +72,11 @@ func _on_time_changed(new_value: int) -> void:
 func _on_villager_changed(new_value: int) -> void:
 	villagers_label.text = str("%02d" % new_value)
 
-func setup_day():
-	_on_day_changed(0)
-	GameState.days_changed.connect(_on_day_changed)
+func setup_hours_remaining() -> void:
+	_on_hours_remaining_changed(GameState.hours_remaining)
+	GameState.hours_remaining_changed.connect(
+		_on_hours_remaining_changed
+	)
 
 func setup_guards():
 	guards_label.text = "[font_size=8]"+str("%02d" % GameState.guards)+"[/font_size][font_size=4]/"+str("%02d" % GameState.guards_busy)+"[/font_size]"

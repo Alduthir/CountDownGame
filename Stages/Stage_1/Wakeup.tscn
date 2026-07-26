@@ -23,6 +23,18 @@
 [ext_resource type="SpriteFrames" uid="uid://cmq58n52bwsr2" path="res://NPCs/Gravedigger/Gravedigger.tres" id="14_w6nbp"]
 [ext_resource type="SpriteFrames" uid="uid://bss3s5xelv6k3" path="res://NPCs/Elder/Elder.tres" id="17_m3k83"]
 [ext_resource type="SpriteFrames" uid="uid://b1uodiv7bfybf" path="res://NPCs/Doctor/Doctor.tres" id="19_4m54n"]
+[ext_resource type="Shader" uid="uid://dt66w2ol4fqt5" path="res://Shared/day_night.gdshader" id="24_3d4p0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6eav1"]
+shader = ExtResource("24_3d4p0")
+shader_parameter/darkness = 0.75
+shader_parameter/night_color = Color(0.02, 0.04, 0.12, 1)
+shader_parameter/fog_strength = 0.45
+shader_parameter/fog_size = 0.65
+shader_parameter/fog_softness = 0.35
+shader_parameter/fog_speed = 0.15
+shader_parameter/fog_scale = 7.0
+shader_parameter/fog_color = Color(0.25, 0.3, 0.42, 1)
 
 [node name="Wakeup" type="Control" unique_id=35681556]
 layout_mode = 3
@@ -91,6 +103,18 @@ position = Vector2(192, 250)
 position = Vector2(283, 112)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1466623364]
+
+[node name="ShaderCanvas" type="CanvasLayer" parent="CanvasLayer" unique_id=1820793046]
+unique_name_in_owner = true
+
+[node name="NightOverlay" type="ColorRect" parent="CanvasLayer/ShaderCanvas" unique_id=951607359]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_6eav1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Gui" parent="CanvasLayer" unique_id=921643240 instance=ExtResource("7_pcam2")]
 

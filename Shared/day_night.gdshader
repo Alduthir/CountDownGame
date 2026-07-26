@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform float darkness : hint_range(0.0, 1.0) = 0.75;
+uniform float darkness : hint_range(0.0, 1.0) = 0.60;
 uniform vec4 night_color : source_color = vec4(0.02, 0.04, 0.12, 1.0);
 
 uniform float fog_strength : hint_range(0.0, 1.0) = 0.45;
