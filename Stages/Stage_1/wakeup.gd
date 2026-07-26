@@ -5,6 +5,7 @@ extends Control
 @onready var DialogSystem : DialogSystem = %DialogSystem
 
 func _ready() -> void:
+	GameState.timer.timeout.connect(check_stories)
 	setup_endgame()
 	DialogSystem.start_dialog(dialog_data.portrait, dialog_data.conversation)
 
